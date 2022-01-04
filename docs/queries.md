@@ -1,0 +1,3 @@
+# Carelyo Queries
+
+> Queries Documentation
