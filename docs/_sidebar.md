@@ -25,4 +25,13 @@
   - [Pharmarcy UI](pharmarcyui.md)
   - [Doctor UI](doctorui.md)
 
+- DevOps
+
+  - [Logging](logging.md)
+     - [Rsyslog] (rsyslog.md)
+     - [Logstah] (logstash.md)
+     - [Elastisearch] (elasticsearch.md)
+     - [kibana] (kibana.md)
+ 
+
 - [**API**](backend.md)
