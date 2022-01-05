@@ -28,10 +28,10 @@
 - DevOps
 
   - [Logging](logging.md)
-     - [Rsyslog] (rsyslog.md)
-     - [Logstah] (logstash.md)
-     - [Elastisearch] (elasticsearch.md)
-     - [kibana] (kibana.md)
+    - - [Rsyslog](rsyslog.md)
+    - - [Logstah](logstash.md)
+    - - [Elastisearch](elasticsearch.md)
+    - - [kibana](kibana.md)
  
 
 - [**API**](backend.md)
