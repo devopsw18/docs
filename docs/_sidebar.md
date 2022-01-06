@@ -1,37 +1,35 @@
-- Getting started
+- [**Getting started**](index.md)
 
-  - [Portal](README.md)
-  - [Setup](setup.md)
-  - [Backend](backend.md)
-  - [Packages](packages.md)
+  - [Setup](start/setup.md)
+  - [Backend](start/backend.md)
+  - [Packages](start/packages.md)
 
-- Helpers
+- [**Helpers**](helpers.md)
 
-  - [Mutations](mutations.md)
-  - [Queries](queries.md)
-  - [Hooks](hooks.md)
-  - [Utils](utils.md)
+  - [Mutations](helpers/mutations.md)
+  - [Queries](helpers/queries.md)
+  - [Hooks](helpers/hooks.md)
+  - [Utils](helpers/utils.md)
 
-- Core
+- [**Core**](core.md)
 
-  - [Components](components.md)
-  - [Pages](pages.md)
-  - [Styling](styling.md)
+  - [Components](core/components.md)
+  - [Pages](core/pages.md)
+  - [Styling](core/styling.md)
 
-- UI
+- [**UI**](ui.md)
 
-  - [Patient UI](patientui.md)
-  - [SystemAdmin UI](sysadminui.md)
-  - [Pharmarcy UI](pharmarcyui.md)
-  - [Doctor UI](doctorui.md)
+  - [Patient UI](ui/patientui.md)
+  - [SystemAdmin UI](ui/sysadminui.md)
+  - [Pharmarcy UI](ui/pharmarcyui.md)
+  - [Doctor UI](ui/doctorui.md)
 
-- DevOps
+- [**DevOps**](devops.md)
 
-  - [Logging](logging.md)
-    - - [Rsyslog](rsyslog.md)
-    - - [Logstah](logstash.md)
-    - - [Elastisearch](elasticsearch.md)
-    - - [kibana](kibana.md)
- 
+  - [Logging](devops/logging.md)
+  - [Rsyslog](devops/rsyslog.md)
+  - [Logstah](devops/logstash.md)
+  - [Elastisearch](devops/elasticsearch.md)
+  - [kibana](devops/kibana.md)
 
-- [**API**](backend.md)
+- [**API**](api.md)

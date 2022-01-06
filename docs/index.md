@@ -4,7 +4,7 @@
 > Here you can read about the careylyo web application
 > Your first step should be setting up your`development` environment head to [Setup](setup.md) to get started
 
-## Writing documentation
+## Writing documentation {docsify-ignore}
 
 The Documentation is written using Markdown. So it really easy to get started.
 
@@ -23,9 +23,9 @@ The side menu is essencially a markdown list.
  
 ```
 
-## CLI
+## CLI {docsify-ignore}
 
-#### Setup Local Development
+### Setup Local Development
 
 ```bash
 npm i docsify-cli -g
@@ -36,13 +36,13 @@ docsify serve ./docs
 
 Serves Documentation Portal on <http://localhost:3000>
 
-## Vscode Extensions
+## Vscode Extensions {docsify-ignore}
 
 ?> **markdownlint** VS Marketplace Link: <https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint>.
 
 ?> **Markdown All in One** VS Marketplace Link: VS Marketplace Link: <https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one>.
 
-## GitPages
+## GitPages {docsify-ignore}
 
 Commit your changes to [Develop Branch](https://gitlab.com/carelyo/docs/-/tree/develop/docs)
 
