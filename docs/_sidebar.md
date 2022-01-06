@@ -24,5 +24,17 @@
   - [SystemAdmin UI](sysadminui.md)
   - [Pharmarcy UI](pharmarcyui.md)
   - [Doctor UI](doctorui.md)
+<<<<<<< HEAD
+=======
+
+- DevOps
+
+  - [Logging](logging.md)
+    - - [Rsyslog](rsyslog.md)
+    - - [Logstah](logstash.md)
+    - - [Elastisearch](elasticsearch.md)
+    - - [kibana](kibana.md)
+ 
+>>>>>>> develop
 
 - [**API**](backend.md)
