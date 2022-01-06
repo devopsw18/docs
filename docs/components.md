@@ -1,3 +1,0 @@
-# Carelyo Components
-
-> Components Documentation

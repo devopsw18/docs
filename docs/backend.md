@@ -1,3 +1,0 @@
-# Carelyo Backend
-
-> Backend Documentation
