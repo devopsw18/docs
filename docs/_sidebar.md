@@ -1,40 +1,41 @@
-- Getting started
+- [**Getting started**](index.md)
 
-  - [Portal](README.md)
-  - [Setup](setup.md)
-  - [Backend](backend.md)
-  - [Packages](packages.md)
+  - [Setup](start/setup.md)
+  - [Backend](start/backend.md)
+  - [Packages](start/packages.md)
 
-- Helpers
+- [**Helpers**](helpers.md)
 
-  - [Mutations](mutations.md)
-  - [Queries](queries.md)
-  - [Hooks](hooks.md)
-  - [Utils](utils.md)
+  - [Mutations](helpers/mutations.md)
+  - [Queries](helpers/queries.md)
+  - [Hooks](helpers/hooks.md)
+  - [Utils](helpers/utils.md)
 
-- Core
+- [**Core**](core.md)
 
-  - [Components](components.md)
-  - [Pages](pages.md)
-  - [Styling](styling.md)
+  - [Components](core/components.md)
+  - [Pages](core/pages.md)
+  - [Styling](core/styling.md)
 
-- UI
+- [**UI**](ui.md)
 
+<<<<<<< HEAD
   - [Patient UI](patientui.md)
   - [SystemAdmin UI](sysadminui.md)
   - [Pharmarcy UI](pharmarcyui.md)
   - [Doctor UI](doctorui.md)
 <<<<<<< HEAD
 =======
-
-- DevOps
-
-  - [Logging](logging.md)
-    - - [Rsyslog](rsyslog.md)
-    - - [Logstah](logstash.md)
-    - - [Elastisearch](elasticsearch.md)
-    - - [kibana](kibana.md)
- 
+=======
+  - [Patient UI](ui/patientui.md)
+  - [SystemAdmin UI](ui/sysadminui.md)
+  - [Pharmarcy UI](ui/pharmarcyui.md)
+  - [Doctor UI](ui/doctorui.md)
 >>>>>>> develop
 
-- [**API**](backend.md)
+- [**DevOps**](devops.md)
+
+=======
+  - [Logging](devops/logging.md)
+
+- [**API**](api.md)
