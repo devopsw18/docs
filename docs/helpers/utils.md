@@ -1,3 +1,3 @@
 # Carelyo Utils
 
-> utils Documentation
+> Utils covers the functions that provide simplicity and reusability to our application by preventing repeating code used throughout different functions held in Mutations, Queries, or within UI components.

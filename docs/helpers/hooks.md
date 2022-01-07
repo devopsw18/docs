@@ -1,3 +1,3 @@
 # Carelyo Custom Hooks
 
-> Hooks Documentation
+> Hooks holds our custom React hooks.
