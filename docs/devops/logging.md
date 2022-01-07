@@ -43,16 +43,11 @@ services:
        - /etc/localtime:/etc/localtime:ro
 volumes:
   monitoring: {}
-```
+
 Save the file.
+```
 
 ```bash
 ## Rund the docker-compose file
 docker-compose up -d
 ```
-
-
-
-
-
-
