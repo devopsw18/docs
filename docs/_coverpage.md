@@ -11,5 +11,5 @@ _`Carelyo Official Documentation`_
 - `APIs`
 
 [Gitlab](https://gitlab.com/carelyo/docs/)
-[Carelyo Wesite](https://Carelyo.ng)
+[Carelyo Website](https://Carelyo.ng)
 [Getting Started](index.md)
