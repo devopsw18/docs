@@ -27,9 +27,5 @@
 - [**DevOps**](devops.md)
 
   - [Logging](devops/logging.md)
-  - [Rsyslog](devops/rsyslog.md)
-  - [Logstah](devops/logstash.md)
-  - [Elastisearch](devops/elasticsearch.md)
-  - [kibana](devops/kibana.md)
 
 - [**API**](api.md)
