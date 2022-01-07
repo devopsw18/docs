@@ -19,23 +19,13 @@
 
 - [**UI**](ui.md)
 
-<<<<<<< HEAD
-  - [Patient UI](patientui.md)
-  - [SystemAdmin UI](sysadminui.md)
-  - [Pharmarcy UI](pharmarcyui.md)
-  - [Doctor UI](doctorui.md)
-<<<<<<< HEAD
-=======
-=======
   - [Patient UI](ui/patientui.md)
   - [SystemAdmin UI](ui/sysadminui.md)
   - [Pharmarcy UI](ui/pharmarcyui.md)
   - [Doctor UI](ui/doctorui.md)
->>>>>>> develop
 
 - [**DevOps**](devops.md)
 
-=======
   - [Logging](devops/logging.md)
 
 - [**API**](api.md)
