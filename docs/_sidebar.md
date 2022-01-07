@@ -26,6 +26,6 @@
 
 - [**DevOps**](devops.md)
 
-  - [Logging](devops/logging.md)
+  - [Monitoring](devops/monitoring.md)
 
 - [**API**](api.md)
