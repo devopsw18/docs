@@ -1,0 +1,10 @@
+
+{
+ "position": 1,
+ "label": "Hooks",
+ "collapsible": true,
+ "link": {
+   "type": "generated-index",
+   "title": "Application Hooks"
+ }
+}

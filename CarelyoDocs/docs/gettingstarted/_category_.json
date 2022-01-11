@@ -1,0 +1,10 @@
+
+{
+ "position": 2,
+ "label": "Getting Started",
+ "collapsible": false,
+ "link": {
+   "type": "generated-index",
+   "title": "Carelyo services and ui"
+ }
+}
