@@ -9,8 +9,8 @@ const config = {
   title: 'Carelyo Docs',
   tagline: 'Read up on crucial part of our services and how to get started with them',
   url: 'https://carelyo.gitlab.io/',
-  baseUrl: '/docs/',
-  onBrokenLinks: 'throw',
+  baseUrl: '-/tree/main/CarelyoDocs/docs/',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'carelyo', // Usually your GitHub org/user name.
@@ -23,13 +23,13 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://gitlab.com/carelyo/docs',
+          editUrl: 'https://gitlab.com/carelyo/docs/-/tree/main/CarelyoDocs',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://gitlab.com/carelyo/docs',
+            'https://gitlab.com/carelyo/docs/-/tree/main/CarelyoDocs/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
