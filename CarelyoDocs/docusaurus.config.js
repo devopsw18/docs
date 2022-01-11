@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Carelyo Docs',
   tagline: 'Read up on crucial part of our services and how to get started with them',
-  url: 'https://carelyo.gitlab.io/',
-  baseUrl: '-/tree/main/CarelyoDocs/docs/',
+  url: 'https://carelyo.gitlab.io',
+  baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
