@@ -1,10 +1,10 @@
 {
- "position": 4,
- "label": "Services",
+ "position": 1,
+ "label": "Workbench",
  "collapsible": true,
  "collapsed": true,
  "link": {
    "type": "generated-index",
-   "title": "Carelyo Services"
+   "title": "Your Carelyo Workbench"
  }
 }

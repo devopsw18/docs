@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-sidebar_label: Patient Services
+sidebar_label: Patient
 ---
 # Carelyo Patient Services
 
