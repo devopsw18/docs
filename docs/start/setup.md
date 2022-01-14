@@ -1,3 +1,0 @@
-# Carelyo Setup
-
-> Setup Documentation
