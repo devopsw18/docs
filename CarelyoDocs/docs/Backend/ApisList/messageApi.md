@@ -1,0 +1,11 @@
+# Message Api
+
+Unless specified otherwise, all APIs here require a patient, doctor, or admin token (may update later)
+
+| **Mapping** | URL | **Purpose** | **Request** | **Response**| if used |
+| --- | --- | --- | --- | --- | --- |
+| POST         | /api/i/message/create               | create a new message                 | (long) id, (string) subject, (long) receiverId, (string) sender, (string) text, (string) date, (boolean) hasBeenRead  | messageDTO (id, subject, receiverId, sender, text, date, hasBeenRead) or failed (string)                            |                          |
+| GET          | /api/i/message/getall               | get all messages in database         |                                                                                                                       | list of messageDTOs (id, subject, receiverId, sender, text, date, hasBeenRead)                                      | only admin can use this  |
+| GET          | /api/i/message/get/{userId}         | get all messages of a specific user  | (path variable) user id                                                                                               | list of messageDTOs (id, subject, receiverId, sender, text, date, hasBeenRead) or failed to find the user (string)  |                          |
+| PUT          | /api/i/message/setread/{messageId}  | set a specific  message as readed    | (path variable) message id                                                                                            | success or failed (string)                                                                                          |                          |
+| DELETE       | /api/i/message/delete/{messageId}   | delete a specific  message           | (path variable) message id                                                                                            | success or failed (string)                                                                                          |                          |
