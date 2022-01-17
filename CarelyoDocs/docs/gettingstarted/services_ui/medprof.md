@@ -94,6 +94,12 @@ sidebar_label: Medical Professional
 > - Done Consultation
 > - Earnings
 > - Urgent Concerns (Standbydoc)
+> > Invite friend
+> Profile
+> Support
+> Feedback
+> Wallet
+> Settings
 
 ## Consultation
 ![Book consultation](../../../assets/images/consbook.png)
