@@ -1,6 +1,6 @@
 {
- "position": 1,
- "label": "Workbench",
+ "position": 3,
+ "label": "Setup Workbench",
  "collapsible": true,
  "collapsed": true,
  "link": {
