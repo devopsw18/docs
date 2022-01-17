@@ -6,6 +6,8 @@ sidebar_label: Login
 
 > Login Services handles login for all users
 
+![Login login](../../../assets/images/loginserv.png)
+
 ## Registration Patient
 > - - Email
 > - - Mobile
@@ -47,3 +49,11 @@ sidebar_label: Login
 > - Forogot password
 > - - Email or Mobile
 > - - OTP
+
+## Forgot Password
+> - Email or Mobile
+> - OTP
+> - Change password
+> - login
+
+![forgot password](../../../assets/images/forgotpass.png)
