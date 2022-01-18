@@ -9,9 +9,9 @@ const config = {
   title: 'Carelyo Docs',
   tagline: 'Read up on crucial part of our services and how to get started with them',
   url: 'https://carelyo.gitlab.io',
-  baseUrl: '/docs/',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  baseUrl: '/',
+  onBrokenLinks: 'error',
+  onBrokenMarkdownLinks: 'error',
   favicon: 'img/favicon.ico',
   organizationName: 'carelyo', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
@@ -54,7 +54,6 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          {to: '/blog', label: 'Dev Blogs', position: 'left'},
           {
             href: 'https://gitlab.com/carelyo',
             label: 'Gitlab',
