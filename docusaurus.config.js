@@ -9,7 +9,7 @@ const config = {
   title: 'Carelyo Docs',
   tagline: 'Read up on crucial part of our services and how to get started with them',
   url: 'https://carelyo.gitlab.io',
-  baseUrl: '/',
+  baseUrl: '/docs/',
   onBrokenLinks: 'error',
   onBrokenMarkdownLinks: 'error',
   favicon: 'img/favicon.ico',
