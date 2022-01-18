@@ -1,0 +1,10 @@
+# Prelaunch Api
+
+| **Mapping** | URL | **Purpose** | **Request** | **Response**| if used |
+| --- | --- | --- | --- | --- | --- |
+| POST                    | /api/preregister/doctor        | Preregister doctor to get information on the app  | (String) email, (String) phoneNumber, (String) referrerMobile, (MultipartFile) uploadCV  | ResponseMessage confirming the success or failure of the pre-registration  |          |
+| GET (role SYSTEMADMIN)  | /api/preregister/files         | Get a list of all uploaded CV-files               |                                                                                          | List of ResponseFiles                                                      |          |
+| GET (role SYSTEMADMIN)  | /api/i/preregister/files/{id}  | Get a CV for a specific doctor                    | (Long) Id                                                                                | ResponseEntity with the file. Filename will be DOCTORS_EMAIL.pdf           |          |
+| GET (role SYSTEMADMIN)  | /api/preregister/getdoctors    | Get a list of all preregistered doctors           |                                                                                          | List of PreLaunchDoctorDTO                                                 |          |
+| POST                    | /api/preregister/patient       | Preregister patient                               | (String) email, (String) phoneNumber, (String) referrerMobile                            | ResponseMessage confirming the success or failure of the pre-registration  |          |
+| GET (role SYSTEMADMIN)  | /api/preregister/getpatients   | Get a list of all preregistered patients          |                                                                                          | List of PrelaunchPatientRegistrationDTO                                    |          |
