@@ -1,3 +1,0 @@
-# Carelyo Styling
-
-> Styling Documentation
