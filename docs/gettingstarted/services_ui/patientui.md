@@ -67,23 +67,81 @@ This includes:
 > - Surname
 > - Date of birth
 > - Gender
-> - Marrie | Divorced | Single
-> - Living alone Yes | No
-> - Weight
+> - Marital status
+>> - Married
+>> - Divorced
+>> - Single
+> - Living alone 
+>> - Yes
+>> - No
 > - Height
 > - Previous Medical issue
-> - Allergies Yes | No
+> - Allergies
+>> - Yes
+>> - No
 > - Tribe
 > - Occupation
 > - Religion
 > - Blood type
+>> - A+ 
+>> - A- 
+>> - B+ 
+>> - B-
+>> - AB+ 
+>> - AB- 
+>> - O+ 
+>> - O- 
 > - Disability
 > - Preferred Language
+>> - English
+>> - Igbo
+>> - Hausa
+>> - Yoruba
 > - Country (if countries is outside Africa then ask Purpose of visit)
+>> - Purpose of visit
+>>>  - Tourist
+>>>  - Expatriate
+>>>  - Business Trip (applicable to patient living abroad)
 > - State
+>> - Abia State (Umuahia)
+>> - Adamawa State (Yola)
+>> - Akwa Ibom State (Uyo)
+>> - Anambra State (Awka)
+>> - Bauchi State (Bauchi)
+>> - Bayelsa State (Yenagoa)
+>> - Benue State (Makurdi)
+>> - Borno State (Maiduguri)
+>> - Cross River State (Calabar)
+>> - Delta State (Asaba)
+>> - Ebonyi State (Abakaliki)
+>> - Edo State (Benin City)
+>> - Ekiti State (Ado Ekiti)
+>> - Enugu State (Enugu)
+>> - Gombe State (Gombe)
+>> - Imo State (Owerri)
+>> - Jigawa State (Dutse)
+>> - Kaduna State (Kaduna)
+>> - Kano State (Kano)
+>> - Katsina State (Katsina)
+>> - Kebbi State (Birnin Kebbi)
+>> - Kogi State (Lokoja)
+>> - Kwara State (Ilorin)
+>> - Lagos State (Ikeja)
+>> - Nasarawa State (Lafia)
+>> - Niger State (Minna)
+>> - Ogun State (Abeokuta)
+>> - Ondo State (Akure)
+>> - Osun State (Oshogbo)
+>> - Oyo State (Ibadan)
+>> - Plateau State (Jos)
+>> - Rivers State (Port Harcourt)
+>> - Sokoto State (Sokoto)
+>> - Taraba State (Jalingo)
+>> - Yobe State (Damaturu)
+>> - Zamfara State (Gusau)
+>> - Abuja Federal Capital Territory 
 > - Community
 > - Address
 > - Post Code
-> - Purpose of visit Tourist | Expatriate | Business Trip (applicable to patient living abroad)
-> - Add children
+> - Add child
 > - Add Dependent
