@@ -12,9 +12,9 @@ sidebar_label: Patient
 > 2. Patient living abroad
 
 ## A Patient
-> - Adualt Patient (<18)
-> - Child of and Adualt
-> - Dependent (Elderly, house maid, relative etc, someone in the Adualt Patient's care)
+> - Adult Patient (<18)
+> - Child of and Adult
+> - Dependent (Elderly, house-maid, relative etc, someone in the Adult Patient's care)
 > ![Patient thepatient](../../../assets/images/patient-map.png)
 
 ## What is on the Dashbord
@@ -22,8 +22,8 @@ sidebar_label: Patient
 ### Talk to doctor
 > - Booking for Myself
 > - Booking for Child
-> - Booking for Dependet
-> - - - Dependent is someone under the adults care i.e. helper, elderly, familiy relative
+> - Booking for Dependent
+> - - - Dependent is someone under the adults care i.e. helper, elderly, family relative
 
 ![Patient talk2doc](../../../assets/images/p-talk2doc.png)
 
@@ -62,10 +62,10 @@ This includes:
 
 ### Local Patient
 > - Title
-> - Nationl Identity Number
+> - National Identity Number
 > - Firstname
 > - Surname
-> - Date of bith
+> - Date of birth
 > - Gender
 > - Marrie | Divorced | Single
 > - Living alone Yes | No
@@ -79,7 +79,7 @@ This includes:
 > - Blood type
 > - Disability
 > - Preferred Language
-> - Country (if countris is outside Africa then ask Purpose of visit)
+> - Country (if countries is outside Africa then ask Purpose of visit)
 > - State
 > - Community
 > - Address
