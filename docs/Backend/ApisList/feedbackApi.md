@@ -1,5 +1,7 @@
 # Feedback Api
 
+Note:
+
 | **Mapping** | URL | **Purpose** | **Request** | **Response**| if used |
 | --- | --- | --- | --- | --- | --- |
 | POST (role PATIENT, DOCTOR, PHARMACY, PHARMACYADMIN)  | /api/i/feedback/{userId}/createfeedback  | Create feedback messages by patient, doctor, pharmacy, pharmacyAdmin                                    |                 |                  |          |

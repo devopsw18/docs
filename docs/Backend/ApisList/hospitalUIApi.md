@@ -1,5 +1,7 @@
 # Hospital UI Api
 
+Note:
+
 | **Mapping** | URL | **Purpose** | **RequestDTO** | **ResponseDTO** | if used  |
 | --- | --- | --- | --- | --- | --- |
 | Put(role HOSPITALADMIN)                  | /api/i/hospital/id                                | update hospital profile                   | Long id,HospitalProfileDTO                       | hospital profile dto or hospital couldn't be found                |  |

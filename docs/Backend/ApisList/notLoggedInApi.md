@@ -1,6 +1,6 @@
 # Not Logged In Api
 
-These APIs are for all UIs
+Note: These APIs are for all UIs
 
 | **Mapping** | URL | **Purpose** | **Request** | **Response**| if used |
 | --- | --- | --- | --- | --- | --- |

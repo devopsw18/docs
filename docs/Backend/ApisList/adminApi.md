@@ -1,5 +1,10 @@
 # Admin Api
 
-| **Mapping** | URL | **Purpose** | **Request** | **Response**| if used |
-| --- | --- | --- | --- | --- | --- |
-| PUT(role SYSTEMADMIN)  | /api/i/admin/setUserAsSysAdmin/{id}  | Adds role SYSTEMADMIN to a user                                       |                 |                  |          |
+Note:
+
+## Adds role SYSTEMADMIN to a user
+>- **Mapping:**  PUT(role SYSTEMADMIN) 
+>- **URL:**  /api/i/admin/setUserAsSysAdmin/{id}
+>- **Request:** 
+>- **Response:** 
+>- if used: 

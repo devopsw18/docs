@@ -1,5 +1,7 @@
 # Doctor UI Api
 
+Note:
+
 | **Mapping** | URL | **Purpose** | **Request** | **Response**| if used |
 | --- | --- | --- | --- | --- | --- |
 | GET (role SYSTEMADMIN) | /api/i/doctors | Get all doctors | | List of DoctorDTO (Long userId, String mobile, String email, Long doctorId, String systemStatus) |  |

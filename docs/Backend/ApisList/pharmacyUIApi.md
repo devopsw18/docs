@@ -1,5 +1,7 @@
 # Pharmacy UI Api
 
+Note:
+
 | **Mapping** | URL | **Purpose** | **RequestDTO** | **ResponseDTO** |  if used  |
 | --- | --- | --- | --- | --- | --- |
 | Put(role PHARMACYADMIN) |  /api/i/pharmacy/id | update pharmacy profile | Long id, PharmacyProfileDTO | pharmacy id, user email, user mobile, user id |  |

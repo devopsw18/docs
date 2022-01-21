@@ -1,5 +1,7 @@
 # Prelaunch Api
 
+Note:
+
 | **Mapping** | URL | **Purpose** | **Request** | **Response**| if used |
 | --- | --- | --- | --- | --- | --- |
 | POST                    | /api/preregister/doctor        | Preregister doctor to get information on the app  | (String) email, (String) phoneNumber, (String) referrerMobile, (MultipartFile) uploadCV  | ResponseMessage confirming the success or failure of the pre-registration  |          |

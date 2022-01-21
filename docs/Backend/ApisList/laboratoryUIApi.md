@@ -1,5 +1,7 @@
 # Laboratory UI Api
 
+Note:
+
 
 | **Mapping**  | URL | **Purpose** | **RequestDTO** | **ResponseDTO**  | If used                           |
 | ---         | ---   | ---    | ---        | ---       | ---  |

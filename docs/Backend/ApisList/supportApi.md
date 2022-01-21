@@ -1,5 +1,7 @@
 # Support Api
 
+Note:
+
 | **Mapping** | URL | **Purpose** | **RequestDTO** | **ResponseDTO** |  if used  |
 | --- | --- | --- | --- | --- | --- |
 | POST (role PATIENT, DOCTOR, PHARMACY, PHARMACYADMIN)  | /api/i/support/{userId}/createsupport  | Create support messages by patient, doctor, pharmacy, pharmacyAdmin                                       |                                                                                                        |                                                                                                        |          |

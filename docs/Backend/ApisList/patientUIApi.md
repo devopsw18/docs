@@ -1,6 +1,6 @@
 # Patient UI Api
 
-Unless specified otherwise, all APIs require a patient token (the system admin APIs will be moved into their own document later)
+Note: Unless specified otherwise, all APIs require a patient token (the system admin APIs will be moved into their own document later)
 
 | **Mapping**  | URL | **Purpose** | **RequestDTO** | **ResponseDTO**  | If used                           |
 | ---         | ---   | ---    | ---        | ---       | ---  |

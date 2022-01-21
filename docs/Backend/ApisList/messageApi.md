@@ -1,6 +1,6 @@
 # Message Api
 
-Unless specified otherwise, all APIs here require a patient, doctor, or admin token (may update later)
+Note: Unless specified otherwise, all APIs here require a patient, doctor, or admin token (may update later)
 
 | **Mapping** | URL | **Purpose** | **Request** | **Response**| if used |
 | --- | --- | --- | --- | --- | --- |
