@@ -71,5 +71,42 @@ docker-compose logs -f --tail="all"
 ## Open Firewall and Network Security Group
 
 ### Ingress Rule
+This allows only you IP to access this resource
 Network Security Group: NSG_Checkmk
-Allow source your homeIP i.e., 10.0.0.2/32 and port 8080
+Allow source your homeIP i.e., 10.0.0.2/32 and port 8080 
+
+### Login in to Checkmk server
+Server IP:8080
+
+## Add Agents
+To add anagent 
+- Clicck Setup > Agents > Windows, Linus, Solaris, AIX
+- Since we are monitoring Ubuntu, click the Linux DEB to download the agent
+- next copy the file to the Ubuntu server
+
+```bash
+## Secure copy from local computer to the log server on the cloud
+scp check-mk-agent_2.0.0p17-74a3d18d9c2e1ce4_all.deb ubuntuserver:/tmp
+
+## install the agent
+dpkg -i check-mk-agent_2.0.0p17-74a3d18d9c2e1ce4_all.deb
+```
+## Add Plugin to monitor docker container
+To monitor additional services you may need plugins.
+Download the plugin from the checkmk server or from the internet
+
+```bash
+## upload it to the server to this location
+cd /usr/lib/check_mk_agent/plugins/
+
+## install the agent
+dpkg -i check-mk-agent_2.0.0p17-74a3d18d9c2e1ce4_all.deb
+```
+
+log in to the checkmk via the web browser Server IP:8080
+- Setup > Add host
+-  Enter the hostname: myserver
+-  Under Network address: Enter the IPv4 address i.e., 10.0.9.0
+-  Save & go to service configuration
+-  This takes you to Setup > Hosts > Main directory >Properties of host myserver > Services of host myserver
+- - Check all the services that you want to monitor and click **Full service scan** and on the top right you should see changes if any, then click **Activate on selected sites** to implement the changes
