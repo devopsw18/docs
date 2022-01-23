@@ -121,3 +121,6 @@ Built with Lua version: Lua 5.3.5
 global
     lua-load /etc/haproxy/cors.lua
 ```
+
+## Block Volume Encryption
+By default all volumes and their backups are encrypted using the Oracle-provided encryption keys. Each time a volume is cloned or restored from a backup the volume is assigned a new unique encryption key. This link talks about OCI Block Volume Service [BlockVolumeEncryption](https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/overview.htm#BlockVolumeEncryption)
