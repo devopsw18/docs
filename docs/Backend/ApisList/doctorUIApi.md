@@ -2,29 +2,333 @@
 
 Note:
 
-| **Mapping** | URL | **Purpose** | **Request** | **Response**| if used |
-| --- | --- | --- | --- | --- | --- |
-| GET (role SYSTEMADMIN) | /api/i/doctors | Get all doctors | | List of DoctorDTO (Long userId, String mobile, String email, Long doctorId, String systemStatus) |  |
-| GET (role SYSTEMADMIN) | /api/i/doctors/{illnessId} | Get all doctors that has this kind of illness as speciality | (Long) illnessId | ResponseEntity with a list of doctors |  |
-| GET (role DOCTOR or SYSTEMADMIN) | /api/i/doctors/doctor/{userId} | Get a specific doctor | (Long) userId | ResponseEntity with DoctorDTO (Long userId, String mobile, String email, Long doctorId, String systemStatus) if the doctor exists, otherwise ResponseEntity with error message |  |
-| POST (role DOCTOR) | /api/i/doctors/{userId} | Add profile to a doctor | (Long) userId, DoctorProfileDTO (String dateOfBirth, String gender, String maritalStatus, String officeAddress, String city, String state, String mdcnCertificateNumber, List&LT;Long> specialities) | ResponseEntity with DoctorDTO (Long userId, String mobile, String email, Long doctorId, String systemStatus) if the doctor exists, otherwise ResponseEntity with error message |  |
-| POST (role DOCTOR or SYSTEMADMIN) | /api/i/doctors/{userId}/update/email | Update the email for a doctor | (Long) userId, EmailDTO (String email) | ResponseEntity with information about update |   |
-| POST (role DOCTOR or SYSTEMADMIN) | /api/i/doctors/{userId}/update/mobile | Update mobilenumber for a doctor  | (Long) userId, MobileDTO (String mobile) | ResponseEntity with information about update|   |
-| GET (role DOCTOR or SYSTEMADMIN) | /api/i/consultations/booked | Get all booked consultations |  | List of ConsultationDTO (Long id, String patient, Long patientId, String doctor, String illness, String date, String timeBooked, String timeAccepted, String timeStarted, String status, List&LT;String> symptoms, String detailedDescription, String transactionReference, Integer timeSlot, String language, String timeFinished)  |  |
-| GET (role DOCTOR) | /api/i/consultations/{consultationId}/accept/{doctor} | Doctor accepts a consultation | (Long) consultationId, (String) doctor | ResponseEntity with information if the consultation has been accepted or not |  |
-| POST (role DOCTOR) | /api/i/consultations/{consultationId}/unaccept | Doctor unaccept a consultation | (Long) consultationId | ResponseEntity with information if the consultation has been unaccepted or not |  |
-| GET (role DOCTOR) | /api/i/consultations/{consultationId}/start | Start a consultation | (Long) consultationId | ResponseEntity with information if the consultation has been started or not |  |
-| POST (role DOCTOR) | /api/i/consultations/{consultationId}/finish | Finish a consultation | (Long) consultationId, DoneConsultationWithJournalDTO (Long id, String patient, Long patientId, String doctor, String doctorId, String illness, String language, String patientDescription, String headIn, String date, String summary, Long consultationDurationInMinute, PatientJournal patientJournal) | ResponseEntity with information if the consultation has been finished or not |  |
-| GET (role DOCTOR) | /api/i/consultations/viewdoneconsultation/{doneconsultationId}  | View done consultation by doneconsultationId | (Long) doneconsultationId | ResponseEntity with DoneConsultationWithJournalDTO or ResponseEntity with error message |  |
-| GET (role DOCTOR or SYSTEMADMIN) | /api/i/consultations/{doctor}/accepted | Doctor gets all accepted consultations by the doctor | (String) doctor | List of ConsultationDTO |  |
-| POST (role DOCTOR) | /api/i/consultations/{consultationId}/labrequest | Doctor request a lab test | (Long) consultationId, LabRequestDTO (Long id, String patientName, ELabRequest testRequested, String date, String doctorName, String testReason, byte[] qrCode) | ResponseEntity with text message |  |
-| GET (role DOCTOR) | /api/i/followupconsultation/{consultationId}/createfollowup | Create a follow up consultation | (Long) consultationId | ResponseEntity with text message |  |
-| GET (role DOCTOR or SYSTEMADMIN) | /api/i/followupconsultation/getallfollowups | Get all follow up consultations |  | List of FollowUpConsultation (Long id, Long patientId, LocalDate dateCreated)  |  |
-| GET (role DOCTOR or SYSTEMADMIN) | /api/i/followupconsultation/{patientId}/getfollowup  | Get all follow-ups for a specific patient | (Long) patientId | List of FollowUpConsultation (Long id, Long patientId, LocalDate dateCreated) |  |
-| GET (role PATIENT, DOCTOR or SYSTEMADMIN) | /api/i/illnesses | Get all illnesses that are registered |  | ResponseEntity with List of IllnessDTO (Long id, String illness, List&LT;String> symptoms) |  |
-| GET (role PATIENT, DOCTOR or SYSTEMADMIN) | /api/i/illnesses/{illness} | Get a specific illness | (String) illness | ResponseEntity with IllnessDTO or ResponseEntity with error message |  |
-| POST (role DOCTOR) | /api/i/prescriptions | Doctor post a prescription form | PrescriptionFormDTO (String date, String patientMobileNumber, String illness, Long patientId, String patientName, String patientDateOfBirth, String patientAddress, String medicationName, String medicationForm, String medicationStrength, String medicationDose, String medicationRoute, String medicationFrequency, String medicationRefills, String medicationQuantity, String doctorName, String doctorMobileNumber)  | ResponseEntity with PrescriptionDTO or ResponseEntity with error message |  |
-| PUT (role PATIENT, DOCTOR or PHARMACIST) | /api/i/referral/addreferral/{mobile} | Add a referral user to the currently logged-in user | (UserDetailsImpl) user, (String) mobile | ResponseEntity with a text message |  |
-| GET (role PATIENT, DOCTOR or PHARMACIST) | /api/i/referral/getreferraluser | Gets the current referral user of the currently logged-in user | (UserDetailsImpl) user | ResponseEntity with referral users id as a string |  |
-| PUT (role PATIENT, DOCTOR or PHARMACIST)   | /api/i/referral/addreferreduser | Adds the currently logged-in user to their referral users list of referred users | (UserDetailsImpl) user | ResponseEntity with text message |  |
-| GET (role PATIENT, DOCTOR or PHARMACIST) | /api/i/referral/getreferredusers/{id} | Gets all the users a certain user has referred | (Long) id | ResponseEntity with a list of referred users or ResponseEntity with error message |  |
+## Get all doctors
+>- **Mapping:** GET (role SYSTEMADMIN)
+>- **URL:** /api/i/doctors
+>- **Request:** 
+>- **Response:**  List &LT;DoctorDTO>
+>>- Long userId
+>>- String mobile
+>>- String email
+>>- Long doctorId
+>>- String systemStatus
+>- if used: 
+
+## Get all doctors that has this kind of illness as speciality
+>- **Mapping:** GET (role SYSTEMADMIN)
+>- **URL:** /api/i/doctors/{illnessId}
+>> Long illnessId
+>- **Request:** 
+>- **Response:** List &LT;DoctorDTO>
+>>- Long userId
+>>- String mobile
+>>- String email
+>>- Long doctorId
+>>- String systemStatus
+>- if used: 
+
+## Get a specific doctor
+>- **Mapping:** GET (role DOCTOR or SYSTEMADMIN)
+>- **URL:** /api/i/doctors/doctor/{userId}
+>> Long userId
+>- **Request:** 
+>- **Response:** DoctorDTO or String error message
+>>- Long userId
+>>- String mobile
+>>- String email
+>>- Long doctorId
+>>- String systemStatus
+>- if used: 
+
+## Add profile to a doctor
+>- **Mapping:** POST (role DOCTOR)
+>- **URL:** /api/i/doctors/{userId}
+>> Long userId
+>- **Request:** DoctorProfileDTO
+>>-  String dateOfBirth;
+>>-  String gender;
+>>-  String maritalStatus;
+>>-  String officeAddress;
+>>-  String city;
+>>-  String state;
+>>-  String mdcnCertificateNumber;
+>>-  List&LT;Long> specialities;
+>- **Response:** DoctorDTO or String error message
+>>- Long userId
+>>- String mobile
+>>- String email
+>>- Long doctorId
+>>- String systemStatus
+>- if used: 
+
+## Update the email for a doctor
+>- **Mapping:** POST (role DOCTOR or SYSTEMADMIN)
+>- **URL:** /api/i/doctors/{userId}/update/email
+>> Long userId
+>- **Request:** EmailDTO
+>>- String email
+>- **Response:** String message about update
+>- if used: 
+
+## Update mobilenumber for a doctor
+>- **Mapping:** POST (role DOCTOR or SYSTEMADMIN)
+>- **URL:** /api/i/doctors/{userId}/update/mobile
+>> Long userId
+>- **Request:** MobileDTO
+>>- String mobile
+>- **Response:** String message about update
+>- if used: 
+
+## Get all booked consultations
+>- **Mapping:** GET (role DOCTOR or SYSTEMADMIN)
+>- **URL:** /api/i/consultations/booked
+>- **Request:** 
+>- **Response:** List&LT;ConsultationDTO>
+>>- Long id
+>>- String patient
+>>- Long patientId
+>>- String doctor
+>>- String illness
+>>- String date
+>>- String timeBooked
+>>- String timeAccepted
+>>- String timeStarted
+>>- String status
+>>- List&LT;String> symptoms
+>>- String detailedDescription
+>>- String transactionReference
+>>- Integer timeSlot
+>>- String language
+>>- String timeFinished
+>- if used: 
+
+## Doctor accepts a consultation
+>- **Mapping:** GET (role DOCTOR)
+>- **URL:** /api/i/consultations/{consultationId}/accept/{doctor}
+>> String doctor
+>- **Request:** 
+>- **Response:** String message about accepted or not
+>- if used: 
+
+## Doctor unaccept a consultation
+>- **Mapping:** POST (role DOCTOR)
+>- **URL:** /api/i/consultations/{consultationId}/unaccept
+>> Long consultationId
+>- **Request:** 
+>- **Response:** String message about unaccepted or not
+>- if used: 
+
+## Start a consultation
+>- **Mapping:** GET (role DOCTOR)
+>- **URL:** /api/i/consultations/{consultationId}/start
+>> Long consultationId
+>- **Request:** 
+>- **Response:** String message about started or not
+>- if used: 
+
+## Finish a consultation
+>- **Mapping:** POST (role DOCTOR)
+>- **URL:** /api/i/consultations/{consultationId}/finish
+>> Long consultationId
+>- **Request:** DoneConsultationWithJournalDTO
+>>- Long id
+>>- String patient
+>>- Long patientId
+>>- String doctor
+>>- String doctorId
+>>- String illness
+>>- String language
+>>- String patientDescription
+>>- String headIn
+>>- String date
+>>- String summary
+>>- Long consultationDurationInMinute
+>>- PatientJournal patientJournal
+>>- Boolean hasBeenRead
+>- **Response:** String message about finished or not
+>- if used: 
+
+## View done consultation by doneconsultationId
+>- **Mapping:** GET (role DOCTOR)
+>- **URL:** /api/i/consultations/viewdoneconsultation/{doneconsultationId}
+>> Long doneconsultationId
+>- **Request:** 
+>- **Response:** DoneConsultationWithJournalDTO
+>>- Long id
+>>- String patient
+>>- Long patientId
+>>- String doctor
+>>- String doctorId
+>>- String illness
+>>- String language
+>>- String patientDescription
+>>- String headIn
+>>- String date
+>>- String summary
+>>- Long consultationDurationInMinute
+>>- PatientJournal patientJournal
+>>- Boolean hasBeenRead
+>- if used: 
+
+## Doctor gets all accepted consultations by the doctor
+>- **Mapping:** GET (role DOCTOR or SYSTEMADMIN)
+>- **URL:** /api/i/consultations/{doctor}/accepted
+>> Sring doctor
+>- **Request:** 
+>- **Response:** List&LT;ConsultationDTO>
+>>- Long id
+>>- String patient
+>>- Long patientId
+>>- String doctor
+>>- String illness
+>>- String date
+>>- String timeBooked
+>>- String timeAccepted
+>>- String timeStarted
+>>- String status
+>>- List&LT;String> symptoms
+>>- String detailedDescription
+>>- String transactionReference
+>>- Integer timeSlot
+>>- String language
+>>- String timeFinished
+>- if used: 
+
+## Doctor request a lab test
+>- **Mapping:** POST (role DOCTOR)
+>- **URL:** /api/i/consultations/{consultationId}/labrequest
+>> Long consultationId
+>- **Request:** LabRequestDTO
+>>- Long id
+>>- String patientName
+>>- Long patientId
+>>- ELabRequest testRequested
+>>- String date
+>>- String doctorName
+>>- String testReason
+>>- byte[] qrCode
+>- **Response:** String message
+>- if used: 
+
+## Create a follow up consultation
+>- **Mapping:**  GET (role DOCTOR)
+>- **URL:** /api/i/followupconsultation/{consultationId}/createfollowup
+>> Long consultationId
+>- **Request:** 
+>- **Response:** String message
+>- if used: 
+
+## Get all follow up consultations
+>- **Mapping:** GET (role DOCTOR or SYSTEMADMIN)
+>- **URL:** /api/i/followupconsultation/getallfollowups
+>- **Request:** 
+>- **Response:** FollowUpConsultation
+>>- Long id
+>>- Long patientId
+>>- LocalDate dateCreated
+>- if used: 
+
+## Get all follow-ups for a specific patient
+>- **Mapping:** GET (role DOCTOR or SYSTEMADMIN)
+>- **URL:** /api/i/followupconsultation/{patientId}/getfollowup
+>> Long patientId
+>- **Request:** 
+>- **Response:** List&LT;FollowUpConsultation>
+>>- Long id
+>>- Long patientId
+>>- LocalDate dateCreated
+>- if used: 
+
+## Get all illnesses that are registered
+>- **Mapping:** GET (role PATIENT, DOCTOR or SYSTEMADMIN)
+>- **URL:** /api/i/illnesses
+>- **Request:** 
+>- **Response:** List&LT;IllnessDTO>
+>>- Long id
+>>- String illness
+>>- List&LT;String> symptoms
+>- if used: 
+
+## Get a specific illness
+>- **Mapping:** GET (role PATIENT, DOCTOR or SYSTEMADMIN)
+>- **URL:** /api/i/illnesses/{illness}
+>> String illness
+>- **Request:** 
+>- **Response:** IllnessDTO or String error message
+>>- Long id
+>>- String illness
+>>- List&LT;String> symptoms
+>- if used: 
+
+## Doctor post a prescription form
+>- **Mapping:** POST (role DOCTOR)
+>- **URL:** /api/i/prescriptions
+>- **Request:** PrescriptionFormDTO
+>>- String date
+>>- String patientMobileNumber
+>>- String illness
+>>- Long patientId
+>>- String patientName
+>>- String patientDateOfBirth
+>>- String patientAddress
+>>- String medicationName
+>>- String medicationForm
+>>- String medicationStrength
+>>- String medicationDose
+>>- String medicationRoute
+>>- String medicationFrequency
+>>- String medicationRefills
+>>- String medicationQuantity
+>>- String doctorName
+>>- String doctorMobileNumber
+>- **Response:** PrescriptionDTO or String error message
+>>- Long id
+>>- String date
+>>- String patientMobileNumber
+>>- String illness
+>>- Long patientId
+>>- String patientName
+>>- String patientDateOfBirth
+>>- String patientAddress
+>>- String medicationName
+>>- String medicationForm
+>>- String medicationStrength
+>>- String medicationDose
+>>- String medicationRoute
+>>- String medicationFrequency
+>>- String medicationRefills
+>>- String medicationQuantity
+>>- String doctorName
+>>- String doctorMobileNumber
+>>- String pharmacistRemark
+>- if used: 
+
+## Add a referral user to the currently logged-in user
+>- **Mapping:** PUT (role PATIENT, DOCTOR or PHARMACIST)
+>- **URL:** /api/i/referral/addreferral/{mobile}
+>> String mobile
+>- **Request:** UserDetailsImpl
+>- **Response:** String message
+>- if used: 
+
+## Gets the current referral user of the currently logged-in user
+>- **Mapping:** GET (role PATIENT, DOCTOR or PHARMACIST)
+>- **URL:** /api/i/referral/getreferraluser
+>- **Request:** UserDetailsImpl
+>- **Response:** String message about referral users id
+>- if used: 
+
+## Adds the currently logged-in user to their referral users list of referred users
+>- **Mapping:** PUT (role PATIENT, DOCTOR or PHARMACIST)
+>- **URL:** /api/i/referral/addreferreduser
+>- **Request:** UserDetailsImpl
+>- **Response:** String message
+>- if used: 
+
+## Gets all the users a certain user has referred
+>- **Mapping:** GET (role PATIENT, DOCTOR or PHARMACIST)
+>- **URL:** /api/i/referral/getreferredusers/{id}
+>> Long id
+>- **Request:** 
+>- **Response:** List&LT;Long> referredUserList
+>- if used: 

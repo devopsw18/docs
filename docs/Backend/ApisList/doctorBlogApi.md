@@ -11,7 +11,7 @@ Note:
 >>- String text
 >>- String image
 >>- String linkToVideo
->- **Response:** Srting (Shows a message if blog was created!)
+>- **Response:** String message created or not
 >- if used: 
 
 ## Get all blogs
@@ -29,6 +29,7 @@ Note:
 ## Get all blogs for a specific doctor
 >- **Mapping:**  GET (role DOCTOR, PATIENT or SYSTEMADMIN)
 >- **URL:**  /api/i/blog/getallblogs/{doctorid}
+>> Long doctorid
 >- **Request:** 
 >- **Response:** List&LT;DoctorBlog>
 >>- Long doctorId
@@ -42,7 +43,7 @@ Note:
 >- **Mapping:**  GET (role DOCTOR, PATIENT or SYSTEMADMIN)
 >- **URL:**  /api/i/blog/getblog/
 >- **Request:** 
->- **Response:** DoctorBlogDTO
+>- **Response:** DoctorBlog
 >>- Long doctorId
 >>- String title
 >>- String text
