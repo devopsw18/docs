@@ -7,7 +7,10 @@ sidebar_label: Setup GitLab SSH
 ## Setup GitLab SSH
 
 ### Generate an SSH key pair
-1. Open Terminal or GitBash for Windows or click to download for windows [Gitbash](https://gitforwindows.org)
+
+Create a new folder to store all your Swedcon18 Project
+
+1. Open Terminal or GitBash for Windows or click to download for windows Get Gitbash [Gitbash](https://gitforwindows.org)
 2. In the Type 
 ```bash
 ssh-keygen -t ed25519 -C "<comment>"
