@@ -36,11 +36,20 @@ macOS:
 ```bash
 tr -d '\n' < ~/.ssh/id_ed25519.pub | pbcopy
 ```
+
 Linux (requires the xclip package):
 
 ```bash
 xclip -sel clip < ~/.ssh/id_ed25519.pub
 ```
+Linux (requires the xclip package):
+
+Git Bash on Windows:
+
+```bash
+cat ~/.ssh/id_ed25519.pub | clip
+```
+
 2. Sign in to GitLab.
 3. On the top bar, in the top right corner, select your avatar.
 4. Select Preferences.
