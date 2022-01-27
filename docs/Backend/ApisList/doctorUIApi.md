@@ -45,14 +45,15 @@ Note:
 >- **URL:** /api/i/doctors/{userId}
 >> Long userId
 >- **Request:** DoctorProfileDTO
->>-  String dateOfBirth;
->>-  String gender;
->>-  String maritalStatus;
->>-  String officeAddress;
->>-  String city;
->>-  String state;
->>-  String mdcnCertificateNumber;
->>-  List&LT;Long> specialities;
+>>- String fullName
+>>- String dateOfBirth
+>>- String gender
+>>- String maritalStatus
+>>- String officeAddress
+>>- String city
+>>- String state
+>>- String mdcnCertificateNumber
+>>- List&LT;Long> specialities
 >- **Response:** DoctorDTO or String error message
 >>- Long userId
 >>- String mobile
@@ -126,12 +127,11 @@ Note:
 >- **Response:** String message about started or not
 >- if used: 
 
-## Finish a consultation
+## Finish a consultation, Create a doneConsultation
 >- **Mapping:** POST (role DOCTOR)
 >- **URL:** /api/i/consultations/{consultationId}/finish
 >> Long consultationId
 >- **Request:** DoneConsultationWithJournalDTO
->>- Long id
 >>- String patient
 >>- Long patientId
 >>- String doctor
@@ -140,11 +140,20 @@ Note:
 >>- String language
 >>- String patientDescription
 >>- String headIn
->>- String date
 >>- String summary
 >>- Long consultationDurationInMinute
 >>- PatientJournal patientJournal
->>- Boolean hasBeenRead
+>>>- String patientName
+>>>- String illnessSummary
+>>>- String doctorName
+>>>- String doctorsRemark
+>>>- ~~Long id~~
+>>>- ~~Long patientId~~
+>>>- ~~String date~~
+>>>- ~~Boolean hasBeenRead~~
+>>- ~~Long id~~
+>>- ~~String date~~
+>>- ~~Boolean hasBeenRead~~
 >- **Response:** String message about finished or not
 >- if used: 
 
@@ -167,6 +176,14 @@ Note:
 >>- String summary
 >>- Long consultationDurationInMinute
 >>- PatientJournal patientJournal
+>>>- Long id
+>>>- String patientName
+>>>- Long patientId
+>>>- String illnessSummary
+>>>- String date
+>>>- String doctorName
+>>>- String doctorsRemark
+>>>- Boolean hasBeenRead
 >>- Boolean hasBeenRead
 >- if used: 
 
@@ -199,14 +216,14 @@ Note:
 >- **URL:** /api/i/consultations/{consultationId}/labrequest
 >> Long consultationId
 >- **Request:** LabRequestDTO
->>- Long id
 >>- String patientName
 >>- Long patientId
 >>- ELabRequest testRequested
 >>- String date
 >>- String doctorName
 >>- String testReason
->>- byte[] qrCode
+>>- ~~Long id~~
+>>- ~~byte[] qrCode~~
 >- **Response:** String message
 >- if used: 
 
@@ -307,21 +324,21 @@ Note:
 >- **Mapping:** PUT (role PATIENT, DOCTOR or PHARMACIST)
 >- **URL:** /api/i/referral/addreferral/{mobile}
 >> String mobile
->- **Request:** UserDetailsImpl
+>- **Request:** 
 >- **Response:** String message
 >- if used: 
 
 ## Gets the current referral user of the currently logged-in user
 >- **Mapping:** GET (role PATIENT, DOCTOR or PHARMACIST)
 >- **URL:** /api/i/referral/getreferraluser
->- **Request:** UserDetailsImpl
+>- **Request:** 
 >- **Response:** String message about referral users id
 >- if used: 
 
 ## Adds the currently logged-in user to their referral users list of referred users
 >- **Mapping:** PUT (role PATIENT, DOCTOR or PHARMACIST)
 >- **URL:** /api/i/referral/addreferreduser
->- **Request:** UserDetailsImpl
+>- **Request:** 
 >- **Response:** String message
 >- if used: 
 

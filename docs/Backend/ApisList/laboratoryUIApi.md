@@ -2,22 +2,258 @@
 
 Note:
 
+## Adds a scientist to database
+>- **Mapping:** POST (role LABADMIN)
+>- **URL:** /api/i/laboratory/addscientist
+>- **Request:** ScientistDTO
+>>- String title
+>>- String firstName
+>>- String lastName
+>>- String email
+>>- String mobile
+>>- Long labId
+>>- ~~Long id~~
+>- **Response:** String message created or not
+>- if used: 
 
-| **Mapping**  | URL | **Purpose** | **RequestDTO** | **ResponseDTO**  | If used                           |
-| ---         | ---   | ---    | ---        | ---       | ---  |
-| POST (role LABADMIN)                | /api/i/laboratory/addscientist                                   | Add a scientist to the database                                           | (String) title, (String) firstName, (String) lastName, (String) email, (String) mobile                                                                 | Message if the scientist was created                                                                                                              |          |
-| POST (role LABADMIN)                | /api/i/laboratory/addlab                                         | Add a laboratory to the database                                          | (String) labName, (String) contactPerson, (String) email, (String) mobileNumber, (String) address, (String) postcode, (String) state, (Long) signerId  | Message if the laboratory was created                                                                                                             |          |
-| PUT (role LABADMIN)                 | /api/i/laboratory/{labid}/updatelabprofile                       | Update a laboratory in the database                                       | (Long) labId                                                                                                                                           | Message with information about update                                                                                                             |          |
-| GET (role LABADMIN or SYSTEMADMIN)  | /api/i/laboratory/getallscientists                               | Get all scientists from database                                          |                                                                                                                                                        | List of ScientistDTO (Long id, String title, String firstName, String lastName, String email, String mobile)                                      |          |
-| GET (role LABADMIN or SYSTEMADMIN)  | /api/i/laboratory/{scientistid}                                  | Get a specific scientist                                                  | (Long) scientistId                                                                                                                                     | ScientistDTO (Long id, String title, String firstName, String lastName, String email, String mobile)                                              |          |
-| PUT (role LABADMIN)                 | /api/i/laboratory/{scientistid}/updatescientist                  | Update a scientist profile                                                | (Long) scientistId                                                                                                                                     | Message with information about update                                                                                                             |          |
-| DELETE (role LABADMIN)              | /api/i/laboratory/{scientistid}/deletescientist                  | Delete a scientist from database                                          | (Long) scientistId                                                                                                                                     | Message with information about delete                                                                                                             |          |
-| POST (role LABADMIN)                | /api/i/laboratory/labrequestentry                                | Add a labrequest with a QR code to the database                           | (String) patientName, (ELabRequest) testRequested, (String) date, (String) doctorName, (String) testReason, (byte[]) qrCode                            | Message if the save was successfull                                                                                                               |          |
-| GET (role LABADMIN or SYSTEMADMIN)  | /api/i/laboratory/getalllabrequest                               | Get all labrequest from database                                          |                                                                                                                                                        | List of LabRequest (Long id, String patientName, ELabRequest testRequested, String date, String doctorName, String testReason, byte[] qrCode)     |          |
-| GET (role PATIENT or SYSTEMADMIN)   | /api/i/laboratory/getalllabrequests/{patientid}                  | Get all labrequest from database by patientId                             | (Long) patientid                                                                                                                                       | List of LabRequestDTO (Long id, String patientName, ELabRequest testRequested, String date, String doctorName, String testReason, byte[] qrCode)  |          |
-| POST (role LABSCIENTIST)            | /api/i/laboratory/labresult/{labRequestId}/{resultName}          | Creates a labResult with a labRequestId, resultName and a list of values  | (Long) labRequestId, (String) resultName, (List&LT;String>) values                                                                                        | LabResultDTO (Long id, String resultName, long labRequestId, long patientId, Boolean finished, List&LT;String> results, String date)                 |          |
-| PUT (role LABSCIENTIST)             | /api/i/laboratory/labresult/{labResultId}/finish                 | Sets a labResult as finished                                              | (Long) labResultId                                                                                                                                     | Mesage if the labRequest was set as finished                                                                                                      |          |
-| GET (role LABSCIENTIST)             | /api/i/laboratory/labresult/{labResultId}                        | Finds a labResult with the provided id                                    | (Long) labRequestId                                                                                                                                    | LabResultDTO (Long id, String resultName, long labRequestId, long patientId, Boolean finished, List&LT;String> results, String date)                 |          |
-| GET (role LABSCIENTIST)             | /api/i/laboratory/labresult/getAllByLabRequestId/{labRequestId}  | Get all labResult with the provided id                                    | (Long) labRequestId                                                                                                                                    | List of LabResultDTO (Long id, String resultName, long labRequestId, long patientId, Boolean finished, List&LT;String> results, String date)         |          |
-| GET (role PATIENT or DOCTOR)        | /api/i/laboratory/labresult/getAllByPatientId/{patientId}        | Finds all labResult with the provided patient id                          | (Long) patientId                                                                                                                                       | List of LabResultDTO (Long id, String resultName, long labRequestId, long patientId, Booblean finished, List&LT;String> results, String date)        |          |
-| PUT (role LABSCIENTIST)             | /api/i/laboratory/labresult/update                               | Updates a labResult with the provided DTO                                 | (Long) id, (String) resultName, (long) labRequestId, (long) patientId, (Boolean) finished, (List&LT;String>) results, (String) date                       | LabResultDTO (Long id, String resultName, long labRequestId, long patientId, Boolean finished, List&LT;String> results, String date)                 |          |
+
+## Add a laboratory to the database
+>- **Mapping:** POST (role LABADMIN)
+>- **URL:** /api/i/laboratory/addlab
+>- **Request:** LaboratoryDTO
+>>- String labName
+>>- String contactPerson
+>>- String email
+>>- String mobileNumber
+>>- String address
+>>- String postcode
+>>- String state
+>>- ~~Long id~~
+>>- ~~Long signerId~~
+>- **Response:** String message created or not
+>- if used: 
+
+
+## Update a laboratory in the database
+>- **Mapping:** PUT (role LABADMIN)
+>- **URL:** /api/i/laboratory/{labid}/updatelabprofile
+>> Long labid
+>- **Request:** LaboratoryDTO
+>>- String labName
+>>- String contactPerson
+>>- String email
+>>- String mobileNumber
+>>- String address
+>>- String postcode
+>>- String state
+>>- ~~Long id~~
+>>- ~~Long signerId~~
+>- **Response:** String message updated or not
+>- if used: 
+
+
+## Gets all scientists from database
+>- **Mapping:** GET (role LABADMIN or SYSTEMADMIN)
+>- **URL:** /api/i/laboratory/getallscientists
+>- **Request:** 
+>- **Response:** List&LT;ScientistDTO>
+>>- Long id
+>>- String title
+>>- String firstName
+>>- String lastName
+>>- String email
+>>- String mobile
+>>- Long labId
+>- if used: 
+
+## Get a specific scientist
+>- **Mapping:** GET (role LABADMIN or SYSTEMADMIN)
+>- **URL:** /api/i/laboratory/{scientistid}
+>> Long scientistid
+>- **Request:** 
+>- **Response:** ScientistDTO
+>>- Long id
+>>- String title
+>>- String firstName
+>>- String lastName
+>>- String email
+>>- String mobile
+>>- Long labId
+>- if used: 
+
+## Update a scientist profile
+>- **Mapping:** PUT (role LABADMIN)
+>- **URL:** /api/i/laboratory/{scientistid}/updatescientist
+>- **Request:** ScientistDTO
+>>- String title
+>>- String firstName
+>>- String lastName
+>>- String email
+>>- String mobile
+>>- Long labId
+>>- ~~Long id~~
+>- **Response:** String message updated or not
+>- if used: 
+
+## Delete a scientist from database
+>- **Mapping:** DELETE (role LABADMIN)
+>- **URL:** /api/i/laboratory/{scientistid}/deletescientist
+>> Long scientistid
+>- **Request:** 
+>- **Response:** String message deleted or not
+>- if used: 
+
+## Add a labrequest with a QR code to the database
+>- **Mapping:** POST (role LABADMIN)
+>- **URL:** /api/i/laboratory/labrequestentry
+>- **Request:** LabRequestDTO
+>>- String patientName
+>>- Long patientId
+>>- ELabRequest testRequested
+>>- String doctorName
+>>- String testReason
+>>- ~~Long id~~
+>>- ~~String date~~
+>>- ~~byte[] qrCode~~
+>- **Response:** String message created or not
+>- if used: ELabRequest is enum
+
+## Get all labrequest from database
+>- **Mapping:** GET (role LABADMIN or SYSTEMADMIN)
+>- **URL:** /api/i/laboratory/getalllabrequest
+>- **Request:** 
+>- **Response:** List&LT;LabRequest>
+>>- Long id
+>>- String patientName
+>>- Long patientId
+>>- ELabRequest testRequested
+>>- String date
+>>- String doctorName
+>>- String testReason
+>>- byte[] qrCode
+>- if used: ELabRequest is enum
+
+## 	Get all labrequest from database by patientId
+>- **Mapping:** GET (role PATIENT or SYSTEMADMIN)
+>- **URL:** /api/i/laboratory/getalllabrequests/{patientid}
+>> Long patientid
+>- **Request:** 
+>- **Response:** List&LT;LabRequestDTO>
+>>- Long id
+>>- String patientName
+>>- Long patientId
+>>- ELabRequest testRequested
+>>- String date
+>>- String doctorName
+>>- String testReason
+>>- byte[] qrCode
+>- if used: 
+
+## 	Creates a labResult 
+>- **Mapping:** POST (role LABSCIENTIST)
+>- **URL:** /api/i/laboratory/labresult
+>- **Request:** LabResultDTO
+>>- String resultName
+>>- long labRequestId
+>>- String laboratory
+>>- String result
+>>- ~~Long id~~
+>>- ~~long patientId~~
+>>- ~~Boolean finished~~
+>>- ~~String date~~
+>>- ~~String testName~~
+>- **Response:** LabResultDTO or String error message
+>>- Long id
+>>- String resultName
+>>- long labRequestId
+>>- long patientId
+>>- Boolean finished
+>>- String date
+>>- String testName
+>>- String laboratory
+>>- String result
+>- if used: 
+
+## Sets a labResult as finished
+>- **Mapping:** PUT (role LABSCIENTIST)
+>- **URL:** /api/i/laboratory/labresult/{labResultId}/finish
+>> Long labResultId
+>- **Request:** 
+>- **Response:** String message finished or not
+>- if used: 
+
+## Get a specific labResult
+>- **Mapping:** GET (role LABSCIENTIST)
+>- **URL:** /api/i/laboratory/labresult/{labResultId}
+>> Long labResultId
+>- **Request:** 
+>- **Response:** LabResultDTO or String error message
+>>- Long id
+>>- String resultName
+>>- long labRequestId
+>>- long patientId
+>>- Boolean finished
+>>- String date
+>>- String testName
+>>- String laboratory
+>>- String result
+>- if used: 
+
+## Get all LabResults by a specific labRequest
+>- **Mapping:** GET (role LABSCIENTIST)
+>- **URL:** /api/i/laboratory/labresult/getAllByLabRequestId/{labRequestId}
+>> Long labRequestId
+>- **Request:** 
+>- **Response:** List&LT;LabResultDTO>
+>>- Long id
+>>- String resultName
+>>- long labRequestId
+>>- long patientId
+>>- Boolean finished
+>>- String date
+>>- String testName
+>>- String laboratory
+>>- String result
+>- if used: 
+
+## Get all labResult by a specific patient
+>- **Mapping:** GET (role PATIENT or DOCTOR)
+>- **URL:** /api/i/laboratory/labresult/getAllByPatientId/{patientId}
+>> Long patientId
+>- **Request:** 
+>- **Response:** List&LT;LabResultDTO>
+>>- Long id
+>>- String resultName
+>>- long labRequestId
+>>- long patientId
+>>- Boolean finished
+>>- String date
+>>- String testName
+>>- String laboratory
+>>- String result
+>- if used: 
+
+## Update a labResult
+>- **Mapping:** PUT (role LABSCIENTIST)
+>- **URL:** /api/i/laboratory/labresult/update
+>- **Request:** LabResultDTO
+>>- Long id
+>>- String resultName
+>>- long labRequestId
+>>- long patientId
+>>- Boolean finished
+>>- String date
+>>- String testName
+>>- String laboratory
+>>- String result
+>- **Response:** LabResultDTO or String error message
+>>- Long id
+>>- String resultName
+>>- long labRequestId
+>>- long patientId
+>>- Boolean finished
+>>- String date
+>>- String testName
+>>- String laboratory
+>>- String result
+>- if used: 
