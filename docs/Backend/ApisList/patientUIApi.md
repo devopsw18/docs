@@ -27,8 +27,8 @@ Note: Unless specified otherwise, all APIs require a patient token (the system a
 
 ## Get referred users list of a specific user
 >- **Mapping:** GET (role PATIENT, DOCTOR, PHARMACYUSER, HOSPITALUSER or LABSCIENTIST)
->- **URL:** /api/i/referral/getreferredusers/{id}
->> Long id
+>- **URL:** /api/i/referral/getreferredusers/{userId}
+>> Long userId
 >- **Request:** 
 >- **Response:** List&LT;Long> referredUserList
 >- if used: 

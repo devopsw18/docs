@@ -56,7 +56,8 @@ Note: These APIs are for all UIs
 ## Register a doctor account
 >- **Mapping:** POST
 >- **URL:** /api/register/doctor
->- **Request:** String doctorSignUpDTO + MultipartFile multipartFile
+>- **Request:** form-data(String doctorSignUpDTO + MultipartFile multipartFile)
+>> doctorSignUpDTO
 >>- String mobile
 >>- String email
 >>- String fullName
