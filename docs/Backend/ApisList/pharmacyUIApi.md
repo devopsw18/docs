@@ -4,7 +4,7 @@ Note:
 
 ---
 ## Get a specific pharmacy
->- **Mapping:** Get(role PHARMACYADMIN)
+>- **Mapping:** GET (role PHARMACYADMIN)
 >- **URL:** /api/i/pharmacy/{pharmacyId}
 >> Long pharmacyId
 >- **Request:** 
@@ -67,7 +67,7 @@ Note:
 >- if used: 
 
 ## Get a specific pharmacist
->- **Mapping:** Get(role PHARMACYADMIN)
+>- **Mapping:** GET (role PHARMACYADMIN)
 >- **URL:** /api/i/pharmacist/{pharmacistId}
 >> Long pharmacistId
 >- **Request:** 
@@ -82,7 +82,7 @@ Note:
 >- if used: 
 
 ## Update a pharmacist
->- **Mapping:** Put(role PHARMACYADMIN)
+>- **Mapping:** PUT (role PHARMACYADMIN)
 >- **URL:** /api/i/pharmacist/updatepharmacist
 >- **Request:** PharmacistUpdateDTO
 >>- Long id
@@ -102,7 +102,7 @@ Note:
 >- if used: 
 
 ## Get all phramacists from a specific pharmacy
->- **Mapping:** Get(role PHARMACYADMIN)
+>- **Mapping:** GET (role PHARMACYADMIN)
 >- **URL:** /api/i/pharmacist/{pharmacyId}/allpharmacists
 >> Long pharmacyId
 >- **Request:** 
@@ -117,7 +117,7 @@ Note:
 >- if used: 
 
 ## Delete a specific pharmacist
->- **Mapping:** Delete(role PHARMACYADMIN)
+>- **Mapping:** DELETE (role PHARMACYADMIN)
 >- **URL:** /api/i/pharmacist/{pharmacistId}
 >> Long pharmacistId
 >- **Request:** 

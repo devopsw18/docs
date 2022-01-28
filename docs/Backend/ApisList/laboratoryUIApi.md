@@ -72,7 +72,7 @@ Note:
 >- **URL:** /api/i/laboratory/{scientistid}
 >> Long scientistid
 >- **Request:** 
->- **Response:** ScientistDTO
+>- **Response:** ScientistDTO or String error message
 >>- Long id
 >>- String title
 >>- String firstName

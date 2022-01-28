@@ -18,7 +18,7 @@ Note: These APIs are for all UIs
 >- **Request:** ValidateCodeDTO
 >>- String email
 >>- String code
->- **Response:** String message valided or not
+>- **Response:** String message verified or not
 >- if used: Should not be used together with forgot_password since validating a code deletes it.
 
 ## Register an admin account

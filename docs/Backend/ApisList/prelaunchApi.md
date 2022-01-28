@@ -1,6 +1,6 @@
 # Prelaunch Api
 
-Note: APis here always have response with http state 200, even error message 
+Note: APis here will always return response with http state 200, even it contains error message.
 
 ---
 ## Preregister doctor to get information on the app

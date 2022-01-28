@@ -4,7 +4,7 @@ Note:
 
 ---
 ## Create new message
->- **Mapping:** POST (Role PATIENT, DOCTOR or SYSTEMADMIN)
+>- **Mapping:** POST (role PATIENT, DOCTOR or SYSTEMADMIN)
 >- **URL:** /api/i/message/create
 >- **Request:** MessageDTO
 >>- String subject
@@ -25,7 +25,7 @@ Note:
 >- if used: 
 
 ## Get all messages in database
->- **Mapping:** GET (Role SYSTEMADMIN)
+>- **Mapping:** GET (role SYSTEMADMIN)
 >- **URL:** /api/i/message/getall
 >- **Request:** 
 >- **Response:** List&LT;MessageDTO>
@@ -39,7 +39,7 @@ Note:
 >- if used: 
 
 ## Get all messages of a specific user
->- **Mapping:** GET (Role PATIENT, DOCTOR or SYSTEMADMIN)
+>- **Mapping:** GET (role PATIENT, DOCTOR or SYSTEMADMIN)
 >- **URL:** /api/i/message/get/{userId}
 >> Long userId
 >- **Request:** 
@@ -54,15 +54,15 @@ Note:
 >- if used: 
 
 ## Set a specific message as readed
->- **Mapping:** PUT (Role PATIENT, DOCTOR or SYSTEMADMIN)
+>- **Mapping:** PUT (role PATIENT, DOCTOR or SYSTEMADMIN)
 >- **URL:** /api/i/message/setread/{messageId}
 >> Long messageId
 >- **Request:** 
->- **Response:** String message seted or not
+>- **Response:** String message set or not
 >- if used: 
 
 ## Delete a specific message
->- **Mapping:** DELETE (Role PATIENT, DOCTOR or SYSTEMADMIN)
+>- **Mapping:** DELETE (role PATIENT, DOCTOR or SYSTEMADMIN)
 >- **URL:** /api/i/message/delete/{messageId}
 >> Long messageId
 >- **Request:** 

@@ -4,7 +4,7 @@ Note:
 
 ---
 ##	Create new news
->- **Mapping:** POST (Role SYSTEMADMIN)
+>- **Mapping:** POST (role SYSTEMADMIN)
 >- **URL:** 	/api/i/news/create
 >- **Request:** form-data(String newsDTO + MultipartFile image)
 >> newsDTO
@@ -17,7 +17,7 @@ Note:
 >- if used: 
 
 ## Update a specific news
->- **Mapping:** PUT(Role SYSTEMADMIN)
+>- **Mapping:** PUT (role SYSTEMADMIN)
 >- **URL:** /api/i/news/update/{newsId}
 >> Long newsId
 >- **Request:** form-data(String newsDTO + MultipartFile image)
@@ -31,7 +31,7 @@ Note:
 >- if used: 
 
 ## Delete a specific news
->- **Mapping:** DELETE (Role SYSTEMADMIN)
+>- **Mapping:** DELETE (role SYSTEMADMIN)
 >- **URL:** /api/i/news/delete/{newsId}
 >> Long newsId
 >- **Request:** 

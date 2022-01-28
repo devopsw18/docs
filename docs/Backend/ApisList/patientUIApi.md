@@ -312,7 +312,7 @@ Note: Unless specified otherwise, all APIs require a patient token (the system a
 >>- String disabilities
 >>- ~~Long childId~~
 >>- ~~Long patientId~~
->- **Response:** 
+>- **Response:** String message updated or not
 >- if used: 
 
 
@@ -524,7 +524,7 @@ Note: Unless specified otherwise, all APIs require a patient token (the system a
 >- **URL:** /api/i/consultations/setjournalasread/{journalId}
 >> Long journalId
 >- **Request:** 
->- **Response:** String message setted or not
+>- **Response:** String message set or not
 >- if used: 
 
 

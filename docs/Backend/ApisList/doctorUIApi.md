@@ -69,7 +69,7 @@ Note:
 >> Long userId
 >- **Request:** EmailDTO
 >>- String email
->- **Response:** String message about update
+>- **Response:** String message updated or not
 >- if used: 
 
 ## Update mobilenumber for a doctor
@@ -78,7 +78,7 @@ Note:
 >> Long userId
 >- **Request:** MobileDTO
 >>- String mobile
->- **Response:** String message about update
+>- **Response:** String message updated or not
 >- if used: 
 
 ## Get all booked consultations
@@ -109,7 +109,7 @@ Note:
 >- **URL:** /api/i/consultations/{consultationId}/accept/{doctor}
 >> String doctor
 >- **Request:** 
->- **Response:** String message about accepted or not
+>- **Response:** String message accepted or not
 >- if used: 
 
 ## Doctor unaccept a consultation
@@ -117,7 +117,7 @@ Note:
 >- **URL:** /api/i/consultations/{consultationId}/unaccept
 >> Long consultationId
 >- **Request:** 
->- **Response:** String message about unaccepted or not
+>- **Response:** String message unaccepted or not
 >- if used: 
 
 ## Start a consultation
@@ -125,7 +125,7 @@ Note:
 >- **URL:** /api/i/consultations/{consultationId}/start
 >> Long consultationId
 >- **Request:** 
->- **Response:** String message about started or not
+>- **Response:** String message started or not
 >- if used: 
 
 ## Finish a consultation, Create a doneConsultation
@@ -155,7 +155,7 @@ Note:
 >>- ~~Long id~~
 >>- ~~String date~~
 >>- ~~Boolean hasBeenRead~~
->- **Response:** String message about finished or not
+>- **Response:** String message finished or not
 >- if used: 
 
 ## View done consultation by doneconsultationId
@@ -163,7 +163,7 @@ Note:
 >- **URL:** /api/i/consultations/viewdoneconsultation/{doneconsultationId}
 >> Long doneconsultationId
 >- **Request:** 
->- **Response:** DoneConsultationWithJournalDTO
+>- **Response:** DoneConsultationWithJournalDTO or String error message
 >>- Long id
 >>- String patient
 >>- Long patientId
@@ -225,7 +225,7 @@ Note:
 >>- String testReason
 >>- ~~Long id~~
 >>- ~~byte[] qrCode~~
->- **Response:** String message
+>- **Response:** String message created or not
 >- if used: 
 
 ## Create a follow up consultation
@@ -240,7 +240,7 @@ Note:
 >- **Mapping:** GET (role DOCTOR or SYSTEMADMIN)
 >- **URL:** /api/i/followupconsultation/getallfollowups
 >- **Request:** 
->- **Response:** FollowUpConsultation
+>- **Response:** List&LT;FollowUpConsultation>
 >>- Long id
 >>- Long patientId
 >>- LocalDate dateCreated
@@ -326,21 +326,21 @@ Note:
 >- **URL:** /api/i/referral/addreferral/{mobile}
 >> String mobile
 >- **Request:** 
->- **Response:** String message
+>- **Response:** String message added or not
 >- if used: 
 
 ## Gets the current referral user of the currently logged-in user
 >- **Mapping:** GET (role PATIENT, DOCTOR or PHARMACIST)
 >- **URL:** /api/i/referral/getreferraluser
 >- **Request:** 
->- **Response:** String message about referral users id
+>- **Response:** String message referral users id
 >- if used: 
 
 ## Adds the currently logged-in user to their referral users list of referred users
 >- **Mapping:** PUT (role PATIENT, DOCTOR or PHARMACIST)
 >- **URL:** /api/i/referral/addreferreduser
 >- **Request:** 
->- **Response:** String message
+>- **Response:** String message added or not
 >- if used: 
 
 ## Gets all the users a certain user has referred
