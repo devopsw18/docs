@@ -15,7 +15,7 @@ Create a new folder to store all your Swedcon18 Project
 ```bash
 ssh-keygen -t ed25519 -C "<comment>"
 ```
-Replace <comment> with what you like.
+Replace comment with what you like.
 
 3. Press enter. Output similar to the following is displayed:
 
