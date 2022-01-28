@@ -3,7 +3,6 @@
 Note: These APIs are for all UIs
 
 ---
-
 ## Sends code to given email
 >- **Mapping:** POST
 >- **URL:** /api/register/code

@@ -2,6 +2,7 @@
 
 Note: 
 
+---
 ## Create new message
 >- **Mapping:** POST (Role PATIENT, DOCTOR or SYSTEMADMIN)
 >- **URL:** /api/i/message/create
@@ -52,7 +53,7 @@ Note:
 >>- boolean hasBeenRead
 >- if used: 
 
-## set a specific message as readed
+## Set a specific message as readed
 >- **Mapping:** PUT (Role PATIENT, DOCTOR or SYSTEMADMIN)
 >- **URL:** /api/i/message/setread/{messageId}
 >> Long messageId
@@ -60,7 +61,7 @@ Note:
 >- **Response:** String message seted or not
 >- if used: 
 
-## delete a specific message
+## Delete a specific message
 >- **Mapping:** DELETE (Role PATIENT, DOCTOR or SYSTEMADMIN)
 >- **URL:** /api/i/message/delete/{messageId}
 >> Long messageId

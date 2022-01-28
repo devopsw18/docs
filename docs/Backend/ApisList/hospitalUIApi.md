@@ -2,6 +2,7 @@
 
 Note:
 
+---
 ## Update hospital profile
 >- **Mapping:** PUT(role HOSPITALADMIN)
 >- **URL:** /api/i/hospital/{hospitalId}
@@ -113,7 +114,7 @@ Note:
 >>- Long hospitalId
 >- if used: 
 
-## 	get all hospitalstaffs from a specific hospital
+## 	Get all hospitalstaffs from a specific hospital
 >- **Mapping:** Get(role HOSPITALADMIN)
 >- **URL:** /api/i/hospitalstaff/allhospitalstaff/{hospitalId}
 >> Long hospitalId

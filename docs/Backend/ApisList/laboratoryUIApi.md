@@ -2,6 +2,7 @@
 
 Note:
 
+---
 ## Adds a scientist to database
 >- **Mapping:** POST (role LABADMIN)
 >- **URL:** /api/i/laboratory/addscientist

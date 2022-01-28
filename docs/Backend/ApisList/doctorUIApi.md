@@ -2,6 +2,7 @@
 
 Note:
 
+---
 ## Get all doctors
 >- **Mapping:** GET (role SYSTEMADMIN)
 >- **URL:** /api/i/doctors

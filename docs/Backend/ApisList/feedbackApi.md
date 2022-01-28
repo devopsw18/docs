@@ -2,6 +2,7 @@
 
 Note:
 
+---
 ## Create feedback messages by patient, doctor, pharmacy, pharmacyAdmin
 >- **Mapping:** POST (role PATIENT, DOCTOR, PHARMACY, PHARMACYADMIN or SYSTEMADMIN)
 >- **URL:** /api/i/feedback/{userId}/createfeedback

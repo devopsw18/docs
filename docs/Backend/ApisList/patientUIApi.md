@@ -80,7 +80,7 @@ Note: Unless specified otherwise, all APIs require a patient token (the system a
 >>- Boolean hasDependent
 >- if used: 
 
-## get a specific patient
+## Get a specific patient
 >- **Mapping:** GET (role PATIENT or SYSTEMADMIN)
 >- **URL:** /api/i/patients/{patientId}
 >> Long patientId
@@ -92,7 +92,7 @@ Note: Unless specified otherwise, all APIs require a patient token (the system a
 >>- Long patientId
 >- if used: 
 
-## get a specific patient profile
+## Get a specific patient profile
 >- **Mapping:** GET (role PATIENT or SYSTEMADMIN)
 >- **URL:** /api/i/patients/patientinfo/{patientId}
 >> Long patientId

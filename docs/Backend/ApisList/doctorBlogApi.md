@@ -2,6 +2,7 @@
 
 Note:
 
+---
 ## Doctor creating a blog
 >- **Mapping:**  POST (role DOCTOR)
 >- **URL:**  /api/i/blog/createblog
