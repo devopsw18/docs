@@ -1,91 +1,116 @@
 # Reference Survey API
 
-## Not logged in
-
-## POST /api/referencesurvey/submit
-
-Submits a reference survey
-
-**RequestBody** : ReferenceSurveyDTO(id, responderEmail, responderName, doctorId, doctorFirstName, doctorSurname, questions(ist), answers(list), notes)
-
-**ResponseBody** : String
+Note:
 
 ---
 
-## GET /api/referencesurvey/getsurvey
+## Submits a reference survey
+>- **Mapping:** POST
+>- **URL:** /api/referencesurvey/submit
+>- **Request:** ReferenceSurveyDTO
+>>- Long id
+>>- String responderEmail
+>>- String responderName
+>>- Long doctorId
+>>- String doctorFullName
+>>- List&LT;String> questions
+>>- List&LT;String> answers
+>>- String notes
+>- **Response:** String message submitted or not
+>- if used: 
 
-**RequestBody** :ReferenceSurveyVerificationDTO(email, responderName, doctorId)
+## Generate Survey
+>- **Mapping:** POST
+>- **URL:** /api/referencesurvey/getsurvey
+>- **Request:** ReferenceSurveyVerificationDTO
+>>- String email
+>>- String responderName
+>>- Long doctorId
+>- **Response:** ReferenceSurveyDTO or String error message
+>>- Long id
+>>- String responderEmail
+>>- String responderName
+>>- Long doctorId
+>>- String doctorFullName
+>>- List&LT;String> questions
+>>- List&LT;String> answers
+>>- String notes
+>- if used: 
 
-**ResponseBody** : ReferenceSurveyDTO(id, responderEmail, responderName, doctorId, doctorFirstName, doctorSurname, questions(ist), answers(list), notes)
+## Send reference request to reference email
+>- **Mapping:** POST (role DOCTOR)
+>- **URL:** /api/i/referencesurvey/sendReferenceRequest
+>- **Request:** SendReferenceRequestDTO
+>>- String referenceEmail
+>>- String referenceName
+>>- String doctorFullName
+>>- Long doctorId
+>- **Response:** String message sent or not
+>- if used: 
 
----
+## Get all reference survey by doctor Id
+>- **Mapping:** GET (role SYSTEMADMIN)
+>- **URL:** /api/i/referencesurvey/getSurveysByDoctorId/{doctorId}
+>> Long doctorId
+>- **Request:** 
+>- **Response:** List&LT;ReferenceSurvey>
+>>- Long id
+>>- String responderEmail
+>>- String responderName
+>>- Long doctorId
+>>- String doctorFullName
+>>- List&LT;String> questions
+>>- List&LT;String> answers
+>>- String notes
+>- if used: 
 
-## Logged in
+## 
+>- **Mapping:** GET (role SYSTEMADMIN)
+>- **URL:** /api/i/referencesurvey/getSurveyById/{surveyId}
+>> Long surveyId
+>- **Request:** 
+>- **Response:** ReferenceSurvey
+>>- Long id
+>>- String responderEmail
+>>- String responderName
+>>- Long doctorId
+>>- String doctorFullName
+>>- List&LT;String> questions
+>>- List&LT;String> answers
+>>- String notes
+>- if used: 
 
-## POST /api/i/referencesurvey/sendReferenceRequest
+## Get all survey question
+>- **Mapping:** GET (role SYSTEMADMIN)
+>- **URL:** /api/i/referencesurvey/getAllQuestions
+>- **Request:** 
+>- **Response:** List&LT;SurveyQuestion>
+>>- Long id
+>>- String question
+>- if used: 
 
-**RequestBody** : SendReferenceRequestDTO(referenceEmail, referenceName, doctorFirstName, doctorSurname, doctorId)
+## Create a survey question
+>- **Mapping:** POST (role SYSTEMADMIN)
+>- **URL:** /api/i/referencesurvey/addQuestion
+>- **Request:** SurveyQuestionDTO
+>>- String question
+>>- ~~Long id~~
+>- **Response:** String message added
+>- if used: 
 
-**ResponseBody** : String
+## 
+>- **Mapping:** POST (role SYSTEMADMIN)
+>- **URL:** /api/i/referencesurvey/updateQuestion
+>- **Request:** SurveyQuestionDTO
+>>- Long id
+>>- String question
+>- **Response:** String message updated or not
+>- if used: 
 
-**Authorization** : hasRole:DOCTOR
-
----
-
-## GET /api/i/referencesurvey/getSurveysByDoctorId/{doctorId}
-
-**PathVariable** : doctorId
-
-**ResponseBody** : List\<ReferenceSurvey\>
-
-**Authorization** : hasRole:SYSTEMADMIN
-
----
-
-## GET /api/i/referencesurvey/getSurveyById/{id}
-
-**PathVariable** : id
-
-**ResponseBody** : ReferenceSurvey(id, responderEmail, responderName, doctorId, doctorFirstName, doctorSurname, questions(ist), answers(list), notes)
-
-**Authorization** : hasRole:SYSTEMADMIN
-
----
-
-## GET /api/i/referencesurvey/getAllQuestions
-
-**ResponseBody** : List\<SurveyQuestion\>
-
-**Authorization** : hasRole:SYSTEMADMIN
-
----
-
-## POST /api/i/referencesurvey/addQuestion
-
-**RequestBody** : SurveyQuestionDTO(id, question)
-
-**ResponseBody** : String
-
-**Authorization** : hasRole:SYSTEMADMIN
-
----
-
-## POST /api/i/referencesurvey/updateQuestion
-
-**RequestBody** : SurveyQuestionDTO(id, question)
-
-**ResponseBody** : String
-
-**Authorization** : hasRole:SYSTEMADMIN
-
----
-
-## DELETE /api/i/referencesurvey/deleteQuestionById/{id}
-
-**PathVariable** : id
-
-**ResponseBody** : String
-
-**Authorization** : hasRole:SYSTEMADMIN
-
----
+## 
+>- **Mapping:** DELETE (role SYSTEMADMIN)
+>- **URL:** /api/i/referencesurvey/deleteQuestionById/{questionId}
+>> Long questionId
+>- **Request:** 
+>- **Response:** String message deleted or not
+>- if used: 

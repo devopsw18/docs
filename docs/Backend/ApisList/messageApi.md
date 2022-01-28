@@ -1,11 +1,71 @@
 # Message Api
 
-Unless specified otherwise, all APIs here require a patient, doctor, or admin token (may update later)
+Note: 
 
-| **Mapping** | URL | **Purpose** | **Request** | **Response**| if used |
-| --- | --- | --- | --- | --- | --- |
-| POST         | /api/i/message/create               | create a new message                 | (long) id, (string) subject, (long) receiverId, (string) sender, (string) text, (string) date, (boolean) hasBeenRead  | messageDTO (id, subject, receiverId, sender, text, date, hasBeenRead) or failed (string)                            |                          |
-| GET          | /api/i/message/getall               | get all messages in database         |                                                                                                                       | list of messageDTOs (id, subject, receiverId, sender, text, date, hasBeenRead)                                      | only admin can use this  |
-| GET          | /api/i/message/get/{userId}         | get all messages of a specific user  | (path variable) user id                                                                                               | list of messageDTOs (id, subject, receiverId, sender, text, date, hasBeenRead) or failed to find the user (string)  |                          |
-| PUT          | /api/i/message/setread/{messageId}  | set a specific  message as readed    | (path variable) message id                                                                                            | success or failed (string)                                                                                          |                          |
-| DELETE       | /api/i/message/delete/{messageId}   | delete a specific  message           | (path variable) message id                                                                                            | success or failed (string)                                                                                          |                          |
+---
+## Create new message
+>- **Mapping:** POST (role PATIENT, DOCTOR or SYSTEMADMIN)
+>- **URL:** /api/i/message/create
+>- **Request:** MessageDTO
+>>- String subject
+>>- Long receiverId
+>>- String sender
+>>- String text
+>>- ~~Long id~~
+>>- ~~String date~~
+>>- ~~boolean hasBeenRead~~
+>- **Response:** MessageDTO or String error message
+>>- Long id
+>>- String subject
+>>- Long receiverId
+>>- String sender
+>>- String text
+>>- String date
+>>- boolean hasBeenRead
+>- if used: 
+
+## Get all messages in database
+>- **Mapping:** GET (role SYSTEMADMIN)
+>- **URL:** /api/i/message/getall
+>- **Request:** 
+>- **Response:** List&LT;MessageDTO>
+>>- Long id
+>>- String subject
+>>- Long receiverId
+>>- String sender
+>>- String text
+>>- String date
+>>- boolean hasBeenRead
+>- if used: 
+
+## Get all messages of a specific user
+>- **Mapping:** GET (role PATIENT, DOCTOR or SYSTEMADMIN)
+>- **URL:** /api/i/message/get/{userId}
+>> Long userId
+>- **Request:** 
+>- **Response:** List&LT;MessageDTO> or String error message
+>>- Long id
+>>- String subject
+>>- Long receiverId
+>>- String sender
+>>- String text
+>>- String date
+>>- boolean hasBeenRead
+>- if used: 
+
+## Set a specific message as readed
+>- **Mapping:** PUT (role PATIENT, DOCTOR or SYSTEMADMIN)
+>- **URL:** /api/i/message/setread/{messageId}
+>> Long messageId
+>- **Request:** 
+>- **Response:** String message set or not
+>- if used: 
+
+## Delete a specific message
+>- **Mapping:** DELETE (role PATIENT, DOCTOR or SYSTEMADMIN)
+>- **URL:** /api/i/message/delete/{messageId}
+>> Long messageId
+>- **Request:** 
+>- **Response:** String message deleted or not
+>- if used: 
+
