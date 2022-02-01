@@ -10,19 +10,17 @@ The basic pipeline files can be found [here](https://gitlab.com/carelyo/ci_cd-pi
 # Files
 ## main.yml
 
-This is the main pipeline for building images on merge requests and pushing them to DockerHub.
+This is the main pipeline for building images on merge requests and pushing them to DockerHub. It's a heavily modified version of the [Docker CI/CD template from GitLab](https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/lib/gitlab/ci/templates/Docker.gitlab-ci.yml).
 
-## dev-staging_branches.yml
-Imports and expands on `main.yml`.
-This file is for repos where we only want the Build+Push pipeline to run on the *Develop* & *Staging* branches. The only change (for now) compared to **main.yml** is the addition of
+It **only** runs on Develop, Staging and main branches with a Dockerfile thanks to:
 
-    except:
-		variables:
-		- $CI_COMMIT_REF_NAME =~ /main/
+    rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "Develop" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "Staging" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+    # Where a dockerfile exists
+      exists:
+      - Dockerfile
 
-Which prevents it from being run on the main branch.
-
-You could also add it directly to the repos *gitlab-ci.yml* at the bottom after importing **main.yml**, but this is a lot more efficient as it's used for multiple repos.
+This can also be changed on a per-repo basis after importing ``ci_cd-pipeline-files/main.yml``.
 
 # GitLab configuration
 The variables used in the `gitlab-ci.yml` are set on a group-wide level through [its settings](https://gitlab.com/groups/carelyo/-/settings/ci_cd). It's also possible to set these on a per-project basis.
