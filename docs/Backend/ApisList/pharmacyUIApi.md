@@ -1,11 +1,125 @@
 # Pharmacy UI Api
 
-| **Mapping** | URL | **Purpose** | **RequestDTO** | **ResponseDTO** |  if used  |
-| --- | --- | --- | --- | --- | --- |
-| Put(role PHARMACYADMIN) |  /api/i/pharmacy/id | update pharmacy profile | Long id, PharmacyProfileDTO | pharmacy id, user email, user mobile, user id |  |
-| Post(role PHARMACYADMIN) | /api/i/pharmacy/id/addpharmacist | add pharmacist | Long id,PharmacistSignUpDTO | pharmacist title, pharmacist fullname,user email, user mobile, pharmacist user id, pharmacy id  |  |
-| Put(role PHARMACYADMIN or PHARMACYUSER)  | /api/i/pharmacy/resetpassword | To update new password for pharmacist | ResetPasswordDTO resetPasswordDTO | password has been reset or email is not associated with any user. |  |
-| Get(role PHARMACYADMIN) | /api/i/pharmacist/pharmacistId  get pharmacist DTO | Long pharmacistId | returns pharmacist dto (id, title, full name, user email,user mobile, user Id, pharmacy Id |  |
-| Put(role PHARMACYADMIN) | /api/i/pharmacist/updatepharmacist | To update pharmacist | Pharmacist update DTO pharmacistUpdateDTO  | returns pharmacist dto or user or pharmacist doesn't exist |  |
-| Get(role PHARMACYADMIN) | /api/i/pharmacist/pharmacyId/allpharmacists | get list of phramacists | Long pharmacyId                            | returns pharmacists dto or pharmacy couldn't be found |  |
-| Delete(role PHARMACYADMIN) | /api/i/pharmacist/pharmacistId | To delete pharmacist | Long pharmacistId | successfully deleted or user  or phramacy or pharmacist doesn't exist |  |
+Note:
+
+---
+## Get a specific pharmacy
+>- **Mapping:** GET (role PHARMACYADMIN)
+>- **URL:** /api/i/pharmacy/{pharmacyId}
+>> Long pharmacyId
+>- **Request:** 
+>- **Response:** PharmacyDTO or String error message
+>>- Long id
+>>- String email
+>>- String mobile
+>>- Long userId
+>- if used: 
+
+## Update pharmacy profile
+>- **Mapping:** PUT (role PHARMACYADMIN)
+>- **URL:** /api/i/pharmacy/{pharmacyId}
+>> Long pharmacyId
+>- **Request:** PharmacyProfileDTO
+>>- String name
+>>- String contactPersonFirstName
+>>- String contactPersonLastName
+>>- String companyRegistrationNumber
+>>- String contactEmail
+>>- String contactNumber
+>>- String streetAddress
+>>- String cityTown
+>>- String state
+>- **Response:** PharmacyDTO or String error message
+>>- Long id
+>>- String email
+>>- String mobile
+>>- Long userId
+>- if used: 
+
+## Create pharmacist for a specific pharmacy
+>- **Mapping:** POST (role PHARMACYADMIN)
+>- **URL:** /api/i/pharmacy/{pharmacyId}/addpharmacist
+>> Long pharmacyId
+>- **Request:** PharmacistSignUpDTO
+>>- String title
+>>- String fullName
+>>- String email
+>>- String mobile
+>>- String password
+>- **Response:** PharmacistDTO or String error message
+>>- Long id
+>>- String title
+>>- String fullName
+>>- String email
+>>- String mobile
+>>- Long userId
+>>- Long pharmacyId
+>- if used: 
+
+## Update new password for a specific pharmacist
+>- **Mapping:** PUT (role PHARMACYADMIN or PHARMACYUSER)
+>- **URL:** /api/i/pharmacy/resetpassword
+>- **Request:** ResetPasswordDTO
+>>- String email
+>>- String code
+>>- String password
+>- **Response:** String message updeted or not
+>- if used: 
+
+## Get a specific pharmacist
+>- **Mapping:** GET (role PHARMACYADMIN)
+>- **URL:** /api/i/pharmacist/{pharmacistId}
+>> Long pharmacistId
+>- **Request:** 
+>- **Response:** PharmacistDTO or String error message
+>>- Long id
+>>- String title
+>>- String fullName
+>>- String email
+>>- String mobile
+>>- Long userId
+>>- Long pharmacyId
+>- if used: 
+
+## Update a pharmacist
+>- **Mapping:** PUT (role PHARMACYADMIN)
+>- **URL:** /api/i/pharmacist/updatepharmacist
+>- **Request:** PharmacistUpdateDTO
+>>- Long id
+>>- String title
+>>- String fullName
+>>- String email
+>>- String mobile
+>>- ~~Long userId~~
+>- **Response:** PharmacistDTO or String error message
+>>- Long id
+>>- String title
+>>- String fullName
+>>- String email
+>>- String mobile
+>>- Long userId
+>>- Long pharmacyId
+>- if used: 
+
+## Get all phramacists from a specific pharmacy
+>- **Mapping:** GET (role PHARMACYADMIN)
+>- **URL:** /api/i/pharmacist/{pharmacyId}/allpharmacists
+>> Long pharmacyId
+>- **Request:** 
+>- **Response:** List&LT;PharmacistDTO> or String error message
+>>- Long id
+>>- String title
+>>- String fullName
+>>- String email
+>>- String mobile
+>>- Long userId
+>>- Long pharmacyId
+>- if used: 
+
+## Delete a specific pharmacist
+>- **Mapping:** DELETE (role PHARMACYADMIN)
+>- **URL:** /api/i/pharmacist/{pharmacistId}
+>> Long pharmacistId
+>- **Request:** 
+>- **Response:** String message deleted or not
+>- if used: 

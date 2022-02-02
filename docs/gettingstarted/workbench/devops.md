@@ -4,30 +4,28 @@ sidebar_label: DevOps
 ---
 # Carelyo DevOps Workbench
 
-# Pipeline introduction
+## Pipeline introduction
 The basic pipeline files can be found [here](https://gitlab.com/carelyo/ci_cd-pipeline-files). 
 
-# Files
-## main.yml
+## Files
+### main.yml
 
-This is the main pipeline for building images on merge requests and pushing them to DockerHub.
+This is the main pipeline for building images on merge requests and pushing them to DockerHub. It's a heavily modified version of the [Docker CI/CD template from GitLab](https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/lib/gitlab/ci/templates/Docker.gitlab-ci.yml).
 
-## dev-staging_branches.yml
-Imports and expands on `main.yml`.
-This file is for repos where we only want the Build+Push pipeline to run on the *Develop* & *Staging* branches. The only change (for now) compared to **main.yml** is the addition of
+It **only** runs on Develop, Staging and main branches with a Dockerfile thanks to:
 
-    except:
-		variables:
-		- $CI_COMMIT_REF_NAME =~ /main/
+    rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "Develop" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "Staging" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+    # Where a dockerfile exists
+      exists:
+      - Dockerfile
 
-Which prevents it from being run on the main branch.
+This can also be changed on a per-repo basis after importing ``ci_cd-pipeline-files/main.yml``.
 
-You could also add it directly to the repos *gitlab-ci.yml* at the bottom after importing **main.yml**, but this is a lot more efficient as it's used for multiple repos.
-
-# GitLab configuration
+## GitLab configuration
 The variables used in the `gitlab-ci.yml` are set on a group-wide level through [its settings](https://gitlab.com/groups/carelyo/-/settings/ci_cd). It's also possible to set these on a per-project basis.
 
-## Variables
+### Variables
  - `CI_REGISTRY` is where the DockerHub repo URL is stored.  
  - - These variables [are masked](https://docs.gitlab.com/ee/ci/variables/index.html#mask-a-cicd-variable), meaning they won't show up in job logs in plain text.
  - - `CI_REGISTRY_PASSWORD` is the DockerHub access token. The normal password is possible too but is less secure in case someone gains access to the GitLab account. Also it's not posssible to mask certain passwords(meaning ones with special characters etc).
@@ -41,7 +39,7 @@ The variables used in the `gitlab-ci.yml` are set on a group-wide level through 
 * Log/Monitoring Server is logkib01 - 10.234.0.215
 
 
-## Checkmk
+### Checkmk
 
 Checkmk is free and open source. We are running the enterprise edition which allows us monitor 25 nodes for free. We can also us the open source version.
 
@@ -66,7 +64,7 @@ cd monitor
 touch docker-compose.yml
 ```
 
-## Edit the docker-compose file using vi
+**Edit the docker-compose file using vi**
 
 ```bash
 version: '3.1'
@@ -96,7 +94,7 @@ docker-compose up -d
 docker-compose logs -f --tail="all"
 ```
 
-## Open Firewall and Network Security Group
+### Open Firewall/Network Security Group
 
 ### Ingress Rule
 This allows only you IP to access this resource
@@ -106,7 +104,7 @@ Allow source your homeIP i.e., 10.0.0.2/32 and port 8080
 ### Login in to Checkmk server
 Server IP:8080
 
-## Add Agents
+### Add Agents
 To add anagent 
 - Clicck Setup > Agents > Windows, Linus, Solaris, AIX
 - Since we are monitoring Ubuntu, click the Linux DEB to download the agent
@@ -119,7 +117,7 @@ scp check-mk-agent_2.0.0p17-74a3d18d9c2e1ce4_all.deb ubuntuserver:/tmp
 ## install the agent
 dpkg -i check-mk-agent_2.0.0p17-74a3d18d9c2e1ce4_all.deb
 ```
-## Add Plugin to monitor docker container
+### Add Plugin to monitor docker container
 To monitor additional services you may need plugins.
 Download the plugin from the checkmk server at 
 Setup > Agents > Other operating systems or from the **internet**
@@ -152,3 +150,55 @@ global
 
 ## Block Volume Encryption
 By default all volumes and their backups are encrypted using the Oracle-provided encryption keys. Each time a volume is cloned or restored from a backup the volume is assigned a new unique encryption key. This link talks about OCI Block Volume Service [BlockVolumeEncryption](https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/overview.htm#BlockVolumeEncryption)
+
+## Docker Installation
+
+### Ubuntu 20.04
+**Install docker cert**
+```bash
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+```
+```bash
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+**Download from the repo**
+```bash
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+```
+```bash
+apt-cache policy docker-ce
+```
+**Install docker-ce**
+```bash
+sudo apt install docker-ce
+```
+**Add user to docker group and sudo**
+```bash
+sudo usermod -aG docker ${USER}
+```
+**Start Docker on reboot**
+```bash
+sudo systemctl enable docker.service
+```
+```bash
+sudo systemctl enable containerd.service
+```
+## Docker-compose Installation
+
+**get the docker-composer file**
+
+```bash
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+
+**Make it executable**
+```bash
+sudo chmod +x /usr/local/bin/docker-compose
+```
+```bash
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
+**See docker-compose logs**
+```bash
+docker-compose logs -f --tail="all"
+```
