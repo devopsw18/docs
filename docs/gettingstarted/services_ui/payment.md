@@ -30,4 +30,5 @@ sidebar_label: Payment
 
 
 ## Payment Provider
-> 1app [1app](https://1app.online/)
+> 1app Payment Provider [1app](https://1app.online/)
+> ![Payment 1apppayment](../../../assets/images/payment_1app_doc.png)
