@@ -4,7 +4,7 @@ sidebar_label: DevOps
 ---
 # Carelyo DevOps Workbench
 
-## Pipeline introduction
+# Pipeline introduction
 The basic pipeline files can be found [here](https://gitlab.com/carelyo/ci_cd-pipeline-files). 
 
 ## Files
@@ -22,7 +22,7 @@ It **only** runs on Develop, Staging and main branches with a Dockerfile thanks 
 
 This can also be changed on a per-repo basis after importing ``ci_cd-pipeline-files/main.yml``.
 
-## GitLab configuration
+### GitLab configuration
 The variables used in the `gitlab-ci.yml` are set on a group-wide level through [its settings](https://gitlab.com/groups/carelyo/-/settings/ci_cd). It's also possible to set these on a per-project basis.
 
 ### Variables
@@ -136,6 +136,125 @@ log in to the checkmk via the web browser Server IP:8080
 - - Check all the services that you want to monitor and click **Full service scan** and on the top right you should see changes if any, then click **Activate on selected sites** to implement the changes
 
 ## HAPROXY
+
+### Install Haproxy On Ubuntu 20.04
+
+**Grab the right PPA**
+[Debian/Ubuntu HAProxy packages](https://haproxy.debian.net/#?distribution=Ubuntu&release=focal&version=2.4)
+
+**Enable a dedicated PPA:**
+```code
+# sudo apt-get install --no-install-recommends software-properties-common -y
+# sudo add-apt-repository ppa:vbernat/haproxy-2.4 -y
+# sudo apt-get install haproxy=2.4.\* -y
+```
+**Verify Haproxy is installed**
+
+```ubuntu
+haproxy -v
+
+HAProxy version 2.4.9-1ppa1~focal 2021/11/24 - https://haproxy.org/
+Status: long-term supported branch - will stop receiving fixes around Q2 2026.
+Known bugs: http://www.haproxy.org/bugs/bugs-2.4.9.html
+Running on: Linux 5.11.0-1022-oracle #23~20.04.1-Ubuntu SMP Fri Nov 12 15:45:30 UTC 2021 x86_64
+```
+## Swapfile
+
+**What is Swap**
+Swap is a portion of the hard drive storage that has beenset aside for the operating system to temporarily store that it can no longer hold in RAM.This lets you increase the amount of information that your server can keep in its working memory, with some caveats. The swap space on the hard drive will be used mainly when there is no longer sufficient space in RAM to hold in-use application data.
+
+### Create Swap File
+**Check if swap exist**
+```code
+sudo swapon --show
+```
+
+**Verify**
+
+```code
+free -h
+              total        used        free      shared  buff/cache   available
+Mem:           15Gi       302Mi        14Gi       1.0Mi       682Mi        15Gi
+Swap:            0B          0B          0B
+```
+
+**Allocate 2GB of Swap File**
+
+```code
+sudo fallocate -l 2G /swapfile
+```
+**Verify**
+
+```code
+ls -lh /swapfile
+```
+
+### Enable Swap File
+
+```code
+sudo chmod 600 /swapfile
+```
+
+### Mark as Swap Space
+
+```code
+sudo mkswap /swapfile
+```
+### Enable Swap File
+
+```code
+sudo swapon /swapfile
+```
+
+**Verify**
+
+```code
+free -h
+```
+
+### Make Swap Permanent
+
+```code
+sudo cp /etc/fstab /etc/fstab.bak
+```
+**Add swap file to the end of the file /etc/fstab file**
+
+```code
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+```
+### Tunning Swap Settings
+```code
+cat /proc/sys/vm/swappiness
+```
+```code
+sudo vi /etc/sysctl.conf
+```
+**Add to the buttom**
+```
+vm.swappiness=10
+```
+
+### Adjusting the Cache Pressure Setting
+**Show current value**
+```code
+cat /proc/sys/vm/vfs_cache_pressure
+```
+**Change it to 50**
+```code
+sudo vi /etc/sysctl.conf
+```
+```code
+vm.vfs_cache_pressure=50
+```
+
+### Swapfile Rule of Thumb
+| Amount of RAM installed in system  |  Recommended swap space | Recommended swap space with hibernation  |
+|-------------|-----------------|--------------------------------|
+| ≤ 2GB       | 2X RAM          |    3X RAM                      |
+| 2GB – 8GB   | = RAM           |    2X RAM                      |
+| 8GB – 64GB  | 4G to 0.5X RAM  |    1.5X RAM                    |
+| >64GB       | Minimum 4GB     |    Hibernation not recommended |
+
 
 ### LUA.CORS
 Here the link [lua.cors](https://www.haproxy.com/blog/enabling-cors-in-haproxy/)
