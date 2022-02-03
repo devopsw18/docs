@@ -132,9 +132,15 @@ sudo iptables -I INPUT -p tcp --dport 50514 -m conntrack --ctstate NEW,ESTABLISH
 ```code
 sudo iptables-save > /etc/iptables/rules.v4
 ```
+
 **Restore IPtable**
 ```code
 sudo iptables-restore < /etc/iptables/rules.v4
+```
+
+**Install iptables-persistent**
+```code
+sudo apt-get install iptables-persistent
 ```
 
 **Key current and Add new**
