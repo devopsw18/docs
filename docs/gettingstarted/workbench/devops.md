@@ -158,6 +158,19 @@ Status: long-term supported branch - will stop receiving fixes around Q2 2026.
 Known bugs: http://www.haproxy.org/bugs/bugs-2.4.9.html
 Running on: Linux 5.11.0-1022-oracle #23~20.04.1-Ubuntu SMP Fri Nov 12 15:45:30 UTC 2021 x86_64
 ```
+### Test Haproxy
+
+```code
+haproxy -f haproxy.cfg -c
+```
+### PSTree
+```code
+sudo apt install psmisc -y
+```
+```code
+pstree
+```
+
 ## Swapfile
 
 **What is Swap**
