@@ -204,4 +204,13 @@ Note: These APIs are for all UIs
 >>- String code
 >>- String password
 >- **Response:** String message reset or not
->- if used: 
+>- if used:
+
+## Get user roles from token
+>- **Mapping:** GET
+>- **URL:** /api/authenticatecarelyouser/getuserdetails
+>- **Request:** RequestUserRolesByTokenDTO
+>>- String jwtToken
+>- **Response:** CarelyoUserRolesResponseDTO or String
+>>- List<String\> roles
+>- if used:
