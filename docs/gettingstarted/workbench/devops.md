@@ -118,6 +118,30 @@ sudo iptables -I INPUT -p tcp --dport 443 -m conntrack --ctstate NEW,ESTABLISHED
 ```code
 sudo iptables -I OUTPUT -p tcp --sport 443 -m conntrack --ctstate ESTABLISHED -j ACCEPT
 ```
+**Allow port udp 514 syslog in**
+```code
+sudo iptables -I INPUT -p udp --dport 514 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+```
+
+***Allow 50514 tcp syslog in**
+```code
+sudo iptables -I INPUT -p tcp --dport 50514 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+```
+
+**Save IPtables**
+```code
+sudo iptables-save > /etc/iptables/rules.v4
+```
+**Restore IPtable**
+```code
+sudo iptables-restore < /etc/iptables/rules.v4
+```
+
+**Key current and Add new**
+```code
+sudo iptables-restore -n < /etc/iptables/rules.v4
+```
+
 ### Login in to Checkmk server
 Server IP:8080
 
