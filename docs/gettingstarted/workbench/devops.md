@@ -94,13 +94,30 @@ docker-compose up -d
 docker-compose logs -f --tail="all"
 ```
 
-### Open Firewall/Network Security Group
+## Open Firewall & Network Security Group
 
 ### Ingress Rule
 This allows only you IP to access this resource
 Network Security Group: NSG_Checkmk
 Allow source your homeIP i.e., 10.0.0.2/32 and port 8080 
 
+### IPtables
+**Allow http 80 In**
+
+```code
+sudo iptables -I INPUT -p tcp --dport 80 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+```
+```code
+sudo iptables -I OUTPUT -p tcp --sport 80 -m conntrack --ctstate ESTABLISHED -j ACCEPT
+```
+
+**Allow https 443 In**
+```code
+sudo iptables -I INPUT -p tcp --dport 443 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+```
+```code
+sudo iptables -I OUTPUT -p tcp --sport 443 -m conntrack --ctstate ESTABLISHED -j ACCEPT
+```
 ### Login in to Checkmk server
 Server IP:8080
 
