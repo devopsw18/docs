@@ -216,6 +216,18 @@ systemctl enable --now haproxy
 ```code
 haproxy -f haproxy.cfg -c
 ```
+
+### Haproxy Userlist
+[Userlist](https://www.haproxy.com/documentation/hapee/latest/configuration/config-sections/userlist/)
+
+#### Using encrypted passwords
+**Generate SHA-256 encrypted password**
+
+```code
+sudo apt install whois
+mkpasswd -m sha-256 mypassword123
+```
+
 ### PSTree
 ```code
 sudo apt install psmisc -y
