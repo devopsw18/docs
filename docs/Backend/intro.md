@@ -15,3 +15,5 @@ Also, Frontend engineers should indicate missing Apis too.
 Request dto field with ~~strikethrough~~ means the field  can be null and will not effect for the method.
 
 Request dto field with question mark? means the field can be null but it will effect when it has value.
+
+![Api allapi](../../assets/images/api_list.png)
