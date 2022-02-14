@@ -33,11 +33,24 @@ Note:
 >- **URL:** /api/i/doctors/doctor/{userId}
 >> Long userId
 >- **Request:** 
->- **Response:** DoctorDTO or String error message
+>- **Response:** DoctorProfileDTO.Response or String error message
 >>- Long userId
 >>- String mobile
 >>- String email
 >>- Long doctorId
+>>- String systemStatus
+>>- Boolean approved
+>>-  String fullName
+>>- String dateOfBirth
+>>- String gender
+>>- String maritalStatus
+>>- String officeAddress
+>>- String city
+>>- String state
+>>- String mdcnCertificateNumber
+>>- Long dependantStandBy
+>>- Set&LT;Long/> attachedDoc
+>>- List&LT;Long/> specialities
 >>- String systemStatus
 >- if used: 
 
@@ -45,7 +58,7 @@ Note:
 >- **Mapping:** POST (role DOCTOR)
 >- **URL:** /api/i/doctors/{userId}
 >> Long userId
->- **Request:** DoctorProfileDTO
+>- **Request:** DoctorProfileDTO.Update
 >>- String fullName
 >>- String dateOfBirth
 >>- String gender
@@ -55,11 +68,24 @@ Note:
 >>- String state
 >>- String mdcnCertificateNumber
 >>- List&LT;Long> specialities
->- **Response:** DoctorDTO or String error message
+>- **Response:** DoctorProfileDTO.Response or String error message
 >>- Long userId
 >>- String mobile
 >>- String email
 >>- Long doctorId
+>>- String systemStatus
+>>- Boolean approved
+>>-  String fullName
+>>- String dateOfBirth
+>>- String gender
+>>- String maritalStatus
+>>- String officeAddress
+>>- String city
+>>- String state
+>>- String mdcnCertificateNumber
+>>- Long dependantStandBy
+>>- Set&LT;Long/> attachedDoc
+>>- List&LT;Long/> specialities
 >>- String systemStatus
 >- if used: 
 
