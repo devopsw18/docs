@@ -1,27 +1,25 @@
 image: node:15.12-alpine3.13
 
 stages:
-  - test
-  - deploy
+ - test
+ - deploy
 
 test:
-  stage: test
-  script:
-  - cd CarelyoDocs
+ stage: test
+ script:
   - yarn install
   - yarn build
-  except:
-    - main
+ except:
+  - main
 
 pages:
-  stage: deploy
-  script:
-  - cd CarelyoDocs
+ stage: deploy
+ script:
   - yarn install
   - yarn build
-  - mv ./build ../public
-  artifacts:
-    paths:
-    - public
-  only:
-    - main
+  - mv ./build ./public
+ artifacts:
+  paths:
+   - public
+ only:
+  - main

@@ -1,0 +1,10 @@
+{
+ "position": 2,
+ "label": "Cloud Infrastructure",
+ "collapsible": true,
+ "collapsed": true,
+ "link": {
+   "type": "generated-index",
+   "title": "Carelyo Cloud Services"
+ }
+}
