@@ -1,6 +1,6 @@
 {
  "position": 2,
- "label": "Environments",
+ "label": "k8 cluster",
  "collapsible": true,
  "collapsed": true,
  "link": {
