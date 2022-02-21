@@ -2,6 +2,6 @@
 sidebar_position: 1
 sidebar_label: Develop
 ---
-# Carelyo Environment
+# Carelyo k8 cluster
 
-> Develop Environment
+> develop namespace k8 cluster
