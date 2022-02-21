@@ -4,4 +4,4 @@ sidebar_label: Staging
 ---
 # Carelyo Environment
 
-> Staging Environmet
+> staging namespace k8 cluster
