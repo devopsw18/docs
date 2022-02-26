@@ -5,62 +5,81 @@ sidebar_label: DevOps
 # Carelyo DevOps Workbench
 
 # Pipeline introduction
-The basic pipeline files can be found [here](https://gitlab.com/carelyo/ci_cd-pipeline-files). 
+> - The basic pipeline files can be found [here](https://gitlab.com/carelyo/ci_cd-pipeline-files). 
 
 ## Files
 ### main.yml
 
-This is the main pipeline for building images on merge requests and pushing them to DockerHub. It's a heavily modified version of the [Docker CI/CD template from GitLab](https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/lib/gitlab/ci/templates/Docker.gitlab-ci.yml).
+> This is the main pipeline for building images on merge requests and pushing them to DockerHub. It's a heavily modified version of the [Docker CI/CD template from GitLab](https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/lib/gitlab/ci/templates/Docker.gitlab-ci.yml).
+>
+> It **only** runs on Develop, Staging and main branches with a Dockerfile thanks to:
 
-It **only** runs on Develop, Staging and main branches with a Dockerfile thanks to:
-
+```bash
     rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "Develop" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "Staging" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
     # Where a dockerfile exists
       exists:
       - Dockerfile
+```
 
-This can also be changed on a per-repo basis after importing ``ci_cd-pipeline-files/main.yml``.
+> This can also be changed on a per-repo basis after importing ``ci_cd-pipeline-files/main.yml``.
 
 ### GitLab configuration
-The variables used in the `gitlab-ci.yml` are set on a group-wide level through [its settings](https://gitlab.com/groups/carelyo/-/settings/ci_cd). It's also possible to set these on a per-project basis.
+> The variables used in the `gitlab-ci.yml` are set on a group-wide level through [its settings](https://gitlab.com/groups/carelyo/-/settings/ci_cd). It's also possible to set these on a per-project basis.
 
 ### Variables
- - `CI_REGISTRY` is where the DockerHub repo URL is stored.  
- - - These variables [are masked](https://docs.gitlab.com/ee/ci/variables/index.html#mask-a-cicd-variable), meaning they won't show up in job logs in plain text.
- - - `CI_REGISTRY_PASSWORD` is the DockerHub access token. The normal password is possible too but is less secure in case someone gains access to the GitLab account. Also it's not posssible to mask certain passwords(meaning ones with special characters etc).
+> - `CI_REGISTRY` is where the DockerHub repo URL is stored.  
+> - - These variables [are masked](https://docs.gitlab.com/ee/ci/variables/index.html#mask-a-cicd-variable), meaning they won't show up in job logs in plain text.
+  - - `CI_REGISTRY_PASSWORD` is the DockerHub access token. The normal password is possible too but is less secure in case someone gains access to the GitLab account. Also it's not posssible to mask certain passwords(meaning ones with special characters etc).
  -- `CI_REGISTRY_USER` is where the DockerHub repo URL is stored.
 
 
 ## Monitoring
 
 > Logging and monitoring the state of VMs, docker containers, and the services are done using [Checkmk](https://checkmk.com/).
-
-* Log/Monitoring Server is logkib01 - 10.234.0.215
+>
+> - Log/Monitoring Server is logkib01 - 10.234.0.215
 
 
 ### Checkmk
 
-Checkmk is free and open source. We are running the enterprise edition which allows us monitor 25 nodes for free. We can also us the open source version.
+>Checkmk is free and open source. We are running the enterprise edition which allows us monitor 25 nodes for free. We can also us the open source version.
 
 ### Install Checkmk
 
-We are using the docker version. We get it from here [Checkmk](https://checkmk.com/l/t/enterprise-free-trial)
+> We are using the docker version. We get it from here [Checkmk](https://checkmk.com/l/t/enterprise-free-trial)
 
-Upload it to the the log server.
+> Upload it to the the log server.
+
+
+## Secure copy from local computer to the log server on the cloud
+```bash
+scp check-mk-free-docker-2.0.0p17.tar.gz log01:/tmp
+```
+## ssh into the log server to load the file
+```bash
+sudo -i 
+```
+```bash
+cd /tmp
+```
 
 ```bash
-## Secure copy from local computer to the log server on the cloud
-scp check-mk-free-docker-2.0.0p17.tar.gz log01:/tmp
-
-## ssh into the log server to load the file
-sudo -i 
-cd /tmp
 docker load -i check-mk-free-docker-2.0.0p17.tar.gz
+```
 
-## Create a folder called monitor
-mkdir monitor
-cd monitor
+## Create a folder called "checkmk"
+```bash
+mkdir checkmk
+```
+```bash
+cd checkmk
+```
+# create a volume "checkmk"
+```bash
+mkdir checkmk
+```
+```bash
 touch docker-compose.yml
 ```
 
@@ -86,20 +105,30 @@ volumes:
 Save the file.
 ```
 
-```bash
-## Rund the docker-compose file
-docker-compose up -d
 
-## View docker-compose logs
+## Rund the docker-compose file
+```bash
+docker-compose up -d
+```
+
+## View docker-compose logs to get password
+```bash
 docker-compose logs -f --tail="all"
 ```
+## Visit app
+> http://4378f8fab6ed/cmk/
+> - checkmk  |
+> - checkmk  |   The admin user for the web applications is cmkadmin with password: password
+> - checkmk  |   For command line administration of the site, log in with 'omd su cmk'.
+> - checkmk  |   After logging in, you can change the password for cmkadmin with 'htpasswd etc/> htpasswd cmkadmin'.
+
 
 ## Open Firewall & Network Security Group
 
 ### Ingress Rule
-This allows only you IP to access this resource
-Network Security Group: NSG_Checkmk
-Allow source your homeIP i.e., 10.0.0.2/32 and port 8080 
+> - This allows only you IP to access this resource
+> - Network Security Group: NSG_Checkmk
+> - Allow source your homeIP i.e., 10.0.0.2/32 and port 8080 
 
 ### IPtables
 **Allow http 80 In**
@@ -152,10 +181,10 @@ sudo iptables-restore -n < /etc/iptables/rules.v4
 Server IP:8080
 
 ### Add Agents
-To add anagent 
-- Clicck Setup > Agents > Windows, Linus, Solaris, AIX
-- Since we are monitoring Ubuntu, click the Linux DEB to download the agent
-- next copy the file to the Ubuntu server
+> To add anagent 
+> - Clicck Setup > Agents > Windows, Linus, Solaris, AIX
+> Z- Since we are monitoring Ubuntu, click the Linux DEB to download the agent
+> - next copy the file to the Ubuntu server
 
 ```bash
 ## Secure copy from local computer to the log server on the cloud
