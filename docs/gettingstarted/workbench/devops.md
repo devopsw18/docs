@@ -24,7 +24,11 @@ sidebar_label: DevOps
 
 > This can also be changed on a per-repo basis after importing ``ci_cd-pipeline-files/main.yml``.
 
-### GitLab configuration
+### backend.yml
+
+This builds on `main.yml` by importing it and adding `JUnit` tests for the backend team's projects.
+
+## GitLab configuration
 > The variables used in the `gitlab-ci.yml` are set on a group-wide level through [its settings](https://gitlab.com/groups/carelyo/-/settings/ci_cd). It's also possible to set these on a per-project basis.
 
 ### Variables
