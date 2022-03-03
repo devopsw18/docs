@@ -397,7 +397,7 @@ Note:
 >- **Response:** String
 
 ## Get doctor professional profile
->- **Mapping:** PUT (role DOCTOR, STANDBYDOCTOR)
+>- **Mapping:** GET (role DOCTOR, STANDBYDOCTOR)
 >- **URL:** /api/i/doctors/getprofessionalprofile/{doctorId}
 >>- Long doctorId
 >- **Request:** 
