@@ -58,41 +58,35 @@ Note:
 >- **Mapping:** POST (role DOCTOR)
 >- **URL:** /api/i/doctors/{userId}
 >> Long userId
->- **Request:** DoctorProfileDTO.Update
->>- String fullName
->>- String dateOfBirth
->>- String gender
->>- String maritalStatus
->>- String officeAddress
->>- String city
->>- String state
->>- String mdcnCertificateNumber
->>- List&LT;Long> specialities
->- **Response:** DoctorProfileDTO.Response or String error message
->>- Long userId
->>- String mobile
->>- String email
->>- Long doctorId
->>- String systemStatus
->>- Boolean approved
->>-  String fullName
->>- String dateOfBirth
->>- String gender
->>- String maritalStatus
->>- String officeAddress
->>- String city
->>- String state
->>- String mdcnCertificateNumber
->>- Long dependantStandBy
->>- Set&LT;Long/> attachedDoc
->>- List&LT;Long/> specialities
->>- String systemStatus
+>- **Request:** DoctorProfileDTO.Personal.Update
+>>- String fullName;
+>>- String dateOfBirth;
+>>- String gender;
+>>- String maritalStatus;
+>>- String officeAddress;
+>>- String city;
+>>- String state;
+>- **Response:** DoctorProfileDTO.Personal.Response or String error message
+>>- Long userId;
+>>- String mobile;
+>>- String email;
+>>- Long doctorId;
+>>- String systemStatus;
+>>- Boolean approved;
+>>- String fullName;
+>>- String dateOfBirth;
+>>- String gender;
+>>- String maritalStatus;
+>>- String officeAddress;
+>>- String city;
+>>- String state;
+>>- String title;
 >- if used: 
 
 ## Update the email for a doctor
 >- **Mapping:** POST (role DOCTOR or SYSTEMADMIN)
 >- **URL:** /api/i/doctors/{userId}/update/email
->> Long userId
+>>- Long userId
 >- **Request:** EmailDTO
 >>- String email
 >- **Response:** String message updated or not
@@ -376,3 +370,58 @@ Note:
 >- **Request:** 
 >- **Response:** List&LT;Long> referredUserList
 >- if used: 
+
+## Update doctor professional profile
+>- **Mapping:** PUT (role DOCTOR, STANDBYDOCTOR)
+>- **URL:** /api/i/doctors/updateprofessionalprofile/{doctorId}
+>>- Long doctorId
+>- **Request:** DoctorProfileDTO.Professional.Update
+>>- String mdcnCertificateNumber;
+>>- List&LT;String> clinicalFocuses;
+>>- List&LT;String> academicQualifications;
+>>- List&LT;String> professionalMemberships;
+>>- List&LT;String> currentAppointments;
+>>- List&LT;String> pastAppointments;
+>>- List&LT;String> training;
+>>- List&LT;String> research;
+>>- List&LT;String> hospitalCommittees;
+>>- List&LT;String> conferencePresentations;
+>>- List&LT;String> professionalDevelopment;
+>>- String nationalIdentityNumber;
+>>- boolean isStudent;
+>>- String university;
+>>- String currentYear;
+>>- String graduationDate;
+>>- String studentNumber;
+>>- String title;
+>- **Response:** String
+
+## Get doctor professional profile
+>- **Mapping:** PUT (role DOCTOR, STANDBYDOCTOR)
+>- **URL:** /api/i/doctors/getprofessionalprofile/{doctorId}
+>>- Long doctorId
+>- **Request:** 
+>- **Response:** DoctorProfileDTO.Professional.Response
+>>- Long doctorId;
+>>- String title;
+>>- String fullName;
+>>- boolean approved;
+>>- String mdcnCertificateNumber;
+>>- List&LT;String> clinicalFocuses;
+>>- List&LT;String> academicQualifications;
+>>- List&LT;String> professionalMemberships;
+>>- List&LT;String> currentAppointments;
+>>- List&LT;String> pastAppointments;
+>>- List&LT;String> training;
+>>- List&LT;String> research;
+>>- List&LT;String> hospitalCommittees;
+>>- List&LT;String> conferencePresentations;
+>>- List&LT;String> professionalDevelopment;
+>>- String nationalIdentityNumber;
+>>- boolean isStudent;
+>>- String university;
+>>- String currentYear;
+>>- String graduationDate;
+>>- String studentNumber;
+>>- Long dependantStandBy;
+>>- Set&LT;Long> attachedDoc;
