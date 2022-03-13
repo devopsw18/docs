@@ -568,21 +568,27 @@ By default all volumes and their backups are encrypted using the Oracle-provided
 ## Docker Installation
 
 ### Ubuntu 20.04
-**Install docker cert**
+**Run update**
+```bash
+sudo apt update
+```
+***Get needed packages**
 ```bash
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ```
+**Add GPG key**
 ```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
-**Download from the repo**
+**Add the Docker repo to APT**
 ```bash
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+add-aptsudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 ```
+**Ensure you install from the Docker repo instead of the default Ubuntu repo**
 ```bash
 apt-cache policy docker-ce
 ```
-**Install docker-ce**
+**Install docker**
 ```bash
 sudo apt install docker-ce
 ```
