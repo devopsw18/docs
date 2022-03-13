@@ -574,7 +574,7 @@ sudo apt update
 ```
 ***Get needed packages**
 ```bash
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
 ```
 **Add GPG key**
 ```bash
@@ -590,7 +590,7 @@ apt-cache policy docker-ce
 ```
 **Install docker**
 ```bash
-sudo apt install docker-ce
+sudo apt install docker-ce -y
 ```
 **Add user to docker group and sudo**
 ```bash
@@ -603,6 +603,7 @@ sudo systemctl enable docker.service
 ```bash
 sudo systemctl enable containerd.service
 ```
+
 ## Docker-compose Installation
 
 **get the docker-composer file**
