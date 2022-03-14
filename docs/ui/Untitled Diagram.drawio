@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-03-14T12:27:52.840Z" agent="5.0 (Windows)" etag="8h0cOrUQ4o6deMXBg68f" version="17.1.2" type="gitlab">
+<mxfile host="app.diagrams.net" modified="2022-03-14T16:35:35.461Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="OzJZjfexfJq-DhrPyQNd" version="17.1.1" type="gitlab">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1789" dy="930" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2222" dy="1194" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -162,23 +162,29 @@
         <mxCell id="Dos6IfHk-zw9CJUv5LPl-71" value="Senare: &lt;br&gt;&lt;ul&gt;&lt;li&gt;perhaps add a forum for easy communication between pharmacists, pharmacy.&lt;/li&gt;&lt;li&gt;Inventory for buying medication, drugs etc.&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#050505;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-380" y="306" width="610" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="8dSXoVbEQZDPzywqZXyl-1" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Dos6IfHk-zw9CJUv5LPl-37">
+        <mxCell id="8dSXoVbEQZDPzywqZXyl-1" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Dos6IfHk-zw9CJUv5LPl-37" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1159" y="290" as="sourcePoint" />
             <mxPoint x="1209" y="240" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="8dSXoVbEQZDPzywqZXyl-2" value="Next step?&lt;br&gt;Prescription object with boolean that it has been delivered? " style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="8dSXoVbEQZDPzywqZXyl-2" value="Next step?&lt;br&gt;Prescription object with boolean that it has been delivered? " style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="1209" y="234" width="120" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="8dSXoVbEQZDPzywqZXyl-3" value="Integration with DoctorUI + PatientUI?" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="8dSXoVbEQZDPzywqZXyl-3" value="Integration with DoctorUI + PatientUI?" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="1200" y="414" width="120" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="8dSXoVbEQZDPzywqZXyl-4" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="8dSXoVbEQZDPzywqZXyl-4" value="" style="endArrow=classic;html=1;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1249" y="346" as="sourcePoint" />
             <mxPoint x="1249" y="417" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="GZrChby2d0Wq45yujZ4E-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.075;entryY=-0.05;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="GZrChby2d0Wq45yujZ4E-1" target="Dos6IfHk-zw9CJUv5LPl-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GZrChby2d0Wq45yujZ4E-1" value="Presciption data inc&lt;br&gt;doctorID(responseble ID)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="898" y="-55" width="142" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
