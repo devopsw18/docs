@@ -49,6 +49,19 @@ Target user for patient services are
 
 ### User Needs
 
+There are three different usertypes for the patient services
+Patient :
+
+ - Register a child - Full ownership of data
+ - Give custody of child to another patient
+   - The child object is duplicated and connected to the patient
+ - Remove custody
+ - Give full ownership of data to another patient
+Dependent :
+
+
+Children
+
 ### Assumptions and Dependencies
 
 ## System Features and Requirements
