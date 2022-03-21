@@ -33,6 +33,28 @@ sidebar_label: Setup
 > kubectl -n cert-manager get all
 >```
 
+## Install Haproxy Ingress controller
+> - From Cloud shell get the helm repo for haproxy ingress controller
+
+>```bash
+> helm repo add haproxy-ingress https://haproxy-ingress.github.io/charts
+>```
+> - Create a file haproxy-ingress-values.yaml and add this content into it.
+
+> ```bash
+> controller:
+>  hostNetwork: true
+>  ```
+
+> - Install the haproxy ingress controller withh this command
+> ```bash
+> helm install haproxy-ingress haproxy-ingress/haproxy-ingress\
+>  --create-namespace --namespace ingress-controller\
+>  --version 0.13.6\
+>  -f haproxy-ingress-values.yaml
+> ```
+> [Haproxy Ingress Controller] ![https://haproxy-ingress.github.io/docs/getting-started/]
+> 
 ## Create Cert Issuers
 >
 > View the clusterissuers
@@ -53,4 +75,23 @@ sidebar_label: Setup
 > 
 > ```bash
 > kubectl get secrets
+> ```
+
+## To deploy login deployment and service
+> In the deployment > k8 > login folder 
+> - Modify and then apply the deployment yaml file
+> - This file has two sections:
+> - - login deployment
+> - - login service
+> - Apply it into the carelyo-stage namespace
+> ```bash
+> kubectl apply -f deploy_login.yaml -n carelyo-stage
+> ```
+
+## To deploy login Ingress
+> In the deployment > k8 > login folder
+> - Create a new file for the login ingress deployment
+> - Apply it into the the carelyo-stage namespace
+> ```bash
+> kubectl apply -f haproxy-login-ingress.yaml -n carelyo-stage
 > ```
