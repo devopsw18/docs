@@ -24,7 +24,11 @@ sidebar_label: DevOps
 
 > This can also be changed on a per-repo basis after importing ``ci_cd-pipeline-files/main.yml``.
 
-### GitLab configuration
+### backend.yml
+
+This builds on `main.yml` by importing it and adding `JUnit` tests for the backend team's projects.
+
+## GitLab configuration
 > The variables used in the `gitlab-ci.yml` are set on a group-wide level through [its settings](https://gitlab.com/groups/carelyo/-/settings/ci_cd). It's also possible to set these on a per-project basis.
 
 ### Variables
@@ -564,23 +568,29 @@ By default all volumes and their backups are encrypted using the Oracle-provided
 ## Docker Installation
 
 ### Ubuntu 20.04
-**Install docker cert**
+**Run update**
 ```bash
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
+sudo apt update
 ```
+***Get needed packages**
+```bash
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+```
+**Add GPG key**
 ```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
-**Download from the repo**
+**Add the Docker repo to APT**
 ```bash
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+add-aptsudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 ```
+**Ensure you install from the Docker repo instead of the default Ubuntu repo**
 ```bash
 apt-cache policy docker-ce
 ```
-**Install docker-ce**
+**Install docker**
 ```bash
-sudo apt install docker-ce
+sudo apt install docker-ce -y
 ```
 **Add user to docker group and sudo**
 ```bash
@@ -593,20 +603,22 @@ sudo systemctl enable docker.service
 ```bash
 sudo systemctl enable containerd.service
 ```
+
 ## Docker-compose Installation
 
 **get the docker-composer file**
-
 ```bash
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+mkdir -p ~/.docker/cli-plugins/
+curl -SL https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
 ```
-
-**Make it executable**
+**Set correct permissions**
 ```bash
-sudo chmod +x /usr/local/bin/docker-compose
+chmod +x ~/.docker/cli-plugins/docker-compose
+sudo chown $USER /var/run/docker.sock
 ```
+**verify docker compose**
 ```bash
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+docker compose version
 ```
 **See docker-compose logs**
 ```bash
