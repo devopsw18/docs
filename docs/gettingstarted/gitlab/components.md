@@ -28,3 +28,18 @@ npm config set -- '//gitlab.example.com/api/v4/projects/34809448/packages/npm/:_
 ````bash
 npm i @carelyo/components
 ````
+
+### Stories
+Stories are how you view and develop your components.
+You create a component for the component where you can display the functionalities
+Locally you can view your stories by runnin
+```bash
+npm run start
+```
+Merging your feature branches to develop sucessful builds update the storybook page which can be found [here](https://carelyo.gitlab.io/frontend-team/component-library/?path=/story/examples--default)
+
+### Installing Packages
+
+Packages should be installed as dev dependcies in most cases unless it a necessary package.
+
+Addition of any package should be justified by it being used in multiple component if a package is needed for only one functionality it much better to just write that code yourself.
