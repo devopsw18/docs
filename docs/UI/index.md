@@ -38,7 +38,6 @@ const component = ({styled}) => {
   return styled ? (
    <StyledDiv>{fn ?? state}<StyledDiv>
   ): <div> {fn ?? state} <div>
-
 }
 ```
 

@@ -29,7 +29,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Carelyo Documention Portal"
+      description="Carelyo Documentation Portal"
       keywords={"doc,docs,documentation,carelyo,developer,dev,frontend,api"}
       >
      

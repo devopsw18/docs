@@ -59,10 +59,10 @@ When writing a commit message make sure it
 
 - Prefix Your commit message with
 
-    - Added for new documents
-    - Changed for changes in present documents
-    - Removed if you removed a document
-    - fixed when you fix a document eg. typos, style and so on
+  - Added for new documents
+  - Changed for changes in present documents
+  - Removed if you removed a document
+  - fixed when you fix a document eg. typos, style and so on
 
 - Add Appropiate label to your merges and issues
 - Use keywords to automatically close your issue
