@@ -1,10 +1,8 @@
 # Active Students
 
-# (<summary align="center">Time in Force Codes</summary>)
-
 | Name      | Start Date | End Date | Position |
 |-----------|----|----|--|
-| Adebayo Ajayi | 10/19/2021 | 01/04/2022 |  |
+| Adebayo Ajayi | 10/19/2021 | 01/04/2022 | Senior Lead Frontend |
 | Stanley Ho | 10/25/2021 | 01/04/2022 |  |
 | George Bergholm | 06/12/2021 | 29/04/2022 |  |
 | Marcus Carlsson | 06/12/2021 | 29/04/2022 |  |
@@ -30,9 +28,15 @@
 | Gnanaprasuna Kavet | 24/01/2022 | 13/05/2022 ||
 | Onur Keles | 14/11/2021 | 14/04/2022 ||
 | Khaled Hamzeh | 24/01/2022 | 24/04/2022 ||
-| Johan Hansén | 10/01/2022 | 01/04/2022 | .NET|
 |Yohannes Mehari|	27/09/2021	|10/12/2021||
-|Elliot Åberg Fält	|27/09/2021|	10/12/2021||
+|Elliot Åberg Fält	|27/09/2021|	10/12/2021| Backend Lead|
 |Camilla Johansson	|13/09/2021	|19/11/2021||
 |Sileshi Haile|	27/09/2021|	10/12/2021||
 |Nina Eriksson	|27/09/2021|	10/12/2021||
+|Elon Månsson	|21/02/2022|	29/05/2022| Lead Frontend |
+|Lex Damm	|21/02/2021|	05/05/2021||
+|Jonathan Fisher	|22/08/2022|	05/05/2022||
+| Jonathan Bjönebro | 10/01/2022 | 01/04/2022 ||
+| Onu Keles | 10/01/2022 | 01/04/2022 ||
+| Fadi Abdallah | 10/01/2022 | 01/04/2022 | .NET|
+| Aydin Aslan | 24/01/2022 | 14/04/2022 ||
