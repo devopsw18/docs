@@ -1,10 +1,11 @@
+
 {
  "position": 0,
- "label": "Specifications",
+ "label": "Components",
  "collapsible": true,
  "collapsed": true,
  "link": {
    "type": "generated-index",
-   "title": "Specifications"
+   "title": "Components"
  }
 }

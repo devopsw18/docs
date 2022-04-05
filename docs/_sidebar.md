@@ -40,8 +40,6 @@
   - [Pages](core/pages.md)
   - [Styling](core/styling.md)
 
-- [**UI**](ui.md)
-
   - [Patient UI](ui/patientui.md)
   - [SystemAdmin UI](ui/sysadminui.md)
   - [Pharmarcy UI](ui/pharmarcyui.md)

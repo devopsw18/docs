@@ -1,6 +1,6 @@
 # Active Students
 
-[//]: # (<summary align="center">Time in Force Codes</summary>)
+# (<summary align="center">Time in Force Codes</summary>)
 
 | Name      | Start Date | End Date | Position |
 |-----------|----|----|--|
@@ -31,3 +31,8 @@
 | Onur Keles | 14/11/2021 | 14/04/2022 ||
 | Khaled Hamzeh | 24/01/2022 | 24/04/2022 ||
 | Johan Hansén | 10/01/2022 | 01/04/2022 | .NET|
+|Yohannes Mehari|	27/09/2021	|10/12/2021||
+|Elliot Åberg Fält	|27/09/2021|	10/12/2021||
+|Camilla Johansson	|13/09/2021	|19/11/2021||
+|Sileshi Haile|	27/09/2021|	10/12/2021||
+|Nina Eriksson	|27/09/2021|	10/12/2021||

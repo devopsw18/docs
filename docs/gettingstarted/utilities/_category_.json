@@ -1,7 +1,8 @@
-
 {
- "position": 4,
- "label": "Utility",
+ "position": 0,
+ "label": "Utilities",
+ "collapsible": true,
+ "collapsed": true,
  "link": {
    "type": "generated-index",
    "title": "Application Utilities"

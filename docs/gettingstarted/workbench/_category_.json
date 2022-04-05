@@ -1,10 +1,10 @@
 {
- "position": 3,
- "label": "Setup Workbench",
+ "position": 0,
+ "label": "Workbench",
  "collapsible": true,
  "collapsed": true,
  "link": {
    "type": "generated-index",
-   "title": "Your Carelyo Workbench"
+   "title": "Workbench"
  }
 }
