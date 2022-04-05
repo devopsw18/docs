@@ -1,6 +1,6 @@
 {
- "position": 2,
- "label": "Cloud Infrastructure",
+ "position": 0,
+ "label": "OCI",
  "collapsible": true,
  "collapsed": true,
  "link": {

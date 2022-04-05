@@ -1,10 +1,10 @@
 {
  "position": 0,
- "label": "Workbench",
+ "label": "k8 cluster",
  "collapsible": true,
  "collapsed": true,
  "link": {
    "type": "generated-index",
-   "title": "Workbench"
+   "title": "Carelyo Services"
  }
 }

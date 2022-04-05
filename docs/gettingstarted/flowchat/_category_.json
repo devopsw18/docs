@@ -1,10 +1,11 @@
+
 {
- "position": 0,
- "label": "Workbench",
+ "position": 4,
+ "label": "Flowchats",
  "collapsible": true,
  "collapsed": true,
  "link": {
    "type": "generated-index",
-   "title": "Workbench"
+   "title": "Flowchats"
  }
 }

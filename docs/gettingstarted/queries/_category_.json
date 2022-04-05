@@ -1,10 +1,11 @@
+
 {
  "position": 0,
- "label": "Workbench",
+ "label": "Queries",
  "collapsible": true,
  "collapsed": true,
  "link": {
    "type": "generated-index",
-   "title": "Workbench"
+   "title": "Application Queries"
  }
 }
