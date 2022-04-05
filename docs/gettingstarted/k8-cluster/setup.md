@@ -42,7 +42,9 @@ sidebar_label: Setup
 >   --type=kubernetes.io/dockerconfigjson
 > ```
 > 2. For example: To Creat a secret for mailuser
->
+> ```bash
+    kubectl create secret generic mail-username --type=string --from-literal=MAIL_USERNAME=donotreply@carelyo.ng
+  ```
 > 
 > View all secrets
 > 
