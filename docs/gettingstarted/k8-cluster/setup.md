@@ -33,48 +33,28 @@ sidebar_label: Setup
 > kubectl -n cert-manager get all
 >```
 
-## Install Haproxy Ingress controller
-> - From Cloud shell get the helm repo for haproxy ingress controller
-
->```bash
-> helm repo add haproxy-ingress https://haproxy-ingress.github.io/charts
->```
-> - Create a file haproxy-ingress-values.yaml and add this content into it.
-
-> ```bash
-> controller:
->  hostNetwork: true
->  ```
-
-> - Install the haproxy ingress controller withh this command
-> ```bash
-> helm install haproxy-ingress haproxy-ingress/haproxy-ingress\
->  --create-namespace --namespace ingress-controller\
->  --version 0.13.6\
->  -f haproxy-ingress-values.yaml
-> ```
-> [Haproxy Ingress Controller] ![https://haproxy-ingress.github.io/docs/getting-started/]
-> 
-## Create Cert Issuers
->
-> View the clusterissuers
-> ```bash
-> kubectl get clusterissuer
-> ```
-
 ## Create Secrets 
 > 1. Create a secret for docker login:
 > 
 > ```bash
-> kubectl -n carelyo-stage create secret swecon-dh \
+>   kubectl -n carelyo-stage create secret swecon-dh \
 >   --from-file=.dockerconfigjson=home/admin/.docker/config.json \
 >   --type=kubernetes.io/dockerconfigjson
 > ```
+> 2. For example: To Creat a secret for mailuser
+>
 > 
 > View all secrets
 > 
 > ```bash
 > kubectl get secrets
+> ```
+
+>## Install ingress Contoller. This command also upgrades the ingress controller as well
+>``` bash
+>  helm upgrade --install ingress-nginx ingress-nginx \
+>  --repo https://kubernetes.github.io/ingress-nginx \
+>  --namespace ingress --create-namespace
 > ```
 
 ## To deploy login deployment and service
@@ -87,11 +67,10 @@ sidebar_label: Setup
 > ```bash
 > kubectl apply -f deploy_login.yaml -n carelyo-stage
 > ```
-
-## To deploy login Ingress
-> In the deployment > k8 > login folder
-> - Create a new file for the login ingress deployment
-> - Apply it into the the carelyo-stage namespace
+> 
 > ```bash
-> kubectl apply -f haproxy-login-ingress.yaml -n carelyo-stage
-> ```
+> kubectl get pods
+> kubectl logs "podaname" --follow
+> kubectl describe svc "servicename"
+> kubectl get ing "ingressResourceName"
+> kubectl get ns
