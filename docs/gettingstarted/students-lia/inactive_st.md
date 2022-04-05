@@ -15,3 +15,4 @@
 |Shahin Sayadi|	04/10/2021|	10/12/2021||
 |Ranjith Gowsa Rajshekar|	04/10/2021|	10/12/2021||
 |Elizar Kozik	|11/10/2021|	18/12/2021||
+| Johan Hansén | 10/01/2022 | 01/04/2022 | .NET|
