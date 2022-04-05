@@ -1,8 +1,8 @@
 ---
-sidebar_position: 4
+sidebar_position: 0
 sidebar_label: Components Library
 ---
-# @carelyo/component
+# Component Library
 
 The component library is a collections of components prevalent components and templates used across the carelyo apps.
 You can install the component library in any carelyo project and use them.

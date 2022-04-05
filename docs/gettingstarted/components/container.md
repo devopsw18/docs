@@ -1,3 +1,9 @@
+---
+sidebar_position: 0
+sidebar_label: Container
+---
+# Container
+
 # Using the container component to write conposable and responsive styling
 
 The container component main responsibility is to wrap our pages and other component for easy manipulation.
