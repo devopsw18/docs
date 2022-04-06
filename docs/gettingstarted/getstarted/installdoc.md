@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 sidebar_label: How to install
 ---
 # Install Documantion On Your Computer
