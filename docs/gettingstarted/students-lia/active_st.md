@@ -1,5 +1,7 @@
 # Active Students
 
+How to register yourself? [Read](https://carelyo.gitlab.io/docs/docs/gettingstarted/getstarted/howToDocument)
+
 | Name      | Start Date | End Date | Position |
 |-----------|----|----|--|
 | Adebayo Ajayi | 10/19/2021 | 01/04/2022 | Senior Lead Frontend |
