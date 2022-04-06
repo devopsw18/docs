@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-sidebar_label: Setup GitLab SSH
+sidebar_label: Setup GitLab SSH Key
 ---
 # Carelyo GitLab
 
@@ -17,10 +17,7 @@ Create a new folder to store all your Swedcon18 Project
 
 ssh-keygen -t ed25519 -C "<comment>"
 ```
-<<<<<<< HEAD
 Replace comment with what you like.
-=======
->>>>>>> feature/testdoc
 
 - Replace comment with what you like.
 
