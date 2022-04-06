@@ -10,13 +10,13 @@ This section describes what you need to do to setup your working environment
 3. [x] Request access to Figma: [Request Figma Access](https://gitlab.com/carelyo/docs/-/issues/new). Enter a title and Assign it to **Micheal Ulasi**
 4. [x] Register yourself as **Active Student** (only **Students or Interns**). [Do It Now](https://carelyo.gitlab.io/docs/docs/gettingstarted/students-lia/active_st)
 
-### Prerequisites
+## Prerequisites
 
 - [x] [Node Js](https://nodejs.org/en/download/) version >= 14 or above (which can be checked by running node -v).
 - [x] [Yarn](https://yarnpkg.com/en/) version >= 1.5 (which can be checked by running yarn -v)
 - [x] [npm](https://www.npmjs.com/) version >= 1.4.29 (which can be checked by running npm -v)
 
-### Installation
+## Install Documentation Portal on your 
 
 ```bash
 git clone git@gitlab.com:carelyo/docs.git
