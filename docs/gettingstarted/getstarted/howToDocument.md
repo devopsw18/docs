@@ -3,7 +3,9 @@ sidebar_position: 1
 sidebar_label: Modify Documentation
 ---
 # Modify Documentation
-Here you will learn how to add or update this documentation.
+
+> You will learn how to modify a documentation page.
+> Create a new page
 
 ## Steps
 
@@ -18,7 +20,15 @@ Here you will learn how to add or update this documentation.
 ## Update Document
 All documents can be found in the **Docs > docs > gettingstarted** folder
 
-> For example to register yourself as **Active Student**. Click **active_st.md** located in docs > gettingstarted > students-lia. Go to the buttom of the page. Then copy the last line and paste after and edit it with your name and start and end date.
+For example to register yourself as **Active Student**. Click **active_st.md** located in docs > gettingstarted > students-lia. Go to the buttom of the page. Then copy the last line and paste after and edit it with your name and start and end date.
 ```
 | FirstName LastName | 24/01/2022 | 14/04/2022 | Role |
 ```
+
+## Create a new documentation page
+All pages are in the **Docs > docs > gettingstarted**
+
+- To create a new page for Business API
+- - Go to the folder **Docs > docs > gettingstarted > apis** 
+- - Dupplicate a file i.e., admin.Api.md. Now rename it to businessApi.md
+- - Now you can modify the file
