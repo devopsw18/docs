@@ -1,10 +1,11 @@
 # Carelyo Documentation
 
-Welcome to CARELYO
-
----
+Welcome to Carelyo!
 
 ## Setup Local Development
+To set up your local environment if you are a all developers and users that have access to this Gitlab:
+
+- [-] Setup Gitlab with SSH key
 
 ### Prerequisites
 
