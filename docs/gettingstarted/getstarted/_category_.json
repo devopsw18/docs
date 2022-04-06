@@ -1,10 +1,10 @@
 {
  "position": 0,
- "label": "GitLab",
+ "label": "Get Started",
  "collapsible": true,
  "collapsed": true,
  "link": {
    "type": "generated-index",
-   "title": "Carelyo Gitlab"
+   "title": "Get Started"
  }
 }
