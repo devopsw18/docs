@@ -66,9 +66,8 @@ Note: Unless specified otherwise, all APIs require a patient token (the system a
 >>- String dateOfBirth
 >>- String gender
 >>- String maritalStatus
->>- String heightFeet_cm
->>- String heightInches_cm
->>- String weight
+>>- String height_cm
+>>- String weight_kg
 >>- String bloodType
 >>- String allergies
 >>- String medicalProblems
