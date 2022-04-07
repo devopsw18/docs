@@ -2,54 +2,23 @@
 
 Welcome to Carelyo! [Go to docs!](https://carelyo.gitlab.io/docs/#/)
 
-## Setup Local Development
-This section describes what you need to do to setup your working environment
+# Issue Board
 
-1. [x] Setup Gitlab with SSH key: Go to docs > Getting Started > Get Started > Setup Gitlab SSH Key
-2. [x] Setup docker compose for running backend api server: [Click here](https://gitlab.com/carelyo/docker-compose) and follow the instructions carefully
-3. [x] Request access to Figma: [Request Figma Access](https://gitlab.com/carelyo/docs/-/issues/new). Enter a title and Assign it to **Micheal Ulasi**
-4. [x] Register yourself as **Active Student** (only **Students or Interns**). [Do It Now](https://carelyo.gitlab.io/docs/docs/gettingstarted/students-lia/active_st)
+![board](../assets/../docs/docs/board.png)
 
+Your first step is to check the [issue board](https://gitlab.com/carelyo/docs/-/boards/3741305) 
 
-## Issue Board
+This is where you will find and track all issues related to updating documentations for the features you are working on. 
 
-![board](board.png)
-Your first step is to check the [issue board](https://gitlab.com/carelyo/docs/-/boards/3741305) this is where you will
-find and track all issues related to updating our documentations if the issue you are working on is not here create a
-new issue in the backlog add the `Docs` label issues that you begin with directly are added on the `In Progress` List.
+If the issue you are working on is not here. Create a
+new issue in the backlog add the `Docs` label to it. Issues that you begin with are directly added on the `In Progress` List.
+
 Issues that you are not working on yet are added on todo if you plan to work on them soon or the backlog when they have
-lower priority. No more than 6 issues can be on `Todo` at any given time so if the `Todo` is full pick a task from there
+lower priority. 
+
+No more than 6 issues can be on `Todo` at any given time so if the `Todo` is full pick a task from there
 first and write your new task to the backlog.
 
-### Linking Your Commits To Issues
-
-You can link to an issue by mentioning it in you commit messages or merge requests with #issue_number `#12`
-You can use keywords such as closes fix resolve to automatically close an issue in from your commits or merge
-requests [read more](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-and relations to other issue with the keyword relate , related to etc Closed Issues are moved to `Closed` on the board.
-
-## Commiting changes
-
-When writing a commit message make sure it
-
-- Contains enough information
-
-- Prefix Your commit message with
-
-  - Added for new documents
-  - Changed for changes in present documents
-  - Removed if you removed a document
-  - fixed when you fix a document eg. typos, style and so on
-
-- Add Appropiate label to your merges and issues
-- Use keywords to automatically close your issue
-
-:::caution Dont do one massive commit with lots of changes we will not merge such commits so do small and detailed
-commits that are related to an issue if no issue exist create one
-:::
-
-- You can commit changes to [Develop Branch](https://gitlab.com/carelyo/docs/-/tree/develop/docs) or create your own "
-  feature" branch then merge to develop
 
 ## Markdown Features
 
