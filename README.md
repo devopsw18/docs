@@ -36,7 +36,6 @@ More*](https://docusaurus.io/docs/next/markdown-features)
 >
 >[**Markdown All in One**](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one).
 
----
 
 :::info We merge the develop branch first to `Staging` at least once a week and create a `tag` when we merge staging
 to `Main` which is at least once a month this is when we create a `release` when necessary.
@@ -44,7 +43,6 @@ to `Main` which is at least once a month this is when we create a `release` when
 
 ## Resources
 
----
 
 - [Docusaurus Documentation](https://docsify.js.org/#/)
 - [Prismjs Documentation](https://prismjs.com/index.html)
