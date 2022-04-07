@@ -1,6 +1,6 @@
 # Carelyo Documentation
 
-Welcome to Carelyo! [Go to docs!](https://carelyo.gitlab.io/docs/#/)
+[Go to documentation page!](https://carelyo.gitlab.io/docs/#/)
 
 # Issue Board
 
