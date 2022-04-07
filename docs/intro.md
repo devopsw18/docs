@@ -1,11 +1,10 @@
 ---
 sidebar_position: 1
-sidebar_label: Introduction
+sidebar_label: Setup Local Development
 ---
 
-# Introduction
+# Setup Local Development
 
-## Setup Local Development
 This section describes what you need to do to setup your working environment
 
 1. [x] Setup Gitlab with SSH key: Go to Documentation > Get Started > Setup Gitlab SSH Key
