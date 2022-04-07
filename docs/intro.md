@@ -3,6 +3,8 @@ sidebar_position: 1
 sidebar_label: Introduction
 ---
 
+# Introduction
+
 ## Setup Local Development
 This section describes what you need to do to setup your working environment
 
