@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-04-08T10:45:05.143Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36" etag="dg3Go65B2KEdHAUNrgxk" version="17.4.0" type="gitlab" pages="10">
+<mxfile host="app.diagrams.net" modified="2022-04-16T08:49:27.377Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36" etag="umFCsKtd463HD_dtFLd8" version="17.4.5" type="gitlab" pages="10">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Pharmacy/Pharmacist">
-    <mxGraphModel dx="1838" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2222" dy="1187" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -193,7 +193,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="l2aBNVSbWUjspB9Aufxc" name="Candis">
-    <mxGraphModel dx="1483" dy="857" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1673" dy="926" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -328,6 +328,9 @@
         <mxCell id="0R-6pB0854nwhh2sItV4-37" value="License check" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry x="475" y="691.25" width="90" height="27.5" as="geometry" />
         </mxCell>
+        <mxCell id="3Ls0iHynn60MYyCrIyM9-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0R-6pB0854nwhh2sItV4-38" target="3Ls0iHynn60MYyCrIyM9-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="0R-6pB0854nwhh2sItV4-38" value="History" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry x="610" y="687.5" width="50" height="35" as="geometry" />
         </mxCell>
@@ -377,6 +380,9 @@
         </mxCell>
         <mxCell id="4bItxZPnThiQxUw3Dwtl-8" value="Sign Policy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="1260" y="810" width="90" height="27.5" as="geometry" />
+        </mxCell>
+        <mxCell id="3Ls0iHynn60MYyCrIyM9-1" value="to email" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="610" y="572.5" width="50" height="35" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
