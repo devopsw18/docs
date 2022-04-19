@@ -43,3 +43,5 @@ How to register yourself? [Read](https://carelyo.gitlab.io/docs/docs/gettingstar
 | Onu Keles | 10/01/2022 | 01/04/2022 ||
 | Fadi Abdallah | 10/01/2022 | 01/04/2022 | .NET|
 | Aydin Aslan | 24/01/2022 | 14/04/2022 ||
+| Robin Rytkönen | 19/04/2022 | 27/05/2022 ||
+| Matilda Schuler | 19/04/2022 | 27/05/2022 ||
