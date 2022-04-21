@@ -213,6 +213,10 @@ istioctl tag remove default
 ```bash
 kubectl label namespace default istio-injection-
 ```
+if you have istio installed on the production namespace
+```bash
+kubectl label namespace prod istio-injection-
+```
 ```bash
 kubectl delete namespace istio-system
 ```
