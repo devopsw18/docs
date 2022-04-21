@@ -4,15 +4,14 @@ sidebar_label: Setup
 ---
 # Carelyo k8 cluster
 
-## Setup for k8 on your local machine 
-Oracle Cloud infrastructure (OCI) is the Public Cloud
+## Install OCI CLI
+Oracle Cloud infrastructure (OCI) Public Cloud.
 This setup requires a linux server. You can use Cloud Shell which is pretty straightforward.
+Get the latest OCI CLI version [OCI-CLI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm#:~:text=Linux%20and%20Unix,Note).
+This takes you to **Linux and Unix** where you just follow the guide.
 
-### Install OCI CLI
-Get the latest OCI CLI version [oci-cli](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm#:~:text=Linux%20and%20Unix,Note)
+During the installation you will go through the steps described next.
 
->This takses you to **Linux and Unix** and just follow the guide
->
 >Hit enter when you see this
 >
 > ```bash
@@ -36,23 +35,33 @@ Get the latest OCI CLI version [oci-cli](https://docs.oracle.com/en-us/iaas/Cont
 > 
 > ===> Enter a path to an rc file to update (file will be created if it does not exist) (leave blank to use '/home/ubuntu/.bashrc'):
 
-### Verify OCI-CLI is installed
-
-> To verify that oci was installed type
+## Verify OCI-CLI is installed
+To verify that oci was installed type
 >
+> ```bash
 > oci --versio
-> 
 > ```
-> 1. Create a directory to contain the kubeconfig file.
+> 
+
+## Create a directory to contain the kubeconfig file.
 > 
 > ```bash
 > mkdir -p $HOME/.kube
 > ```
-> 2. To access the kubeconfig for your cluster via the VCN-Native public endpoint, copy the following command:
-> 
-> ```bash
-> oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.eu-frankfurt-1.aaaaaaaa2gq2cpd27cclfcyszr2dwlo77ezgob4txjeaaqqbzcej7mdomroa --file $HOME/.kube/config --region eu-frankfurt-1 --token-version 2.0.0  --kube-endpoint PUBLIC_ENDPOINT
-ERROR: Could not find config file at /home/ubuntu/.oci/config
+
+## To access the kubeconfig for your cluster
+1. Login to OCI 
+2. In the search type **OKE**
+3. You should see **Service** 
+4. Click **Kubernetes Clusters (OKE)**
+5. Click the cluster you want to connect to for exmple **ActionClos**
+6. Scroll down till you see **Resources** to the left of the sidebar
+7. Click **Quick Start**
+8. Click **Access cluter**
+9. Select **Local Access**
+10. Go the section which states **To access the kubeconfig for your cluster via the VCN-Native public endpoint, copy the following command:** and copy the code and past it to your terminal. Follow the below steps:
+
+> ERROR: Could not find config file at /home/ubuntu/.oci/config
 > Do you want to create a new config file? [Y/n]: y
 > Do you want to create your config file by logging in through a browser? [Y/n]: n
 >    This command provides a walkthrough of creating a valid CLI config file.
@@ -71,15 +80,16 @@ ERROR: Could not find config file at /home/ubuntu/.oci/config
 >    General config documentation:
 >
 >        https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm
->
+
+
 > Hit enter here
 > Enter a location for your config [/home/ubuntu/.oci/config]: 
 > 
-> Login into your OCI and click your profile icon > User setting
+> 1. Login into your OCI and click your profile icon > User setting
 > copy your OCID and paste it here.
-> Enter a user OCID:
-> Enter a tenancy OCID:
-> Enter a region by index or name(e.g.
+> 2. Enter a user OCID:
+> 3. Enter a tenancy OCID:
+> 4. Enter a region by index or name(e.g.
 > 1: af-johannesburg-1, 2: ap-chiyoda-1, 3: ap-chuncheon-1, 4: ap-dcc-canberra-1, 5: ap-hyderabad-1,
 > 6: ap-ibaraki-1, 7: ap-melbourne-1, 8: ap-mumbai-1, 9: ap-osaka-1, 10: ap-seoul-1,
 > 11: ap-singapore-1, 12: ap-sydney-1, 13: ap-tokyo-1, 14: ca-montreal-1, 15: ca-toronto-1,
@@ -90,36 +100,31 @@ ERROR: Could not find config file at /home/ubuntu/.oci/config
 > 36: us-gov-chicago-1, 37: us-gov-phoenix-1, 38: us-langley-1, 39: us-luke-1, 40: us-phoenix-1,
 > 41: us-sanjose-1): 17
 > 
-> Do you want to generate a new API Signing RSA key pair? (If you decline you will be asked to supply the path to an existing key.) [Y/n]: Y
-> 
-> click enter here
-> Enter a directory for your keys to be created [/home/ubuntu/.oci]:
-> Enter a name for your key [oci_api_key]: 
-> Public key written to: /home/ubuntu/.oci/oci_api_key_public.pem
-> Enter a passphrase for your private key (empty for no passphrase): 
-> Private key written to: /home/ubuntu/.oci/oci_api_key.pem
-> Fingerprint: 79:f9:43:ad:fc:8b:b4:d1:2a:6e:8b:03:53:2a:c5:95
-> Config written to /home/ubuntu/.oci/config
+> 5. Do you want to generate a new API Signing RSA key pair? (If you decline you will be asked to supply the path to an existing key.) [Y/n]: Y
+>
+> 6. Click enter here:
+>>Enter a directory for your keys to be created [/home/ubuntu/.oci]:
+>> Enter a name for your key [oci_api_key]: 
+>> Public key written to: /home/ubuntu/.oci/oci_api_key_public.pem
+>> Enter a passphrase for your private key (empty for no passphrase): 
+>> Private key written to: /home/ubuntu/.oci/oci_api_key.pem
+>> Fingerprint: 79:f9:43:ad:fc:8b:b4:d1:2a:6e:8b:03:53:2a:c5:95
+>> Config written to /home/ubuntu/.oci/config
 >
 >
->    If you haven't already uploaded your API Signing public key through the
+> 7. If you haven't already uploaded your API Signing public key through the
 >    console, follow the instructions on the page linked below in the section
 >    'How to upload the public key':
 >
 >        https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#How2
 >
 >
-> Successfully created config file with your new CLI user profile
+> 8. Successfully created config file with your new CLI user profile
 > Once your public key is uploaded in the console, you can re-run your command to use your new config file and user profile
 
-
-> You need to install [kubctl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
->
-
-
->
->
-> 3. To set your KUBECONFIG environment variable to the file for this cluster, use:
+## Install kubectl
+To install [kubctl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).
+To set your KUBECONFIG environment variable to the file for this cluster, use:
 > 
 > ```bash
 >  export KUBECONFIG=$HOME/.kube/config
@@ -127,24 +132,33 @@ ERROR: Could not find config file at /home/ubuntu/.oci/config
 >
 >
 
-# Setup a k8 cluster
+## Install ISTIO 
+1. Go to [Istio download](https://istio.io/latest/docs/setup/getting-started/#download). It's important to check the link for latest version.
+2. Go to the Istio release page to download the installation file for your OS, or download and extract the latest release automatically (Linux or macOS):
+   ```bash 
+   curl -L https://istio.io/downloadIstio | sh -
+   ```
+3. Add the istioctl client to your path (Linux or macOS):
+   ```bash 
+   export PATH="$PATH:/home/admin01/istio-1.13.3/bin" 
+   ```
+4. Move to the Istio package directory. For example, if the package is istio-1.13.3:
+   ```bash 
+   cd istio-1.13.3 
+   ```
+5. Begin the Istio pre-installation check by running:
+   ```bash 
+   istioctl x precheck
+   ```
+6. Add a namespace label to instruct Istio to automatically inject Envoy sidecar proxies when you deploy your application later:
+   ```bash
+   kubectl label namespace default istio-injection=enabled
+   ```
+7. 
 
-## Login to OCI
-> - Login to OCI and in the search type OKE
-> - Click create cluster from OCI Console 
-> - Give the cluster a name carelyo-cluster
-> - Remember to add ssh key
-> - Leave all default and click next and then create.
-> - Done!
 
-## Connect to Cluster Cloud shell
-> - Search oke 
-> - Click the cluster carelyo-cluster
-> - Scroll down and at the left click Quick Start
-> - Click Access Cluster
-> - - Click Launch Cloud Shell or Local Access (for Local Access you must have doing the first step)
-> - - To access the kubeconfig for your cluster via the VCN-Native public endpoint, copy the following command:
-> - -  Close.
+
+
 
 ## Create a certificate manager for the cluster
 > ```bash
