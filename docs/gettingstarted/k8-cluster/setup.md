@@ -155,6 +155,34 @@ To set your KUBECONFIG environment variable to the file for this cluster, use:
    kubectl label namespace default istio-injection=enabled
    ```
 
+## ISTIO Useful Commands
+1. inspecting the deployments
+  ```bash
+  kubectl -n istio-system get deploy
+  ```
+2. You can inspect the installed-state CR, to see what is installed in the cluster, as well as all custom settings.
+  ```bash
+  kubectl -n istio-system get IstioOperator installed-state -o yaml > installed-state.yaml
+  ```
+3. Display the names of Istio configuration profiles
+  ```bash
+  istioctl profile list
+  ```
+4. View the configuration settings of a *default* profile
+   ```bash
+   istioctl profile dump default
+   ```
+5. To view a subset of the entire configuration, you can use the --config-path flag, which selects only the portion of the configuration under the given path.
+   ```bash
+   istioctl profile dump --config-path components.pilot default
+   ```
+6. The profile diff sub-command can be used to show the differences between profiles, which is useful for checking the effects of customizations before applying changes to a cluster.
+   ```bash
+   istioctl profile diff default demo
+   ```
+7. 
+ 
+
 
 
 
