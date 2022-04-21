@@ -152,8 +152,20 @@ To set your KUBECONFIG environment variable to the file for this cluster, use:
    ```
 6. Add a namespace label to instruct Istio to automatically inject Envoy sidecar proxies when you deploy your application later:
    ```bash
-   kubectl label namespace default istio-injection=enabled
+   kubectl label namespace prod istio-injection=enabled
    ```
+7. Install Kiali and the other addons and wait for them to be deployed
+   ```bash
+   kubectl apply -f samples/addons
+   ```
+   ```bash
+   kubectl rollout status deployment/kiali -n istio-system
+   ```
+8. Access the Kiali dashboard.
+   ```bash
+   istioctl dashboard kiali
+   ```
+9.  
 
 ## ISTIO Useful Commands
 1. inspecting the deployments
@@ -184,8 +196,26 @@ To set your KUBECONFIG environment variable to the file for this cluster, use:
    ```bash
    kubectl get svc istio-ingressgateway -n istio-system
    ```
-8. 
- 
+
+## Uninstall Istio
+```bash
+istioctl x uninstall --purge
+```
+```bash
+kubectl delete -f samples/addons
+```
+```bash
+istioctl manifest generate --set profile=default | kubectl delete --ignore-not-found=true -f -
+```
+```bash
+istioctl tag remove default
+```
+```bash
+kubectl label namespace default istio-injection-
+```
+```bash
+kubectl delete namespace istio-system
+```
 
 
 
