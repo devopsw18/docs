@@ -180,7 +180,11 @@ To set your KUBECONFIG environment variable to the file for this cluster, use:
    ```bash
    istioctl profile diff default demo
    ```
-7. 
+7. Execute the following command to determine if your Kubernetes cluster is running in an environment that supports external load balancers:
+   ```bash
+   kubectl get svc istio-ingressgateway -n istio-system
+   ```
+8. 
  
 
 
