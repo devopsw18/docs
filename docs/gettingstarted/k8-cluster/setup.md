@@ -4,11 +4,14 @@ sidebar_label: Setup
 ---
 # Carelyo k8 cluster
 
-## Setup your local machine to connect with OKE CLuster running on OCI (Oracle Cloud Infrastructure Console) for Linux [See here for Windows/Mac](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm)
+## Setup for k8 on your local machine 
+Oracle Cloud infrastructure (OCI) is the Public Cloud
+This setup requires a linux server. You can use Cloud Shell which is pretty straightforward.
 
-> ```bash
-> bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)"
-> ```
+### Install OCI CLI
+Get the latest OCI CLI version [oci-cli](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm#:~:text=Linux%20and%20Unix,Note)
+
+>This takses you to **Linux and Unix** and just follow the guide
 >
 >Hit enter when you see this
 >
@@ -32,9 +35,11 @@ sidebar_label: Setup
 > Hit Enter
 > 
 > ===> Enter a path to an rc file to update (file will be created if it does not exist) (leave blank to use '/home/ubuntu/.bashrc'):
->
+
+### Verify OCI-CLI is installed
+
 > To verify that oci was installed type
-> 
+>
 > oci --versio
 > 
 > ```
