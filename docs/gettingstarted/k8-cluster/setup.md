@@ -154,7 +154,6 @@ To set your KUBECONFIG environment variable to the file for this cluster, use:
    ```bash
    kubectl label namespace default istio-injection=enabled
    ```
-7. 
 
 
 
