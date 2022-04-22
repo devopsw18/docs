@@ -235,8 +235,7 @@ To set your KUBECONFIG environment variable to the file for this cluster, use:
     ```bash
     istioctl proxy-status
     ```
-10. 
-
+10. [istioctl auto-completion](https://istio.io/latest/docs/ops/diagnostic-tools/istioctl/#istioctl-auto-completion)
 ## Uninstall Istio
 ```bash
 istioctl x uninstall --purge
