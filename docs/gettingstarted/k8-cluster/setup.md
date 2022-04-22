@@ -247,7 +247,9 @@ kubectl label namespace prod istio-injection-
 ```bash
 kubectl delete namespace istio-system
 ```
-
+```bash
+istioctl proxy-config route istio-ingressgateway-b7ffbd9c6-z79zt -n istio-system -o json
+```
 
 
 
