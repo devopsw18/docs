@@ -161,7 +161,7 @@ To set your KUBECONFIG environment variable to the file for this cluster, use:
 
 6. Add a namespace label to instruct Istio to automatically inject Envoy sidecar proxies when you deploy your application later:
 >   ```bash
->   kubectl label namespace prod istio-injection=enabled
+>   kubectl label namespace frontend istio-injection=enabled
 >   ```
 >   or 
 >   ```bash
@@ -265,12 +265,16 @@ istioctl proxy-config route istio-ingressgateway-b7ffbd9c6-z79zt -n istio-system
 >```
 
 ## Create Secrets 
-> 1. Create a secret for docker login:
-> 
+> 1. Make sure you are logined in to docker login:
+> 2. Make sure the namespace frontend exist else create it 
 > ```bash
->   kubectl -n carelyo-stage create secret swecon-dh \
->   --from-file=.dockerconfigjson=home/admin/.docker/config.json \
->   --type=kubernetes.io/dockerconfigjson
+> kubectl create namespace frontend
+> ```
+> 3. Create the secret
+> ```bash
+   kubectl -n frontend create secret generic swecon-dh \
+   --from-file=.dockerconfigjson=/home/admin01/.docker/config.json \
+   --type=kubernetes.io/dockerconfigjson
 > ```
 > 2. For example: To Creat a secret for mailuser
 > ```bash
