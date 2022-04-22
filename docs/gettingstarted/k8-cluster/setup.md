@@ -159,7 +159,11 @@ To set your KUBECONFIG environment variable to the file for this cluster, use:
 >   istioctl install
 >   ```
 
-6. Add a namespace label to instruct Istio to automatically inject Envoy sidecar proxies when you deploy your application later:
+6. Install deploy the Istio operator:
+   ```bash
+   istioctl operator init
+   ```
+7. Add a namespace label to instruct Istio to automatically inject Envoy sidecar proxies when you deploy your application later:
 >   ```bash
 >   kubectl label namespace frontend istio-injection=enabled
 >   ```
@@ -168,7 +172,11 @@ To set your KUBECONFIG environment variable to the file for this cluster, use:
 >   kubectl label namespace default istio-injection=enabled
 >   ```
 
-7. To enable access logs:
+7. Pass one or more namespaces to watch using the --watchedNamespaces flag: [Operato](https://istio.io/latest/docs/setup/install/operator/)
+   ```bash
+   istioctl operator init --watchedNamespaces=istio-namespace1,istio-namespace2
+   ```
+8. To enable access logs:
 >   ```bash
 >   # my-config.yaml
 >    apiVersion: install.istio.io/v1alpha1
@@ -223,6 +231,11 @@ To set your KUBECONFIG environment variable to the file for this cluster, use:
    ```bash
    kubectl get svc istio-ingressgateway -n istio-system
    ```
+9. Get overview of the mesh
+    ```bash
+    istioctl proxy-status
+    ```
+10. 
 
 ## Uninstall Istio
 ```bash
