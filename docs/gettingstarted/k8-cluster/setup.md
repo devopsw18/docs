@@ -134,38 +134,62 @@ To set your KUBECONFIG environment variable to the file for this cluster, use:
 
 ## Install ISTIO 
 1. Go to [Istio download](https://istio.io/latest/docs/setup/getting-started/#download). It's important to check the link for latest version.
+
 2. Go to the Istio release page to download the installation file for your OS, or download and extract the latest release automatically (Linux or macOS):
-   ```bash 
-   curl -L https://istio.io/downloadIstio | sh -
-   ```
+>  ```bash 
+>   curl -L https://istio.io/downloadIstio | sh -
+>   ```
+
 3. Add the istioctl client to your path (Linux or macOS):
-   ```bash 
-   export PATH="$PATH:/home/admin01/istio-1.13.3/bin" 
-   ```
-4. Move to the Istio package directory. For example, if the package is istio-1.13.3:
-   ```bash 
-   cd istio-1.13.3 
-   ```
-5. Begin the Istio pre-installation check by running:
-   ```bash 
-   istioctl x precheck
-   ```
+>   ```bash 
+>   export PATH="$PATH:/home/admin01/istio-1.13.3/bin" 
+>   ```
+>   or mv the istiocl to /usr/local/bin/
+>   ```bash 
+>   cd istio-1.13.3
+>   sudo cp bin/istiocli /usr/local/bin/istiocli
+>   ```
+4. Begin the Istio pre-installation check by running:
+>   ```bash 
+>   istioctl x precheck
+>   ```
+
+5. The simplest option is to install the default Istio configuration >profile using the following command:
+>   ```bash
+>   istioctl install
+>   ```
+
 6. Add a namespace label to instruct Istio to automatically inject Envoy sidecar proxies when you deploy your application later:
-   ```bash
-   kubectl label namespace prod istio-injection=enabled
-   ```
-7. Install Kiali and the other addons and wait for them to be deployed
-   ```bash
-   kubectl apply -f samples/addons
-   ```
-   ```bash
-   kubectl rollout status deployment/kiali -n istio-system
-   ```
-8. Access the Kiali dashboard.
-   ```bash
-   istioctl dashboard kiali
-   ```
-9.  
+>   ```bash
+>   kubectl label namespace prod istio-injection=enabled
+>   ```
+>   or 
+>   ```bash
+>   kubectl label namespace default istio-injection=enabled
+>   ```
+
+7. To enable access logs:
+>   ```bash
+>   # my-config.yaml
+>    apiVersion: install.istio.io/v1alpha1
+>    kind: IstioOperator
+>    spec:
+>      meshConfig:
+>        accessLogFile: /dev/stdout
+>   ```
+
+8. Install Kiali and the other addons and wait for them to be deployed.
+
+>   ```bash
+>   kubectl apply -f samples/addons
+>   ```
+>   ```bash
+>   kubectl rollout status deployment/kiali -n istio-system
+>   ```
+9.  Access the Kiali dashboard.
+> ```bash
+>  istioctl dashboard kiali
+>   ```
 
 ## ISTIO Useful Commands
 1. inspecting the deployments
