@@ -67,7 +67,7 @@ kubectl -n database create secret generic swecon-dh \
 --type=kubernetes.io/dockerconfigjson
 
 # deploy app secrets
-kubectl apply -f deployment/istio-app/secret/
+kubectl apply -f deployment/istio-app/secrets/
 
 # deploy apps
 kubectl apply -f deployment/istio-app/login/accesslog.yaml
