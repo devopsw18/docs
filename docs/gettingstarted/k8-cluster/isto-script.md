@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-sidebar_label: Istio Install Script
+sidebar_label: Istio-Script
 ---
 # Istio Installation Script
 
