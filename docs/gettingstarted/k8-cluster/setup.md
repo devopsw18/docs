@@ -283,9 +283,10 @@ istioctl proxy-config route istio-ingressgateway-b7ffbd9c6-z79zt -n istio-system
 > kubectl create namespace frontend
 > ```
 > 3. Create the secret
+> NB: replace the '/home/deploy/.docker/config.json' with your own path to the the docker config
 > ```bash
    kubectl -n frontend create secret generic swecon-dh \
-   --from-file=.dockerconfigjson=/home/admin01/.docker/config.json \
+   --from-file=.dockerconfigjson=/home/deploy/.docker/config.json \
    --type=kubernetes.io/dockerconfigjson
 > ```
 > 2. For example: To Creat a secret for mailuser
