@@ -69,10 +69,16 @@ kubectl -n database create secret generic swecon-dh \
 # deploy app secrets
 kubectl apply -f deployment/istio-app/secrets/
 
-# deploy apps
-kubectl apply -f deployment/istio-app/login/accesslog.yaml
+# deploy access log
+istioctl install --set meshConfig.accessLogFile=/dev/stdout
+
+# deploy gateway
 kubectl apply -f deployment/istio-app/login/gateway.yaml
+
+# deploy virtualservices
 kubectl apply -f deployment/istio-app/login/virtualservice.yaml
+
+# deploy app
 kubectl apply -f deployment/istio-app/login/database.yaml
 kubectl apply -f deployment/istio-app/login/login.yaml
 kubectl apply -f deployment/istio-app/login/registration-svr.yaml
