@@ -267,14 +267,39 @@ istioctl proxy-config route istio-ingressgateway-b7ffbd9c6-z79zt -n istio-system
 
 
 ## Create a certificate manager for the cluster
-> ```bash
-> kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.7.1/cert-manager.yaml
-> ```
+1. Add the Jetstack Helm repository
+ ```bash
+ helm repo add jetstack https://charts.jetstack.io
+ ```
+2. Update your local Helm chart repository cache:
+ ```bash
+ helm repo update
+ ```
+3.  install CRDs as part of the Helm release
+ ```bash
+helm install \
+  cert-manager jetstack/cert-manager \
+  --namespace cert-manager \
+  --create-namespace \
+  --version v1.8.0 \
+  --set installCRDs=true \
+  > cert-manager.custom.yaml
+ ```
+## Verify that the certificate is installed
 > 
 > To see the Cert-manager
 >```bash
 > kubectl -n cert-manager get all
 >```
+
+## Uninstall cert-manager
+```bash
+helm --namespace cert-manager delete cert-manager
+```
+2. Delete the namespace for the cert-manager
+```bash
+kubectl delete namespace cert-manager
+```
 
 ## Create Secrets 
 > 1. Make sure you are logined in to docker login:
@@ -290,9 +315,9 @@ istioctl proxy-config route istio-ingressgateway-b7ffbd9c6-z79zt -n istio-system
    --type=kubernetes.io/dockerconfigjson
 > ```
 > 2. For example: To Creat a secret for mailuser
-> ```bash
+```bash
     kubectl create secret generic mail-username --type=string --from-literal=MAIL_USERNAME=donotreply@carelyo.ng
-  ```
+```
 > 
 > View all secrets
 > 
