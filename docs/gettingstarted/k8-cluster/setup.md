@@ -260,11 +260,8 @@ kubectl label namespace prod istio-injection-
 kubectl delete namespace istio-system
 ```
 ```bash
-istioctl proxy-config route istio-ingressgateway-b7ffbd9c6-z79zt -n istio-system -o json
+istioctl proxy-config route istio-ingressgateway-b7ffbd9c6-5ghpj -n istio-system -o json
 ```
-
-
-
 
 ## Create a certificate manager for the cluster
 1. Add the Jetstack Helm repository
@@ -310,7 +307,7 @@ kubectl delete namespace cert-manager
 > 3. Create the secret
 > NB: replace the '/home/deploy/.docker/config.json' with your own path to the the docker config
 > ```bash
-   kubectl -n frontend create secret generic swecon-dh \
+   kubectl -n backend create secret generic swecon-dh \
    --from-file=.dockerconfigjson=/home/deploy/.docker/config.json \
    --type=kubernetes.io/dockerconfigjson
 > ```
