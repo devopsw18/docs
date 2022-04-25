@@ -24,6 +24,10 @@ istioctl x precheck
 # insall istio
 istioctl install
 
+# when you see Proceed? (y/N) 
+y
+
+
 istioctl operator init --watchedNamespaces=istio-system,default,frontend,backend,database
 
 # inject envoy
