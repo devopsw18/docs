@@ -45,3 +45,4 @@ How to register yourself? [Read](https://carelyo.gitlab.io/docs/docs/gettingstar
 | Aydin Aslan | 24/01/2022 | 14/04/2022 ||
 | Robin Rytkönen | 19/04/2022 | 27/05/2022 ||
 | Matilda Schuler | 19/04/2022 | 27/05/2022 ||
+| Vikash Kosaraju | 25/04/2022 | 27/05/2022 ||
