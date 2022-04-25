@@ -85,9 +85,15 @@ kubectl apply -f deployment/istio-app/login/gateway.yaml
 # deploy virtualservices
 kubectl apply -f deployment/istio-app/login/virtualservice.yaml
 
-# deploy app
+# deploy authentication
+kubectl apply -f deployment/istio-app/login/
+
+# deploy athourization
+kubectl apply -f deployment/istio-app/login/authorization.yaml
+
+#deploy app
 kubectl apply -f deployment/istio-app/login/database.yaml
 kubectl apply -f deployment/istio-app/login/login.yaml
 kubectl apply -f deployment/istio-app/login/registration-svr.yaml
-kubectl apply -f deployment/istio-app/login/authorization.yaml
+
 ```
