@@ -76,6 +76,9 @@ kubectl apply -f deployment/istio-app/secrets/
 # deploy access log
 istioctl install --set meshConfig.accessLogFile=/dev/stdout
 
+#Proceed? (y/N) 
+y
+
 # deploy gateway
 kubectl apply -f deployment/istio-app/login/gateway.yaml
 
