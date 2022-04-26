@@ -51,4 +51,4 @@ to `Main` which is at least once a month this is when we create a `release` when
 
 ---
 
-[Go to documentation page!](https://carelyo.gitlab.io/docs/#/)
+[Go to the documentation page!](https://carelyo.gitlab.io/docs/#/)
