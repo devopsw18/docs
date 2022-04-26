@@ -10,10 +10,11 @@ test:
    - yarn install
  script:
   - yarn build
- except:
-  - main
  only:
    - main
+ except:
+  changes: 
+    - README.md
 
 pages:
  stage: deploy
@@ -27,3 +28,6 @@ pages:
    - public
  only:
    - main
+ except:
+  changes: 
+    - README.md
