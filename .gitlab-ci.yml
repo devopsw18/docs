@@ -13,7 +13,8 @@ test:
  only:
    - main
  except:
-  changes: 
+  changes:
+    # Add more files here that doesn't need the docs pipeline to run so we can avoid wasting CI minutes
     - README.md
 
 pages:
@@ -29,5 +30,6 @@ pages:
  only:
    - main
  except:
-  changes: 
+  changes:
+    # Add more files here that doesn't need the docs pipeline to run so we can avoid wasting CI minutes
     - README.md
