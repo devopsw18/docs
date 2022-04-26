@@ -6,20 +6,24 @@ stages:
 
 test:
  stage: test
+ before_script:
+   - yarn install
  script:
-  - yarn install
   - yarn build
  except:
   - main
+ only:
+   - main
 
 pages:
  stage: deploy
+ before_script:
+   - yarn install
  script:
-  - yarn install
   - yarn build
   - mv ./build ./public
  artifacts:
   paths:
    - public
- rules:
-   - if: $CI_COMMIT_BRANCH == "main"
+ only:
+   - main
