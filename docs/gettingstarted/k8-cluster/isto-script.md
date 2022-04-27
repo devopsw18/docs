@@ -140,3 +140,25 @@ kubectl apply -f deployment/istio-app/login/database.yaml
 kubectl apply -f deployment/istio-app/login/login.yaml
 kubectl apply -f deployment/istio-app/login/registration-svr.yaml
 ```
+# Point dns for the app-carelyo.in. First to get the loadbalancer ip, copy run.
+```bash
+kubectl apply -f deployment/istio-app/login/
+```
+# The result show the istio-ingressgateway. Copy the External IP 130.162.53.180
+```bash
+NAME                        TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)                                      AGE
+cm-acme-http-solver-cgx6q   NodePort       10.96.197.69    <none>           8089:31892/TCP                               12m
+grafana                     ClusterIP      10.96.119.53    <none>           3000/TCP                                     16m
+istio-ingressgateway        LoadBalancer   10.96.65.24     130.162.53.180   15021:31203/TCP,80:32045/TCP,443:30191/TCP   25m
+istiod                      ClusterIP      10.96.214.12    <none>           15010/TCP,15012/TCP,443/TCP,15014/TCP        26m
+jaeger-collector            ClusterIP      10.96.110.154   <none>           14268/TCP,14250/TCP,9411/TCP                 16m
+kiali                       ClusterIP      10.96.108.115   <none>           20001/TCP,9090/TCP                           16m
+```
+
+# In OCI type zone in the search
+1. Select the develop compartment and you will see carelyo.in
+2. Click carelyo.in
+3. Scroll down and to the left you should see Resources
+4. Click Records
+5. Click Add Record if the record doesn't exist. If it does edit it. Add an A Record which maps to this 130.162.53.180. 
+6. Finally, click Publish
