@@ -17,40 +17,44 @@ kubectl create namespace database
 # Get istio
 curl -L https://istio.io/downloadIstio | sh -
 ```
-# Export the path
+## Export the path
 ```bash
 export PATH="$PATH:/home/admin01/istio-1.13.3/bin"
 ```
-# or 
+ or 
+
 ```bash
 cd istio-1.13.3
 sudo cp bin/istiocli /usr/local/bin/istiocli
 ```
 
+
+## validate
 ```bash
-# validate
 istioctl x precheck
 ```
 
+## insall istio
 ```bash
-# insall istio
 istioctl install
 ```
-# when you see Proceed? (y/N)
+
+## when you see Proceed? (y/N)
 ```bash 
 y
 ```
-# Install istio operator which automate updates etc. of istio 
+
+## Install istio operator which automate updates etc. of istio 
 ```bash
 istioctl operator init --watchedNamespaces=istio-system,default,frontend,backend,database
 ```
 
-# deploy access log
+## deploy access log
 ```bash
 istioctl install --set meshConfig.accessLogFile=/dev/stdout
 ```
 
-# inject envoy
+## inject envoy
 ```bash
 kubectl label namespace default istio-injection=enabled
 kubectl label namespace frontend istio-injection=enabled
@@ -59,17 +63,17 @@ kubectl label namespace database istio-injection=enabled
 kubectl apply -f istio-1.13.3/samples/addons
 ```
 
-# deploy cert-manager
+## deploy cert-manager
 ```bash
 helm repo add jetstack https://charts.jetstack.io
 ```
 
-# update
+## update
 ```bash
 helm repo update
 ```
 
-# deploy cert-manager
+## deploy cert-manager
 ```bash
 helm install \
  cert-manager jetstack/cert-manager \
@@ -79,17 +83,17 @@ helm install \
  --set installCRDs=true
 ```
 
-# deploy letsencrypt app.carelyo.in
+## deploy letsencrypt app.carelyo.in
 ```bash
 kubectl apply -f deployment/istio-app/cert-manager/app.carelyo.in.yaml
 ```
 
-# staging issuer
+## staging issuer
 ```bash
 kubectl apply -f deployment/istio-app/cert-manager/staging-cluster.yaml
 ```
 
-# Secret in namespaces
+## Secret in namespaces
 ```bash
 kubectl -n frontend create secret generic swecon-dh \
 --from-file=.dockerconfigjson=/home/deploy/.docker/config.json \
@@ -104,47 +108,47 @@ kubectl -n database create secret generic swecon-dh \
 --type=kubernetes.io/dockerconfigjson
 ```
 
-# deploy app secrets
+## deploy app secrets
 ```bash
 kubectl apply -f deployment/istio-app/secrets/
 ```
 
-#Proceed? (y/N) 
+## Proceed? (y/N) 
 ```bash
 y
 ```
 
-# deploy gateway
+## deploy gateway
 ```bash
 kubectl apply -f deployment/istio-app/login/gateway.yaml
 ```
 
-# deploy virtualservices
+## deploy virtualservices
 ```bash
 kubectl apply -f deployment/istio-app/login/virtualservice.yaml
 ```
 
-# deploy authentication
+## deploy authentication
 ```bash
 kubectl apply -f deployment/istio-app/login/
 ```
 
-# deploy athourization
+## deploy athourization
 ```bash
 kubectl apply -f deployment/istio-app/login/authorization.yaml
 ```
 
-#deploy app
+## deploy app
 ```bash
 kubectl apply -f deployment/istio-app/login/database.yaml
 kubectl apply -f deployment/istio-app/login/login.yaml
 kubectl apply -f deployment/istio-app/login/registration-svr.yaml
 ```
-# Point dns for the app-carelyo.in. First to get the loadbalancer ip, copy run.
+## Point dns for the app-carelyo.in. First to get the loadbalancer ip, copy run.
 ```bash
 kubectl apply -f deployment/istio-app/login/
 ```
-# The result show the istio-ingressgateway. Copy the External IP 130.162.53.180
+## The result show the istio-ingressgateway. Copy the External IP 130.162.53.180
 ```bash
 NAME                        TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)                                      AGE
 cm-acme-http-solver-cgx6q   NodePort       10.96.197.69    <none>           8089:31892/TCP                               12m
@@ -155,10 +159,11 @@ jaeger-collector            ClusterIP      10.96.110.154   <none>           1426
 kiali                       ClusterIP      10.96.108.115   <none>           20001/TCP,9090/TCP                           16m
 ```
 
-# In OCI type zone in the search
+## In OCI type zone in the search
 1. Select the develop compartment and you will see carelyo.in
 2. Click carelyo.in
 3. Scroll down and to the left you should see Resources
 4. Click Records
 5. Click Add Record if the record doesn't exist. If it does edit it. Add an A Record which maps to this 130.162.53.180. 
 6. Finally, click Publish
+
