@@ -46,3 +46,4 @@ How to register yourself? [Read](https://carelyo.gitlab.io/docs/docs/gettingstar
 | Robin Rytkönen | 19/04/2022 | 27/05/2022 ||
 | Matilda Schuler | 19/04/2022 | 27/05/2022 ||
 | Vikash Kosaraju | 25/04/2022 | 27/05/2022 ||
+| Elmira Pakdamangoli | 29/04/2022 | 29/07/2022 ||
