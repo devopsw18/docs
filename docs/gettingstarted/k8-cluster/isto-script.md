@@ -171,3 +171,9 @@ kiali                       ClusterIP      10.96.108.115   <none>           2000
 5. Click Add Record if the record doesn't exist. If it does edit it. Add an A Record which maps to this 130.162.53.180. 
 6. Finally, click Publish
 
+### Chet thet the application is running for example the login 
+```bash
+kubectl exec "$(kubectl get pod -l app=login -o jsonpath='{.items[0].metadata.name}')" -c login -- curl -sS login:80 | grep -o "<title>.*</title>"
+<title>Carelyo</title>
+```
+
