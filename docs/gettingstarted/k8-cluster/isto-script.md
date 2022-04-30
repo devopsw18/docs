@@ -94,6 +94,7 @@ kubectl apply -f deployment/istio-app/cert-manager/staging-cluster.yaml
 ```
 
 ### Secret in namespaces
+Learn how to create kubectl secrets [Managing Secrets](https://kubernetes.io/docs/tasks/configmap-secret/)
 ```bash
 kubectl -n default create secret generic swecon-dh \
 --from-file=.dockerconfigjson=/home/deploy/.docker/config.json \
@@ -115,11 +116,6 @@ kubectl -n database create secret generic swecon-dh \
 ### deploy app secrets
 ```bash
 kubectl apply -f deployment/istio-app/secrets/
-```
-
-### Proceed? (y/N) 
-```bash
-y
 ```
 
 ### deploy gateway
