@@ -48,7 +48,7 @@ y
 
 ### Install istio operator which automate updates etc. of istio 
 ```bash
-istioctl operator init --watchedNamespaces=istio-system,default,frontend,backend,database
+istioctl operator init --watchedNamespaces=istio-system,default,frontend,backend,database,login
 ```
 
 ### Install metric server 
@@ -64,6 +64,7 @@ istioctl install --set meshConfig.accessLogFile=/dev/stdout
 ### inject envoy
 ```bash
 kubectl label namespace default istio-injection=enabled
+kubectl label namespace login istio-injection=enabled
 kubectl label namespace login istio-injection=enabled
 kubectl label namespace frontend istio-injection=enabled
 kubectl label namespace backend istio-injection=enabled
