@@ -8,6 +8,8 @@ sidebar_label: Istio-Script
 
 ```bash
 # deploy namespaces
+kubectl create namespace login
+kubectl create namespace cert-manager
 kubectl create namespace frontend
 kubectl create namespace backend
 kubectl create namespace database
@@ -49,6 +51,11 @@ y
 istioctl operator init --watchedNamespaces=istio-system,default,frontend,backend,database
 ```
 
+### Install metric server 
+```bash
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+```
+
 ### deploy access log
 ```bash
 istioctl install --set meshConfig.accessLogFile=/dev/stdout
@@ -57,6 +64,7 @@ istioctl install --set meshConfig.accessLogFile=/dev/stdout
 ### inject envoy
 ```bash
 kubectl label namespace default istio-injection=enabled
+kubectl label namespace login istio-injection=enabled
 kubectl label namespace frontend istio-injection=enabled
 kubectl label namespace backend istio-injection=enabled
 kubectl label namespace database istio-injection=enabled
@@ -71,6 +79,14 @@ helm repo add jetstack https://charts.jetstack.io
 ### update
 ```bash
 helm repo update
+```
+
+### Read more about Certmanager 
+```bash
+https://cert-manager.io/docs/installation/
+
+This solver can be used when you want to use cert-manager with Oracle Cloud Infrastructure as a DNS provider.
+https://gitlab.com/dn13/cert-manager-webhook-oci
 ```
 
 ### deploy cert-manager
@@ -97,19 +113,23 @@ kubectl apply -f deployment/istio-app/cert-manager/staging-cluster.yaml
 Learn how to create kubectl secrets [Managing Secrets](https://kubernetes.io/docs/tasks/configmap-secret/)
 ```bash
 kubectl -n default create secret generic swecon-dh \
---from-file=.dockerconfigjson=/home/deploy/.docker/config.json \
+--from-file=.dockerconfigjson=/home/login/.docker/config.json \
+--type=kubernetes.io/dockerconfigjson
+
+kubectl -n login create secret generic swecon-dh \
+--from-file=.dockerconfigjson=/home/login/.docker/config.json \
 --type=kubernetes.io/dockerconfigjson
 
 kubectl -n frontend create secret generic swecon-dh \
---from-file=.dockerconfigjson=/home/deploy/.docker/config.json \
+--from-file=.dockerconfigjson=/home/login/.docker/config.json \
 --type=kubernetes.io/dockerconfigjson
 
 kubectl -n backend create secret generic swecon-dh \
---from-file=.dockerconfigjson=/home/deploy/.docker/config.json \
+--from-file=.dockerconfigjson=/home/login/.docker/config.json \
 --type=kubernetes.io/dockerconfigjson
 
 kubectl -n database create secret generic swecon-dh \
---from-file=.dockerconfigjson=/home/deploy/.docker/config.json \
+--from-file=.dockerconfigjson=/home/login/.docker/config.json \
 --type=kubernetes.io/dockerconfigjson
 ```
 
@@ -173,3 +193,7 @@ kubectl exec "$(kubectl get pod -l app=login -o jsonpath='{.items[0].metadata.na
 <title>Carelyo</title>
 ```
 
+### Debuging Tool
+```bash
+istioctl proxy-config route istio-ingressgateway-b7ffbd9c6-5ghpj -n istio-system -o json
+```
