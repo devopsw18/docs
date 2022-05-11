@@ -13,6 +13,7 @@ kubectl create namespace cert-manager
 kubectl create namespace frontend
 kubectl create namespace backend
 kubectl create namespace database
+kubectl create namespace video
 ```
 
 ```bash
@@ -48,7 +49,7 @@ y
 
 ### Install istio operator which automate updates etc. of istio 
 ```bash
-istioctl operator init --watchedNamespaces=istio-system,default,frontend,backend,database,login
+istioctl operator init --watchedNamespaces=istio-system,default,frontend,backend,database,login,video
 ```
 
 ### Install metric server 
@@ -69,6 +70,7 @@ kubectl label namespace login istio-injection=enabled
 kubectl label namespace frontend istio-injection=enabled
 kubectl label namespace backend istio-injection=enabled
 kubectl label namespace database istio-injection=enabled
+kubectl label namespace video istio-injection=enabled
 kubectl apply -f istio-1.13.3/samples/addons
 ```
 
@@ -130,6 +132,10 @@ kubectl -n backend create secret generic swecon-dh \
 --type=kubernetes.io/dockerconfigjson
 
 kubectl -n database create secret generic swecon-dh \
+--from-file=.dockerconfigjson=/home/login/.docker/config.json \
+--type=kubernetes.io/dockerconfigjson
+
+kubectl -n video create secret generic swecon-dh \
 --from-file=.dockerconfigjson=/home/login/.docker/config.json \
 --type=kubernetes.io/dockerconfigjson
 ```
