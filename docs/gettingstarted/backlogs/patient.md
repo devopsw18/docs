@@ -65,6 +65,7 @@ sidebar_label: Patients
 > 2. Add back arrow to dashboard
 > 3. Add Ringing tone for incoming call from doctor
 > 4. Call icon has a bug: It still redirects to booking Comfirmed after consultation is finished.
+> 5. Rating after consultation ends with smilly facces
 
 ## Services
 > Consultations 
@@ -78,6 +79,7 @@ sidebar_label: Patients
 > > Precriptions reference, Lab reference, or follow up
 > 
 > Drug Presciption 
+> > Show QR code and QR number when tapped
 > > Show drug Precriptions upto past six months
 > 
 > Follow up
@@ -92,6 +94,8 @@ sidebar_label: Patients
 > > Request 
 > > > Show new requests
 > > > Remove when result done and result uploaded
+> > > Request a home lab test
+> > > Get price and make Payment
 > 
 > > Result 
 > > > Show new results
@@ -100,6 +104,7 @@ sidebar_label: Patients
 > provider
 > > > Show provider
 > > > Provider detail can be seen such as name and contact details
+> > > Patient can leave provider
 > 
 > Choose Provider
-> > Max. two choices can be selected Hopital and Nutrition clinic or Hospital and Dentist clinic (not Hopital, Hospital or clinic clinic not allowed )
+> > Max. two choices can be selected Hopital and Nutrition clinic or Hospital and Dentist clinic (not Hopital, Hospital or clinic clinic not allowed)
