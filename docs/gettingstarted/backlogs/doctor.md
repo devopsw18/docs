@@ -33,3 +33,4 @@ sidebar_label: Doctor
       2. Add date 
       3. Add time
       4. Where 
+      5. Specialist
