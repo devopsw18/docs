@@ -93,6 +93,7 @@ sidebar_label: Patients
 > Labs
 > > Request 
 > > > Show new requests
+> > > Generate QR code
 > > > Remove when result done and result uploaded
 > > > Request a home lab test
 > > > Get price and make Payment

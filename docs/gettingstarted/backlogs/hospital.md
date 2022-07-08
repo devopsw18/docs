@@ -11,6 +11,7 @@ sidebar_label: Hospital
 > > Can add user i.e. Doctor, Nurse, etc 
 > > Can remove user
 > > Can search 
+> > Delete user
 
 ## Hospital doctor
 > Have same UI as nomarl Carelyo Doctor In addition have Provider Name next to doctor name
