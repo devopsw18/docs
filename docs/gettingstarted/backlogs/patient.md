@@ -11,26 +11,26 @@ sidebar_label: Patients
 > Should start with 
 > 1. Country|Pays|País|Orílẹ̀-èdè|Kasar|Obodo :
 > > Drop Down with list of countries in the world
-> 2. State/Province:
+> 2. State/Province|État/Province|Estado/Província|Ipinle/Agbegbe|Jiha/Lardi|Steeti/ Ógbè:
 > > Drop down based on Country
-> 3. City/Town/Local Govt Area:
+> 3. City/Town/Local Govt Area|Ville/village/gouvernement local|Cidade/Cidade/Área do Governo Local|Ilu/Agbegbe/Agbegbe Govt Agbegbe|Birni/Gari/Karmar Hukumar Mulki|Obodo/Mpaghara Govt:
 > > Drop down based on the state
-> 4. Post code: 
+> 4. Postcode|Code postal|Código postal|koodu ifiweranṣẹ|Koodu ifiweranṣẹ|Koodu nzi ozi: 
 > > This should be optional
-> 5. Address:
-> 6. Languga: 
+> 5. Address|Adresse|Endereço|Adirẹsi|Adireshi|Adreesị:
+> 6. Languga|Langue|Linguagem|Ede|Harshe|Asụsụ: 
 > > Is based on seleted country in Step 1
-> 7. Disabilities: 
+> 7. Disabilities|Invalidité|Incapacidade|Ailera|Nakasa|Nkwarụ: 
 > > Default **None** then multi choice
-> 8. Blood type:
+> 8. Blood type|Type de sang|Tipo sanguíneo|Iru ẹjẹ|Nau'in jini|Ụdị ọbara:
 > > Default **Don't Know**
-> 9. Title
+> 9. Title|Titre|Título|Akọle|Take|Aha
 > > Drop down single choice
-> 10. Firstname:
-> 11. Lastname:
-> 12. Date of Birth
-> 13. Gender: 
-> 14. Marital Status
+> 10. Firstname|Prénom|Primeiro nome|Oruko akole|Sunan rana|Aha mbụ:
+> 11. Lastname|Nom|Sobrenome|Oruko idile|Sunan mahaifa|Aha ikpeazụ:
+> 12. Date of Birth|Date de naissance|Data de nascimento|Ojo ibi|Ranar haifuwa|Ụbọchị ọmụmụ
+> 13. Gender|Le genre|Gênero|Abo|Jinsi|okike: 
+> 14. Marital Status|Marital Status|Ipò Ìgbéyàwó|Matsayin aure|Ọkwa Ndọ
 > 
 
 ## Dashboard 
