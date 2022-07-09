@@ -6,11 +6,19 @@ sidebar_label: Doctor
 1. Entity
    1. Carelyo (Freelance) Doctor
    2. Provider (Provider name) Doctor
-2. At login
+2. Verify doctor when doctor belongst to Entity is Carelyo (Freelance) Doctor
+   1. signup as Freelance doctor 
+   2. Provide references and answer other relevant questions
+   3. Limit access until account is verified
+   4. Verification request should be sent to Carelyo Business Team
+   5. Approve account and send comfirmation to doctor
+   6. Open access after training is completed
+   7. Account must have complete profile with payment details
+3. At login
    1. If doctor exist with same name in in Carelyo & Provider
    2. Ask to select login destination Carelyo | Provider
-3. Show booking request based on Entity
-4. Same workspace for all doctors
+4. Show booking request based on Entity
+5. Same workspace for all doctors
 
 ## Booking request
 1. Rename Journal to Paitent's History 
@@ -34,3 +42,11 @@ sidebar_label: Doctor
       3. Add time
       4. Where 
       5. Specialist
+
+## Doctor Digital workspace
+1. Show booking request
+2. Show calender/taske manager
+3. Show done consultations
+4. Show metrix including earnings
+5. Show personal notes
+6. Chatt with Pharmacist
