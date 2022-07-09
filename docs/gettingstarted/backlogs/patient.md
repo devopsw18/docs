@@ -47,6 +47,12 @@ sidebar_label: Patients
 > > > 1. Request        | Requête               | Solicitar            | Ibere       | Roƙa         |   Arịrịọ
 > > > 2. Result         | Résultat              | Resultado            | Abajade     | Sakamako     |   Nsonaazụ
 > > 6. Provider         | Le fournisseur        | Fornecedor           | Olùpèsè     | Mai bayarwa  | Onye na-enye
+> > 7. Add new Data
+> > > 1. Drop down to select health problem
+> > > 2. Nmae of reading
+> > > 3. Date of reading
+> > > 4. Add time
+> > > 5. Enter reading
 > 4. Choose Provider    | Choisissez le fournisseur | Escolher provedor| Yan Olupese |Zabi Mai Bada | Họrọ Onye na-eweta
 
 ## Consultation | Change it to See a doctor
@@ -109,3 +115,11 @@ sidebar_label: Patients
 > 
 > Choose Provider
 > > Max. two choices can be selected Hopital and Nutrition clinic or Hospital and Dentist clinic (not Hopital, Hospital or clinic clinic not allowed)
+
+## Patient Self-care
+This is for patient with existing health issues that require taking readings
+1. Collect the data 
+2. Serverity level for notification to provider
+   1. Normal => no acction 
+   2. Medium => Give advice 
+   3. Urgent => Notify provider
