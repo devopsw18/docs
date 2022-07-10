@@ -8,52 +8,55 @@ sidebar_label: Patients
 
 ## Complete Profile | Complétez votre profil | Complete seu perfil | Pari rẹ Profaili | Kammala Bayanan martabarka | Mezue profaịlụ gị
  
-> 1. Country|Pays|País|Orílẹ̀-èdè|Kasar|Obodo :
+> 1. Country:
 > > Drop Down with list of countries in the world
-> 2. State/Province|État/Province|Estado/Província|Ipinle/Agbegbe|Jiha/Lardi|Steeti/ Ógbè:
+> 2. State/Province:
 > > Drop down based on Country
-> 3. City/Town/Local Govt Area|Ville/village/gouvernement local|Cidade/Cidade/Área do Governo Local|Ilu/Agbegbe/Agbegbe Govt Agbegbe|Birni/Gari/Karmar Hukumar Mulki|Obodo/Mpaghara Govt:
+> 3. City/Town/Local Govt Area Local:
 > > Drop down based on the state
-> 4. Postcode|Code postal|Código postal|koodu ifiweranṣẹ|Koodu ifiweranṣẹ|Koodu nzi ozi: 
+> 4. Postcode: 
 > > This should be optional
-> 5. Address|Adresse|Endereço|Adirẹsi|Adireshi|Adreesị:
-> 6. Languga|Langue|Linguagem|Ede|Harshe|Asụsụ: 
+> 5. Address:
+> 6. Languga: 
 > > Is based on seleted country in Step 1 multiple choice
-> 7. Disabilities|Invalidité|Incapacidade|Ailera|Nakasa|Nkwarụ: 
+> 7. Disabilities: 
 > > Default **None** then multi choice
-> 8. Blood type|Type de sang|Tipo sanguíneo|Iru ẹjẹ|Nau'in jini|Ụdị ọbara:
+> 8. Blood type:
 > > Default **Don't Know**
-> 9. Title|Titre|Título|Akọle|Take|Aha
+> 9. Title:
 > > Drop down single choice
-> 10. Firstname|Prénom|Primeiro nome|Oruko akole|Sunan rana|Aha mbụ:
-> 11. Lastname|Nom|Sobrenome|Oruko idile|Sunan mahaifa|Aha ikpeazụ:
-> 12. Date of Birth|Date de naissance|Data de nascimento|Ojo ibi|Ranar haifuwa|Ụbọchị ọmụmụ
-> 13. Gender|Le genre|Gênero|Abo|Jinsi|okike: 
-> 14. Marital Status|Marital Status|Ipò Ìgbéyàwó|Matsayin aure|Ọkwa Ndọ
+> 10. Firstname:
+> 11. Lastname:
+> 12. Date of Birth:
+> 13. Gender: 
+> 14. Marital Status:
 > 
 
-## Dashboard | Tableau de bord | Painel | Igbimọ | Panel | Ogwe
-     English            |   French              | Portuguese    |   Yoruba      |   Hausa        | Igbo          
-> 1. See a doctor       |   Voir un docteur     | Ver um médico |   Hụ dọkịta   |   Ga likita    | Hụ dọkịta
-> 2. Messages           |   Poster              | encouraçar    |   Leta        |   wasikunku    | Ozi
-> 3. Services           |   Les services        | Serviços      |   Iṣẹ         |   Barantaka    | Nnyemaka
-> > 1. Consultations    | La consultation       | Consultas            | Ijumọsọrọ   | Shawarwari          | Njuta
-> > 2. Patient's History| Antécédents du patient| Histórico do paciente| Itan alaisa | Tarihin Mara lafiya | Akụkọ onye ọrịa
-> > 3. Drug Precriptions| Médicaments           | Medicamentos         | Awọn oogun  | Magunguna    | Ọgwụ
-> > 4. Follow up        | Suivre l'action       | Seguimento           | Tẹle soke   | Ku biyo baya | Sochie
-> > > 1. Video          | Vidéo                 | Vídeo                | Fídíò       | Bidiyo       | Vidiyo
-> > > 2. In-person      | En personne           | Em pessoa            | Ni eniyan   | Cikin-mutum  | Na-mmadụ
-> > 5. Labs             | Labos                 | Labs                 | Lab igbeyewo| Gwajin gwaji | Ule nyocha
-> > > 1. Request        | Requête               | Solicitar            | Ibere       | Roƙa         |   Arịrịọ
-> > > 2. Result         | Résultat              | Resultado            | Abajade     | Sakamako     |   Nsonaazụ
-> > 6. Provider         | Le fournisseur        | Fornecedor           | Olùpèsè     | Mai bayarwa  | Onye na-enye
-> > 7. Add new Data
+## Dashboard 
+> 1. Choose Provider (don't show this again after the patient has made selection)
+> 2. See a doctor 
+> 3. Messages 
+> 4. Services
+> > 1. Consultations
+> > 2. Patient's History
+> > 3. Drug Precriptions
+> > 4. Follow up
+> > > 1. Video 
+> > > 2. In-person
+> > 5. Labs 
+> > > 1. Request
+> > > 2. Result 
+> > 6. Provider (Show Patient's provider here)
+> 4. Self-care
+> > 1. Show readings
+> > 2. Add new Data
 > > > 1. Drop down to select health problem
 > > > 2. Nmae of reading
 > > > 3. Date of reading
 > > > 4. Add time
 > > > 5. Enter reading
-> 4. Choose Provider    | Choisissez le fournisseur | Escolher provedor| Yan Olupese |Zabi Mai Bada | Họrọ Onye na-eweta
+> > > 6. Save
+
 
 ## Consultation | Change it to See a doctor
 > 1. For Me 
