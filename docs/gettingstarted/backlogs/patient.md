@@ -6,7 +6,7 @@ sidebar_label: Patients
 
 > Patients
 
-## Complete Profile | Complétez votre profil | Complete seu perfil | Pari rẹ Profaili | Kammala Bayanan martabarka | Mezue profaịlụ gị
+## Complete Profile
  
 > 1. Country:
 > > Drop Down with list of countries in the world
