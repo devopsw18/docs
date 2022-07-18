@@ -56,4 +56,11 @@ sidebar_label: Login
 > - Change password
 > - login
 
+# Marcus Larsen Edits
+> - Error messages Popups, Phonenumber remains after user change countrycode, Caribien countrycode fix
+> - Information remains after people push backbutton or coming back from homepage
+> - input checks
+> - backbutton fix
+> - Slice fix..null created error..fixed with '?' on slice
+
 ![forgot password](../../../assets/images/forgotpass.png)
