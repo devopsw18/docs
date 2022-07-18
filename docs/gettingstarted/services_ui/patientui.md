@@ -154,3 +154,6 @@ This includes:
 > - Hospital Selection full
 > - Call in Button
 > - Consultation flow overhaul
+> - Backend: for above mostly hospital selection controller/dto/repo
+> - Backend: changes table for patient added @Lob for allergies, medicalproblems and disabilities
+> - Backend: Added hospital column to patient.. that join hospital table.
