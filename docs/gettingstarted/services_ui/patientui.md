@@ -145,3 +145,15 @@ This includes:
 > - Post Code
 > - Add child
 > - Add Dependent
+
+# Marcus Larsen edits
+> - Complete profile overhaul
+> - Editprofile full
+> - Menu restructering
+> - Lazy 3x loading
+> - Hospital Selection full
+> - Call in Button
+> - Consultation flow overhaul
+> - Backend: for above mostly hospital selection controller/dto/repo/service
+> - Backend: changes table for patient added @Lob for allergies, medicalproblems and disabilities
+> - Backend: Added hospital column to patient.. that join hospital table.
