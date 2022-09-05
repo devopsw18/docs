@@ -1,9 +1,9 @@
 ---
 sidebar_position: 3
-sidebar_label: Doctor UI Api
+sidebar_label: Doctor Blog Api
 ---
 
-# DoctorBlog Api
+# Doctor Blog Api
 
 ---
 ## Doctor creating a blog
