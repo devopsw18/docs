@@ -47,5 +47,6 @@ How to register yourself? [Read](https://carelyo.gitlab.io/docs/docs/gettingstar
 | Matilda Schuler | 19/04/2022 | 27/05/2022 ||
 | Vikash Kosaraju | 25/04/2022 | 27/05/2022 ||
 | Elmira Pakdamangoli | 29/04/2022 | 29/07/2022 ||
-| Björn Milebjörk | 05/09/2022 | 09/12/2022 ||
-| Jesper Smith | 05/09/2022 | 09/12/2022 ||
+| Benjamin Vestberg | 22/08/2022 | 11/11/2022 | Backend |
+| Björn Milebjörk | 05/09/2022 | 09/12/2022 | Backend |
+| Jesper Smith | 05/09/2022 | 09/12/2022 | Backend |
