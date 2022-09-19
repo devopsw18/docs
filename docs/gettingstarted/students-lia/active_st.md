@@ -50,3 +50,5 @@ How to register yourself? [Read](https://carelyo.gitlab.io/docs/docs/gettingstar
 | Benjamin Vestberg | 22/08/2022 | 11/11/2022 | Backend |
 | Björn Milebjörk | 05/09/2022 | 09/12/2022 | Backend |
 | Jesper Smith | 05/09/2022 | 09/12/2022 | Backend |
+| Simon Westlin | 12/09/2022 | 27/11/2022 | Backend |
+| Riyam Jabbar | 12/09/2022 | 27/11/2022 | Backend |
