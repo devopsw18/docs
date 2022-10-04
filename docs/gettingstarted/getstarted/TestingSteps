@@ -1,0 +1,28 @@
+Steps followed for manual testing(Front-end)
+
+
+1.The first step is to clone the project from gitlab.
+
+2.We need to create a .env file in the project.
+
+2.After that we need to bring the latest changes made by the front-end developer to our individual systems ,for that we fetch the latest changes by the command “git fetch --all” then “git pull”.
+
+3.Then we run “npm install” to install node.
+
+4.Then we run “npm start” on all the projects where there is no next.js file.
+
+5.We run “npm run dev” on the projects with next.js file.
+
+6.This will lead us to the localhost page for the respective project.
+
+7.Currently we are focusing on Doctor ui, so doctor’s dashboard, bookings etc. we are testing.
+
+8.We try to understand what the test case is asking for(what the functionality does).
+
+9.We check if the actual result  matches with the expected result.
+
+10.If it matches the test passes.
+
+11. If there are questions about how to understand the issue we contact frontend developer (assignee) and invite to testers discord group to explain
+
+
